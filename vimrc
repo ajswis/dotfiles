@@ -26,7 +26,7 @@ set smartindent
 
 " Code Folding
 set nofoldenable
-set foldmethod=syntax
+set foldmethod=indent
 set foldnestmax=10
 set viewoptions=cursor,folds,slash,unix
 " let g:skipview_files = ['*\.vim']
