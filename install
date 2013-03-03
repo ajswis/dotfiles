@@ -38,6 +38,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ./configure
     make
     sudo make install
-    rm -r "$HOME"/exuberant-ctags
+    rm -r -f "$HOME"/exuberant-ctags
 fi
 echo ""
