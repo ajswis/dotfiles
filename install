@@ -3,18 +3,18 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 for i in $(ls "$DIR"); do
-    if [ "$i" != "install" ] || [ "$i" != "UpdateVimPlugins" ]; then 
-        if [ -e "~/.$i" ]; then
-            read -p "~/.$i exists! Delete? [y/N] " -n 1 -r
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if [ "$i" != "install" ] && [ "$i" != "UpdateVimPlugins" ]; then 
+        if [ -e "$HOME/.$i" ]; then
+            read -p "$HOME/.$i exists! Delete? [y/N] " -n 1 -r
+            if [[ $REPLY =$HOME ^[Yy]$ ]]; then
                 #probably would be better to explicitly check
                 #if directory before -r and -n
-                rm -r "~/.$i"
-                ln -sn "$DIR/$i" "~/.$i"
+                rm -r "$HOME/.$i"
+                ln -sn "$DIR/$i" "$HOME/.$i"
             fi
             echo ""
         else
-            ln -sn "$DIR/$i" "~/.$i"
+            ln -sn "$DIR/$i" "$HOME/.$i"
         fi
     fi
 done
@@ -31,13 +31,13 @@ cd "$DIR"/vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 
 read -p "Auto install exuberant-ctags? [y/N] " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =$HOME ^[Yy]$ ]]; then
     echo ""
-    git clone git://github.com/jakedouglas/exuberant-ctags.git ~/exuberant-ctags
-    cd ~/exuberant-ctags
+    git clone git://github.com/jakedouglas/exuberant-ctags.git $HOME/exuberant-ctags
+    cd $HOME/exuberant-ctags
     ./configure
     make
     sudo make install
-    rm -r ~/exuberant-ctags
+    rm -r $HOME/exuberant-ctags
 fi
 echo ""
