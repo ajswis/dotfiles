@@ -1,0 +1,19 @@
+#!/bin/bash
+
+git submodule foreach git pull origin master
+
+echo "Compiling YouCompleteMe"
+cd "$DIR"/vim/bundle/YouCompleteMe
+./install.sh --clang-completer
+
+read -p "Auto install exuberant-ctags? [y/N] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo ""
+    git clone git://github.com/jakedouglas/exuberant-ctags.git ~/exuberant-ctags
+    cd ~/exuberant-ctags
+    ./configure
+    make
+    sudo make install
+    rm -r ~/exuberant-ctags
+fi
+echo ""

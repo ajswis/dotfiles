@@ -1,0 +1,43 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+for i in $(ls "$DIR"); do
+    if [ "$i" != "install" ] || [ "$i" != "UpdateVimPlugins" ]; then 
+        if [ -e "~/.$i" ]; then
+            read -p "~/.$i exists! Delete? [y/N] " -n 1 -r
+            if [[ $REPLY =~ ^[Yy]$ ]]; then
+                #probably would be better to explicitly check
+                #if directory before -r and -n
+                rm -r "~/.$i"
+                ln -sn "$DIR/$i" "~/.$i"
+            fi
+            echo ""
+        else
+            ln -sn "$DIR/$i" "~/.$i"
+        fi
+    fi
+done
+
+git submodule foreach git pull origin master
+ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
+
+#Very specific to Arch
+echo "Installing boost and powerline"
+yaourt -S boost python2-powerline-git
+
+echo "Compiling YouCompleteMe"
+cd "$DIR"/vim/bundle/YouCompleteMe
+./install.sh --clang-completer
+
+read -p "Auto install exuberant-ctags? [y/N] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo ""
+    git clone git://github.com/jakedouglas/exuberant-ctags.git ~/exuberant-ctags
+    cd ~/exuberant-ctags
+    ./configure
+    make
+    sudo make install
+    rm -r ~/exuberant-ctags
+fi
+echo ""
