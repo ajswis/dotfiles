@@ -6,7 +6,7 @@ for i in $(ls "$DIR"); do
     if [ "$i" != "install" ] && [ "$i" != "UpdateVimPlugins" ]; then 
         if [ -e "$HOME/.$i" ]; then
             read -p "$HOME/.$i exists! Delete? [y/N] " -n 1 -r
-            if [[ $REPLY =$HOME ^[Yy]$ ]]; then
+            if [[ $REPLY =~ ^[Yy]$ ]]; then
                 #probably would be better to explicitly check
                 #if directory before -r and -n
                 rm -r "$HOME/.$i"
@@ -38,6 +38,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ./configure
     make
     sudo make install
-    rm -r $HOME/exuberant-ctags
+    rm -r "$HOME"/exuberant-ctags
 fi
 echo ""
