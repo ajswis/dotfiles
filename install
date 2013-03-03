@@ -31,10 +31,10 @@ cd "$DIR"/vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 
 read -p "Auto install exuberant-ctags? [y/N] " -n 1 -r
-if [[ $REPLY =$HOME ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo ""
-    git clone git://github.com/jakedouglas/exuberant-ctags.git $HOME/exuberant-ctags
-    cd $HOME/exuberant-ctags
+    git clone git://github.com/jakedouglas/exuberant-ctags.git "$HOME"/exuberant-ctags
+    cd "$HOME"/exuberant-ctags
     ./configure
     make
     sudo make install
