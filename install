@@ -9,7 +9,7 @@ for i in $(ls "$DIR"); do
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 #probably would be better to explicitly check
                 #if directory before -r and -n
-                rm -r "$HOME/.$i"
+                rm -rf "$HOME/.$i"
                 ln -sn "$DIR/$i" "$HOME/.$i"
             fi
             echo ""
@@ -19,6 +19,7 @@ for i in $(ls "$DIR"); do
     fi
 done
 
+git submodule update --init --recursive
 git submodule foreach git pull origin master
 ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
 mkdir -p "$HOME"/.local/share/vim/{backup,swap,undo}
@@ -39,6 +40,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ./configure
     make
     sudo make install
-    rm -r -f "$HOME"/exuberant-ctags
+    rm -rf "$HOME"/exuberant-ctags
 fi
 echo ""
