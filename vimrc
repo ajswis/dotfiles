@@ -154,6 +154,10 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 
 map <leader>cc <plug>NERDCommenterToggle
 
+" For some reason, CommentToggle doesn't work unless this is
+" remapped, so remapping it to something I won't ever use.
+map <leader>///<space> <plug>NERDCommenterComment
+
 " Not sure if I want default c prefix or a different one.
 " Note : Insert is disabled by default
 "map <leader>/c\<space> <plug>NERDCommenterComment
@@ -171,6 +175,15 @@ map <leader>cc <plug>NERDCommenterToggle
 "map <leader>/l <plug>NERDCommenterAlignBoth
 "map <leader>/u <plug>NERDCommenterUncomment
 
+"""""""""""""""""""""""""""""""""""""""" 
+" YouCompleteMe
+""""""""""""""""""""""""""""""""""""""""
+
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+
+"""""""""""""""""""""""""""""""""""""""" 
+" Useful Stuff
+""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""
 " TagList
 """""""""""""""""""""""""""""""""""""""""

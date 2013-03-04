@@ -30,7 +30,7 @@ yaourt -S boost python2-powerline-git
 
 echo "Compiling YouCompleteMe"
 cd "$DIR"/vim/bundle/YouCompleteMe
-./install.sh --clang-completer
+./install.sh
 
 read -p "Auto install exuberant-ctags? [y/N] " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
