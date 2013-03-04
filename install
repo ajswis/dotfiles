@@ -21,6 +21,7 @@ done
 
 git submodule foreach git pull origin master
 ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
+mkdir -p "$HOME"/.local/share/vim/{backup,swap,undo}
 
 #Very specific to Arch
 echo "Installing boost and powerline"
