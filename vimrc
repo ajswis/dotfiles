@@ -156,7 +156,7 @@ map <leader>cc <plug>NERDCommenterToggle
 
 " For some reason, CommentToggle doesn't work unless this is
 " remapped, so remapping it to something I won't ever use.
-map <leader>///<space> <plug>NERDCommenterComment
+map <leader><A-/><space> <plug>NERDCommenterComment
 
 " Not sure if I want default c prefix or a different one.
 " Note : Insert is disabled by default
