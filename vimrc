@@ -177,15 +177,11 @@ map <leader><A-/><space> <plug>NERDCommenterComment
 "map <leader>/u <plug>NERDCommenterUncomment
 
 """""""""""""""""""""""""""""""""""""""" 
-" Useful Stuff
-""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""" 
 " YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""
 
 " Unbind tab so as not to interfere with Ultisnips
-let g:ycm_key_list_select_completion = ['<Enter>']
+let g:ycm_key_list_select_completion = ['<Tab>']
 
 """""""""""""""""""""""""""""""""""""""""
 " TagList
