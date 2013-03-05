@@ -88,10 +88,10 @@ nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
-nnoremap <silent> <F10> :wincmd +<CR>
-nnoremap <silent> <F9>  :wincmd -<CR>
-nnoremap <silent> <A-F10> :wincmd ><CR>
-nnoremap <silent> <A-F9>  :wincmd <<CR>
+nnoremap <silent>   +   :wincmd +<CR>
+nnoremap <silent>   _   :wincmd -<CR>
+nnoremap <silent> <A-=> :wincmd ><CR>
+nnoremap <silent> <A--> :wincmd <<CR>
 nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
