@@ -1,5 +1,6 @@
 " Use pathogen to load other plugins
 execute pathogen#infect()
+Helptags
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""
