@@ -1,5 +1,6 @@
 " Use pathogen to load other plugins
 execute pathogen#infect()
+Helptags
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""
@@ -87,10 +88,10 @@ nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-J> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
-nnoremap <silent> <F10> :wincmd +<CR>
-nnoremap <silent> <F9>  :wincmd -<CR>
-nnoremap <silent> <A-F10> :wincmd ><CR>
-nnoremap <silent> <A-F9>  :wincmd <<CR>
+nnoremap <silent>   +   :wincmd +<CR>
+nnoremap <silent>   _   :wincmd -<CR>
+nnoremap <silent> <A-=> :wincmd ><CR>
+nnoremap <silent> <A--> :wincmd <<CR>
 nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
@@ -176,15 +177,11 @@ map <leader><A-/><space> <plug>NERDCommenterComment
 "map <leader>/u <plug>NERDCommenterUncomment
 
 """""""""""""""""""""""""""""""""""""""" 
-" Useful Stuff
-""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""" 
 " YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""
 
 " Unbind tab so as not to interfere with Ultisnips
-let g:ycm_key_list_select_completion = ['<Up>', '<Enter>']
+let g:ycm_key_list_select_completion = ['<Tab>']
 
 """""""""""""""""""""""""""""""""""""""""
 " TagList
