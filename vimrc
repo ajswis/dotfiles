@@ -90,8 +90,8 @@ nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 nnoremap <silent>   +   :wincmd +<CR>
 nnoremap <silent>   _   :wincmd -<CR>
-nnoremap <silent> <A-=> :wincmd ><CR>
-nnoremap <silent> <A--> :wincmd <<CR>
+nnoremap <silent> ) :wincmd ><CR>
+nnoremap <silent> ( :wincmd <<CR>
 nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
