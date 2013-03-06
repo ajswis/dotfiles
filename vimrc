@@ -45,6 +45,9 @@ set autoread
 set timeout
 set ttimeoutlen=50
 
+" New window split settings
+set splitright
+
 """""""""""""""""""""""""""""""""""""""""
 " Keybinds
 """""""""""""""""""""""""""""""""""""""""
@@ -103,7 +106,7 @@ inoremap <C-d> <C-o>:yank<CR><C-o>:put<CR>
 " Open new files in new buffer or new windows
 nnoremap <C-o> :e<space>
 nnoremap <C-p> :sp<space>
-nnoremap <A-p> :rightb vs<space>
+nnoremap <A-p> :vs<space>
 
 " Move lines of text via Alt+[jk] (Like sublime!)
 nnoremap <A-j> :m+1<CR>==
