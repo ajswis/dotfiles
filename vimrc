@@ -5,9 +5,9 @@ filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""
 " Some Basics
+" Note : vim-sensible does some of these
+" settings already
 """""""""""""""""""""""""""""""""""""""""
-"Note : vim-sensible does some of these settings already
-
 set encoding=utf-8
 
 " Search settings
@@ -17,9 +17,9 @@ set smartcase
 set hlsearch
 
 " Indentation and tab functionality
-set tabstop=4 
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 set smarttab
@@ -43,10 +43,13 @@ set autoread
 
 " Command expiration
 set timeout
-set ttimeoutlen=50
+set ttimeoutlen=15
 
 " New window split settings
 set splitright
+
+" Remember buffer info on close
+set viminfo^=%
 
 """""""""""""""""""""""""""""""""""""""""
 " Keybinds
@@ -60,7 +63,7 @@ nnoremap k gk
 
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
 " browse is only available in gvim
-command -nargs=0 -bar Update if &modified 
+command -nargs=0 -bar Update if &modified
                            \|     if empty(bufname('%'))
                            \|         browse confirm write
                            \|     else
@@ -99,7 +102,7 @@ nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
 " Ctrl+d to duplicate a line, vmode versions is best for SHIFT+V, not the others
-nnoremap <C-d> yyp 
+nnoremap <C-d> yyp
 vnoremap <C-d> y<C-o>p
 inoremap <C-d> <C-o>:yank<CR><C-o>:put<CR>
 
@@ -116,12 +119,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
-
-" Mapped keys for plugins, these are listed in respective plugin sections
-"<leader>e => Nerd Tree Toggle
-"<Leader>/ => NerdCommenterToggle
-"<leader>T => Tag List Toggle
-"<leader>o => CtrlP Toggle
 
 """""""""""""""""""""""""""""""""""""""""
 " Ctrl-P Settings
@@ -167,7 +164,7 @@ map <leader><A-/><space> <plug>NERDCommenterComment
 "map <leader>/c\<space> <plug>NERDCommenterComment
 "map <leader>/n <plug>NERDCommenterNested
 "map <leader>/\<space> <plug>NERDCommenterToggle
-"map <leader>/m <plug>NERDCommenterMinimal 
+"map <leader>/m <plug>NERDCommenterMinimal
 "map <leader>/i <plug>NERDCommenterInvert
 "map <leader>/s <plug>NERDCommenterSexy
 "map <leader>/y <plug>NERDCommenterYank
@@ -179,12 +176,12 @@ map <leader><A-/><space> <plug>NERDCommenterComment
 "map <leader>/l <plug>NERDCommenterAlignBoth
 "map <leader>/u <plug>NERDCommenterUncomment
 
-"""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""
 
 " Unbind tab so as not to interfere with Ultisnips
-let g:ycm_key_list_select_completion = ['<Tab>']
+let g:ycm_key_list_select_completion = ['<Enter>']
 
 """""""""""""""""""""""""""""""""""""""""
 " TagList
@@ -199,7 +196,7 @@ nnoremap <leader>t :TlistToggle<CR>
 let g:easytags_updatetime_min = 2000
 
 """""""""""""""""""""""""""""""""""""""""
-" Tex Settings 
+" Tex Settings
 """""""""""""""""""""""""""""""""""""""""
 
 let g:tex_flavor = "latex"
@@ -219,7 +216,7 @@ syntax enable
 " Use a nice color scheme
 colors Monokai
 
-"""""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""""""""""""""""""
 " Useful Stuff
 """"""""""""""""""""""""""""""""""""""""
 
@@ -228,17 +225,14 @@ autocmd BufReadPost *
    \ if line("'\"") > 0 && line("'\"") <= line("$") |
    \   exe "normal! g`\"" |
    \ endif
-" Remember buffer info on close
-set viminfo^=%
 
-" For Python/Coffeescript, delete trailing white space
+" Delete trailing whitespaces on saving.
 func! DeleteTrailingWS()
 	exe "normal mz"
 	%s/\s\+$//ge
 	exe "normal `z"
 endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+autocmd BufWrite * :call DeleteTrailingWS()
 
 " Allow the use of ALT as a function key.
 let c='a'
@@ -252,8 +246,8 @@ endw
 fun! CloseWindow()
 	if &modified
 		echo "Save first or manual exit."
-	else  
-		if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1 
+	else
+		if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
 			q
 		else
 			:bd
