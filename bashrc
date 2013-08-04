@@ -125,3 +125,5 @@ vim() {
 
 export PATH=$PATH:/home/drew/.gem/ruby/2.0.0/bin
 export EDITOR="vim"
+
+alias xbox_controller='sudo xboxdrv --config ~/Documents/xboxdrv_profiles/wiredxbox_minecraft.conf --detach-kernel-driver'
