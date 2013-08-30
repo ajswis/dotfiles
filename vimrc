@@ -64,12 +64,12 @@ nnoremap k gk
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
 " browse is only available in gvim
 command -nargs=0 -bar Update if &modified
-                           \|     if empty(bufname('%'))
-                           \|         browse confirm write
-                           \|     else
-                           \|         confirm write
-                           \|     endif
-                           \| endif
+      \|     if empty(bufname('%'))
+        \|         browse confirm write
+        \|     else
+          \|         confirm write
+          \|     endif
+          \| endif
 nnoremap <silent> <C-s> :Update<CR>
 inoremap <C-s> <C-o>:Update<CR>
 vnoremap <C-s> <C-o>:Update<CR>
@@ -119,6 +119,23 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
+
+" Set specific directories for swap, undo, and backups.
+if isdirectory($HOME . '/.vim/tmp/backup') == 0
+  :silent !mkdir -p ~/.vim/tmp/backup >/dev/null 2>&1
+endif
+set backupdir=~/.vim/tmp/backup//
+
+if isdirectory($HOME . '/.vim/tmp/swap') == 0
+  :silent !mkdir -p ~/.vim/tmp/swap >/dev/null 2>&1
+endif
+set directory=~/.vim/tmp/swap//
+
+if isdirectory($HOME . '/.vim/tmp/undo') == 0
+  :silent !mkdir -p ~/.vim/tmp/undo >/dev/null 2>&1
+endif
+set undodir=~/.vim/tmp/undo//
+set undofile
 
 """""""""""""""""""""""""""""""""""""""""
 " Ctrl-P Settings
@@ -223,35 +240,35 @@ colors Monokai
 
 " Return to last edit position on reopen
 autocmd BufReadPost *
-   \ if line("'\"") > 0 && line("'\"") <= line("$") |
-   \   exe "normal! g`\"" |
-   \ endif
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 
 " Delete trailing whitespaces on saving.
 func! DeleteTrailingWS()
-	exe "normal mz"
-	%s/\s\+$//ge
-	exe "normal `z"
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
 endfunc
 autocmd BufWrite * :call DeleteTrailingWS()
 
 " Allow the use of ALT as a function key.
 let c='a'
 while c <= 'z'
-	exec "set <A-".c.">=\e".c
-	exec "imap \e".c." <A-".c.">"
-	let c = nr2char(1+char2nr(c))
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
 endw
 
 " Close current window or vim if no unsaved windows are open.
 fun! CloseWindow()
-	if &modified
-		echo "Save first or manual exit."
-	else
-		if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-			q
-		else
-			:bd
-		endif
-	endif
+  if &modified
+    echo "Save first or manual exit."
+  else
+    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+      q
+    else
+      :bd
+    endif
+  endif
 endfunction

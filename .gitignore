@@ -1,3 +1,6 @@
 vim/autoload
 vim/view
 vim/.netrwhist
+vim/tmp/backup/*
+vim/tmp/swap/*
+vim/tmp/undo/*
