@@ -177,11 +177,12 @@ map <leader><A-/><space> <plug>NERDCommenterComment
 "map <leader>/u <plug>NERDCommenterUncomment
 
 """"""""""""""""""""""""""""""""""""""""
-" YouCompleteMe
+" UltiSnips
 """"""""""""""""""""""""""""""""""""""""
 
-" Unbind tab so as not to interfere with Ultisnips
-let g:ycm_key_list_select_completion = ['<Enter>']
+let g:UltiSnipsExpandTrigger = "<A-c>"
+let g:UltiSnipsJumpForwardTrigger = "<A-w>"
+let g:UltiSnipsJumpBackwardTrigger = "<A-s>"
 
 """""""""""""""""""""""""""""""""""""""""
 " TagList
