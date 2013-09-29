@@ -1,12 +1,16 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 git submodule foreach git pull origin master
 
-echo "Compiling YouCompleteMe"
-cd "$DIR"/vim/bundle/YouCompleteMe
-./install.sh
+read -p "Auto compile YouCompleteMe? [y/N] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  cd "$DIR"/vim/bundle/YouCompleteMe
+  ./install.sh
+fi
+echo ""
 
 read -p "Auto install exuberant-ctags? [y/N] " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
