@@ -385,17 +385,17 @@
     <!--Volume Control-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer set Master 3277+</command>
+        <command>~/Documents/dotfiles/scripts/volume-change.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer set Master 3277-</command>
+        <command>~/Documents/dotfiles/scripts/volume-change.sh down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>amixer set Master toggle</command>
+        <command>~/Documents/dotfiles/scripts/volume-change.sh toggle</command>
       </action>
     </keybind>
   </keyboard>

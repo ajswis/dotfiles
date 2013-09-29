@@ -1,6 +1,7 @@
 #!/bin/bash
 
-step=3277
+max=$(amixer get Master | grep Limits | cut -f7 -d' ')
+step=$(( ($max+19)/20 ))
 
 if [[ $# -eq 1 ]]; then
   case $1 in
