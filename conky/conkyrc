@@ -56,7 +56,7 @@ color4 0FC4E3
 default_color EEEEEE
 
 # -- Lua Load -- #
-lua_load /home/drew/.conky/conkyrings.lua
+lua_load /home/drew/.config/conky/conkyrings.lua
 lua_draw_hook_pre ring_stats
 
 TEXT
