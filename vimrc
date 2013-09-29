@@ -121,19 +121,8 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 nnoremap <silent> <C-i> :nohlsearch<CR>
 
 " Set specific directories for swap, undo, and backups.
-if isdirectory($HOME . '/.vim/tmp/backup') == 0
-  :silent !mkdir -p ~/.vim/tmp/backup >/dev/null 2>&1
-endif
 set backupdir=~/.vim/tmp/backup//
-
-if isdirectory($HOME . '/.vim/tmp/swap') == 0
-  :silent !mkdir -p ~/.vim/tmp/swap >/dev/null 2>&1
-endif
 set directory=~/.vim/tmp/swap//
-
-if isdirectory($HOME . '/.vim/tmp/undo') == 0
-  :silent !mkdir -p ~/.vim/tmp/undo >/dev/null 2>&1
-endif
 set undodir=~/.vim/tmp/undo//
 set undofile
 
