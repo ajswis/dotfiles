@@ -25,8 +25,7 @@ ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
 mkdir -p "$HOME"/.local/share/vim/{backup,swap,undo}
 
 #Very specific to Arch
-echo "Installing boost and powerline"
-yaourt -S boost python2-powerline-git
+yaourt -S boost python-powerline-git
 
 echo "Compiling YouCompleteMe"
 cd "$DIR"/vim/bundle/YouCompleteMe
