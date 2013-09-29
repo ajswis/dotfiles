@@ -64,12 +64,12 @@ nnoremap k gk
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
 " browse is only available in gvim
 command -nargs=0 -bar Update if &modified
-      \|     if empty(bufname('%'))
-        \|         browse confirm write
-        \|     else
-          \|         confirm write
-          \|     endif
-          \| endif
+          \|  if empty(bufname('%'))
+          \|    browse confirm write
+          \|  else
+          \|    confirm write
+          \|  endif
+          \|endif
 nnoremap <silent> <C-s> :Update<CR>
 inoremap <C-s> <C-o>:Update<CR>
 vnoremap <C-s> <C-o>:Update<CR>
@@ -101,10 +101,10 @@ nnoremap <silent> ( :wincmd <<CR>
 nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
-" Ctrl+d to duplicate a line, vmode versions is best for SHIFT+V, not the others
-nnoremap <C-d> yyp
-vnoremap <C-d> y<C-o>p
-inoremap <C-d> <C-o>:yank<CR><C-o>:put<CR>
+" ALt+d to duplicate a line, vmode version is best for SHIFT+V, not the others
+nnoremap <A-d> yyp
+vnoremap <A-d> y<C-o>p
+inoremap <A-d> <C-o>:yank<CR><C-o>:put<CR>
 
 " Open new files in new buffer or new windows
 nnoremap <C-o> :e<space>
@@ -176,23 +176,6 @@ map <leader>cc <plug>NERDCommenterToggle
 " remapped, so remapping it to something I won't ever use.
 map <leader><A-/><space> <plug>NERDCommenterComment
 
-" Not sure if I want default c prefix or a different one.
-" Note : Insert is disabled by default
-"map <leader>/c\<space> <plug>NERDCommenterComment
-"map <leader>/n <plug>NERDCommenterNested
-"map <leader>/\<space> <plug>NERDCommenterToggle
-"map <leader>/m <plug>NERDCommenterMinimal
-"map <leader>/i <plug>NERDCommenterInvert
-"map <leader>/s <plug>NERDCommenterSexy
-"map <leader>/y <plug>NERDCommenterYank
-"map <leader>/$ <plug>NERDCommenterToEOL
-"map <leader>/A <plug>NERDCommenterAppend
-""map <leader>/ <plug>NERDCommenterInsert
-"map <leader>/a <plug>NERDCommenterAltDelims
-"map <leader>/b <plug>NERDCommenterAlignLeft
-"map <leader>/l <plug>NERDCommenterAlignBoth
-"map <leader>/u <plug>NERDCommenterUncomment
-
 """"""""""""""""""""""""""""""""""""""""
 " UltiSnips
 """"""""""""""""""""""""""""""""""""""""
@@ -239,10 +222,10 @@ colors Monokai
 """"""""""""""""""""""""""""""""""""""""
 
 " Return to last edit position on reopen
-autocmd BufReadPost *
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal! g`\"" |
-      \ endif
+"autocmd BufReadPost *
+      "\ if line("'\"") > 0 && line("'\"") <= line("$") |
+      "\   exe "normal! g`\"" |
+      "\ endif
 
 " Delete trailing whitespaces on saving.
 func! DeleteTrailingWS()
