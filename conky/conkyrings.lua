@@ -238,8 +238,8 @@ function draw_ring(cr,t,pt)
     local angle_0=sa*(2*math.pi/360)-math.pi/2
     local angle_f=ea*(2*math.pi/360)-math.pi/2
     local t_arc=t*(angle_f-angle_0)
-    if math.abs(t_arc) > math.abs(angle_f-angle_0) then
-      t_arc = angle_f
+    if math.abs(t_arc) > t*math.abs(angle_f-angle_0) then
+      t_arc = t*angle_f
     end
 
     if lr then
