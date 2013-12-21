@@ -2,6 +2,25 @@
 
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
+<menu id="games-menu" label="Games">
+  <item label="Minecraft">
+    <action name="Execute">
+      <command>java -jar ~/.minecraft/Minecraft.jar</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Technic">
+    <action name="Execute">
+      <command>java -jar ~/.technic/TechnicLauncher.jar</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
 <menu id="apps-accessories-menu" label="Accessories">
   <item label="Calculator">
     <action name="Execute">
@@ -183,6 +202,7 @@
       </startupnotify>
     </action>
   </item>
+  <menu id="games-menu"/>
   <menu id="apps-accessories-menu"/>
   <menu id="apps-editors-menu"/>
   <menu id="apps-graphics-menu"/>
