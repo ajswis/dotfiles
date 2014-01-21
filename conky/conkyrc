@@ -64,16 +64,16 @@ ${voffset 78}${goto 75}${font Ds\-Digital:size=20}${color2}${time %I}${color3}${
 
 ${goto 75}${color1}${font Nu:size=9}Uptime:
 ${goto 75}${font Nu:size=9}${uptime_short}
-${voffset 38}${font snap:size=7}${goto 40}${color}CPU
-${voffset 7}${goto 52}${color3}${execi 10 sensors coretemp-isa-0000 | grep Physical | cut -c 18-21}°C
+${voffset 35}${font snap:size=7}${goto 40}${color}CPU
+${voffset 5}${goto 52}${color3}${execi 10 sensors coretemp-isa-0000 | grep Physical | cut -c 18-21}°C
 ${goto 52}${color2}${freq_g 1}GHz
-${voffset -37}${goto 140}${color}MEM
-${voffset 7}${goto 112}${color3}${swap}
-${goto 112}${color2}${mem}
-${voffset 58}${goto 40}${color}NET
-${voffset -39}${goto 52}${color2}${downspeedf wlp3s0}
+${voffset -37}${goto 138}${color}MEM
+${voffset 5}${goto 109}${color3}${swap}
+${goto 109}${color2}${mem}
+${voffset 56}${goto 40}${color}NET
+${voffset -40}${goto 52}${color2}${downspeedf wlp3s0}
 ${goto 52}${color3}${upspeedf wlp3s0}
-${voffset 8}${goto 140}${color}HDD
-${voffset -38}${goto 110}${color2}${fs_free /home}
-${goto 60}${goto 110}${color3}${fs_free /}
+${voffset 6}${goto 138}${color}HDD
+${voffset -40}${goto 108}${color2}${fs_free /home}
+${goto 60}${goto 108}${color3}${fs_free /}
 ${color1}${voffset 45}${goto 55}${font Nu:size=9}${execi 3600 uname -r}
