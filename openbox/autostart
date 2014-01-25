@@ -1,6 +1,6 @@
 ~/.fehbg &
 tint2 &
-orage &
+#orage &
 (sleep 2 && compton_openbox --startstop) &
 (sleep 2 && pnmixer) &
 (sleep 2 && dropboxd) &
