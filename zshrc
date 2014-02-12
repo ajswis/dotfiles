@@ -13,7 +13,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 export EDITOR="vim"
-export PATH=$PATH:/home/drew/.gem/ruby/2.0.0/bin
+export PATH=$PATH:~/.gem/ruby/2.1.0/bin
+
 
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
