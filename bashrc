@@ -124,6 +124,7 @@ vim() {
   stty "$STTYOPTS"
 }
 
-export PATH=$PATH:~/.gem/ruby/2.1.0/bin
+export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
+export PATH=$PATH:$HOME/Documents/android-dev/tools:$HOME/Documents/android-dev/platform-tools
 
 alias xbox_controller='sudo xboxdrv --config ~/Documents/xboxdrv_profiles/wiredxbox_minecraft.conf --detach-kernel-driver'

@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory nomatch
+setopt incappendhistory nomatch
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -12,9 +12,10 @@ zstyle :compinstall filename '/home/drew/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-export EDITOR="vim"
-export PATH=$PATH:~/.gem/ruby/2.1.0/bin
 
+export EDITOR="vim"
+export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
+export PATH=$PATH:$HOME/Documents/android-dev/tools:$HOME/Documents/android-dev/platform-tools
 
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
