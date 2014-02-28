@@ -22,6 +22,4 @@ max_x = default_x
   end
 end
 
-puts scale
-puts max_res
 system "$HOME/Documents/dotfiles/scripts/toggle_mirror_display.sh #{scale}x#{scale} #{max_res}"
