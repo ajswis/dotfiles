@@ -220,15 +220,16 @@
       <execute>pkill -KILL -u $USER</execute>
     </action>
   </item>
+  <!--TODO: Find a way to not use sudo/editing sudoers-->
   <item label="Suspend">
     <action name="Execute">
-      <execute>systemctl suspend</execute>
+      <execute>sudo systemctl suspend</execute>
     </action>
   </item>
   <item label="Hibernate">
     <action name="Execute">
       <prompt>Hibernate?</prompt>
-      <execute>systemctl hibernate</execute>
+      <execute>sudo systemctl hibernate</execute>
     </action>
   </item>
   <item label="Restart">
@@ -240,7 +241,7 @@
   <item label="Shutdown">
     <action name="Execute">
       <prompt>Shutdown?</prompt>
-      <execute>shutdown -p now</execute>
+      <execute>sudo shutdown -p now</execute>
     </action>
   </item>
 </menu>
