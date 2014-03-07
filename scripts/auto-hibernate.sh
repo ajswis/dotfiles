@@ -6,7 +6,7 @@ if [[ $stat -eq "Discharging" ]]; then
   export DISPLAY=:0.0
   if [[ $batperc -le 8 ]]; then
     # This will, and should, spam me when my battery gets low.
-    notify-send 'Battery is low!' 'Save your work, idiot!' --icon=battery-low
+    notify-send 'HEY! Your battery is low!' 'Save your work!!' --icon=battery-low
   fi
   if [[ $batperc -eq 0 ]]; then
     # TODO: Find a way to not use sudo/editing sudoers
