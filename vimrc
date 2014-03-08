@@ -174,12 +174,6 @@ let g:UltiSnipsJumpForwardTrigger = "<A-w>"
 let g:UltiSnipsJumpBackwardTrigger = "<A-s>"
 
 """""""""""""""""""""""""""""""""""""""""
-" TagList
-"""""""""""""""""""""""""""""""""""""""""
-
-nnoremap <leader>t :TlistToggle<CR>
-
-"""""""""""""""""""""""""""""""""""""""""
 " Easytags
 """""""""""""""""""""""""""""""""""""""""
 
@@ -199,9 +193,9 @@ autocmd FileType tex setlocal spell spelllang=en_us
 
 syntax enable
 "Set 256 color mode (not always needed).
-"if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
-"	set t_Co=256
-"endif
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "xfce4-terminal"
+  set t_Co=256
+endif
 
 " Use a nice color scheme
 colors Monokai
@@ -209,12 +203,6 @@ colors Monokai
 """"""""""""""""""""""""""""""""""""""""
 " Useful Stuff
 """"""""""""""""""""""""""""""""""""""""
-
-" Return to last edit position on reopen
-"autocmd BufReadPost *
-      "\ if line("'\"") > 0 && line("'\"") <= line("$") |
-      "\   exe "normal! g`\"" |
-      "\ endif
 
 " Delete trailing whitespaces on saving.
 func! DeleteTrailingWS()
