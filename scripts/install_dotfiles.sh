@@ -44,9 +44,9 @@ ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
 mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
 
 #Very specific to Arch
-read -p "Install boost and powerline? [y/N] " -n 1 -r
+read -p "Install boost [y/N] " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  yaourt -S boost python2-powerline-git
+  yaourt -S boost
 fi
 echo ""
 

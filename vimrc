@@ -149,6 +149,12 @@ let g:ctrlp_clear_cache_on_exit = 0
 "let g:ctrlp_show_hidden = 1
 
 """""""""""""""""""""""""""""""""""""""""
+" Airline (Powerline replacement)
+"""""""""""""""""""""""""""""""""""""""""
+let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 1
+
+"""""""""""""""""""""""""""""""""""""""""
 " NerdTree
 """""""""""""""""""""""""""""""""""""""""
 
