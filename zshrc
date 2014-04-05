@@ -15,7 +15,7 @@ compinit
 
 export EDITOR="vim"
 export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
-export PATH=$PATH:$HOME/Documents/android-dev/tools:$HOME/Documents/android-dev/platform-tools
+export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
 
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
