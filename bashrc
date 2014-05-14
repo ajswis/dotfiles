@@ -126,5 +126,6 @@ vim() {
 
 export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
 export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 alias xbox_controller='sudo xboxdrv --config ~/Documents/xboxdrv_profiles/wiredxbox_minecraft.conf --detach-kernel-driver'

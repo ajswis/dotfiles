@@ -16,6 +16,7 @@ compinit
 export EDITOR="vim"
 export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
 export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
