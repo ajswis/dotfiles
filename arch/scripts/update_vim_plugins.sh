@@ -8,7 +8,7 @@ git submodule foreach --recursive git pull origin master
 read -p "Auto compile YouCompleteMe? [y/N] " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo ""
-  cd "$DIR"/vim/bundle/YouCompleteMe
+  cd "$DIR"/../vim/bundle/YouCompleteMe
   ./install.sh
 fi
 echo ""

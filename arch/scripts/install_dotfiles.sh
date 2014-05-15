@@ -1,7 +1,8 @@
 #!/bin/bash
 
+# BASH_SOURCE means the directory location of this bash script
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-exclude=("scripts" "README.md")
+exclude=("scripts")
 configs=("conky" "openbox" "tint2")
 
 elemIn() {
@@ -38,10 +39,11 @@ for i in $(ls "$DIR"); do
   fi
 done
 
+ln -fsn $DIR/../vim "$HOME"/.vim
+ln -fsn $DIR/../vim/pathogen/autoload "$DIR"/../vim/
+mkdir -p "$DIR"/../vim/tmp/{backup,swap,undo}
 git submodule update --init --recursive
 git submodule foreach --recursive git pull origin master
-ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
-mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
 
 #Very specific to Arch
 read -p "Install boost and airline glyphs [y/N] " -n 1 -r
@@ -54,7 +56,7 @@ read -p "Auto compile YouCompleteMe? [y/N] " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo ""
   echo "Compiling YouCompleteMe"
-  cd "$DIR"/vim/bundle/YouCompleteMe
+  cd "$DIR"/../vim/bundle/YouCompleteMe
   ./install.sh
 fi
 echo ""
