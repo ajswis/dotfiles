@@ -5,7 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 exclude=("scripts" "README.md")
 configs=("conky" "openbox" "tint2")
 
-elemIn() {
+elem_in() {
   for e in "${@:2}"; do
     [[ "$e" = "$1" ]] && return 1
   done
@@ -54,9 +54,9 @@ link() {
 }
 
 for i in $(ls "$DIR"); do
-  elemIn "$i" "${exclude[@]}"
+  elem_in "$i" "${exclude[@]}"
   if [[  $? == 1 ]]; then continue; fi
-  elemIn "$i" "${configs[@]}"
+  elem_in "$i" "${configs[@]}"
   if [[ $? == 1 ]]; then
     echo "Linking $i to $HOME/.config/$i"
     link "$HOME/.config" "$i"
