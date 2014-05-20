@@ -54,8 +54,11 @@ link() {
 }
 
 for i in $(ls "$DIR"); do
+  # Ignore some files
   elem_in "$i" "${exclude[@]}"
   if [[  $? == 1 ]]; then continue; fi
+
+  # Differentiate between dotfiles and .config/* files
   elem_in "$i" "${configs[@]}"
   if [[ $? == 1 ]]; then
     echo "Linking $i to $HOME/.config/$i"
@@ -66,6 +69,7 @@ for i in $(ls "$DIR"); do
   fi
 done
 
+# Finish up linking and directory stuff
 ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
 mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
 
