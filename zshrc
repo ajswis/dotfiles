@@ -5,13 +5,10 @@ SAVEHIST=1000
 setopt incappendhistory nomatch correct_all
 unsetopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/drew/.zshrc'
 
+zstyle :compinstall filename '/Users/drew/.zshrc'
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
@@ -24,13 +21,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -G'
 
-# Allow ctrl+S in vim to save files, ie pass
-# the command to vim when vim is open.
-
 export EDITOR="mvim"
 alias vim="mvim"
-
-alias xbox_controller='sudo xboxdrv --config ~/Documents/xboxdrv_profiles/wiredxbox_minecraft.conf --detach-kernel-driver'
 
 # Set Home, End, Del, PgUp, PgDown keys to actually do something.
 bindkey '^[OH' beginning-of-line
