@@ -10,7 +10,8 @@ zstyle :compinstall filename '/Users/drew/.zshrc'
 autoload -Uz compinit
 compinit
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
@@ -23,6 +24,9 @@ alias ls='ls -G'
 
 export EDITOR="mvim"
 alias vim="mvim"
+
+# OS X completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Set Home, End, Del, PgUp, PgDown keys to actually do something.
 bindkey '^[OH' beginning-of-line
