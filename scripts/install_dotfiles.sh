@@ -73,18 +73,20 @@ done
 ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
 mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
 
+if prompt "Install airline glyphs?" N; then
+  yaourt -S powerline-fonts-git
+fi
+
 if prompt "Update git submodules?" N ; then
   git submodule update --init --recursive
   git submodule foreach --recursive git pull origin master
 fi
 
-#Very specific to Arch
-if prompt "Install boost and airline glyphs?" N; then
-  yaourt -S boost powerline-fonts-git
-fi
-
 if prompt "Auto compile YouCompleteMe?" N; then
-  echo ""
+  if prompt "Install boost?" N; then
+    yaourt -S boost
+  fi
+
   echo "Compiling YouCompleteMe"
   cd "$DIR"/vim/bundle/YouCompleteMe
   ./install.sh
