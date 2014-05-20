@@ -53,51 +53,82 @@ link() {
   fi
 }
 
-for i in $(ls "$DIR"); do
-  # Ignore some files
-  elem_in "$i" "${exclude[@]}"
-  if [[  $? == 1 ]]; then continue; fi
+install_dotfiles() {
+  for i in $(ls "$DIR"); do
+    # Ignore some files
+    elem_in "$i" "${exclude[@]}"
+    if [[  $? == 1 ]]; then continue; fi
 
-  # Differentiate between dotfiles and .config/* files
-  elem_in "$i" "${configs[@]}"
-  if [[ $? == 1 ]]; then
-    echo "Linking $i to $HOME/.config/$i"
-    link "$HOME/.config" "$i"
-  else
-    echo "Linking $i to $HOME/.$i"
-    link "$HOME" "$i" "."
+    # Differentiate between dotfiles and .config/* files
+    elem_in "$i" "${configs[@]}"
+    if [[ $? == 1 ]]; then
+      echo "Linking $i to $HOME/.config/$i"
+      link "$HOME/.config" "$i"
+    else
+      echo "Linking $i to $HOME/.$i"
+      link "$HOME" "$i" "."
+    fi
+  done
+
+  # Finish up linking and directory stuff
+  ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
+  mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
+
+  if prompt "Install airline glyphs?" N; then
+    yaourt -S powerline-fonts-git
   fi
-done
+}
 
-# Finish up linking and directory stuff
-ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
-mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
-
-if prompt "Install airline glyphs?" N; then
-  yaourt -S powerline-fonts-git
-fi
-
-if prompt "Update git submodules?" N ; then
+update_git_submodules() {
   git submodule update --init --recursive
   git submodule foreach --recursive git pull origin master
-fi
+}
 
-if prompt "Auto compile YouCompleteMe?" N; then
-  if prompt "Install boost?" N; then
+compile_ycm() {
+  echo "Compiling YouCompleteMe"
+  if prompt "Install boost (required for YCM)?" N; then
     yaourt -S boost
   fi
 
-  echo "Compiling YouCompleteMe"
   cd "$DIR"/vim/bundle/YouCompleteMe
   ./install.sh
-fi
+}
 
-if prompt "Auto compile exuberant-ctags?" N; then
-  echo ""
+compile_exctags() {
   git clone git://github.com/jakedouglas/exuberant-ctags.git "$DIR"/exuberant-ctags
   cd "$DIR"/exuberant-ctags
   ./configure
   make
   sudo make install
   rm -rf "$DIR"/exuberant-ctags
-fi
+}
+
+case "$1" in
+  -a|--all)
+    install_dotfiles
+    update_git_submodules
+    compile_ycm
+    compile_exctags
+    ;;
+  -i|--install_dotfiles)
+    install_dotfiles
+    ;;
+  -g|--update_git_submodules)
+    update_git_submodules
+    ;;
+  -y|--compile_ycm)
+    compile_ycm
+    ;;
+  -e|--compile_exctags)
+    compile_exctags
+    ;;
+  *)
+    echo "Usage:  install_dotfiles <option>"
+    echo "Options:"
+    echo "    -i --install_dotfiles       Install dotfiles to home directory"
+    echo "    -g --update_git_submodules  Update git submodules"
+    echo "    -y --compile_ycm            Compile YouCompleteMe"
+    echo "    -e --compile_exctags        Compile Exuberant-ctags"
+    echo "    -a --all                    All of the above"
+    ;;
+esac
