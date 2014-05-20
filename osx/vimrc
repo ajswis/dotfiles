@@ -178,9 +178,9 @@ map <leader><D-/><space> <plug>NERDCommenterComment
 " UltiSnips
 """"""""""""""""""""""""""""""""""""""""
 
-let g:UltiSnipsExpandTrigger = "<D-c>"
-let g:UltiSnipsJumpForwardTrigger = "<D-w>"
-let g:UltiSnipsJumpBackwardTrigger = "<D-s>"
+let g:UltiSnipsExpandTrigger = "<D-C>"
+let g:UltiSnipsJumpForwardTrigger = "<D-W>"
+let g:UltiSnipsJumpBackwardTrigger = "<D-S>"
 
 """""""""""""""""""""""""""""""""""""""""
 " Easytags
