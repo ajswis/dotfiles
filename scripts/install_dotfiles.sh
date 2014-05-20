@@ -73,8 +73,10 @@ done
 ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
 mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
 
-git submodule update --init --recursive
-git submodule foreach --recursive git pull origin master
+if prompt "Update git submodules?" N ; then
+  git submodule update --init --recursive
+  git submodule foreach --recursive git pull origin master
+fi
 
 #Very specific to Arch
 if prompt "Install boost and airline glyphs?" N; then
