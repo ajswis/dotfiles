@@ -12,10 +12,37 @@ elemIn() {
   return 0
 }
 
+prompt() {
+  while true; do
+    if [ "${2:-}" = "Y" ]; then
+      options="Y/n"
+      default=Y
+    elif [ "${2:-}" = "N" ]; then
+      options="y/N"
+      default=N
+    else
+      options="y/n"
+      default=
+    fi
+
+    read -p "$1 [$options] " -n 1 -r REPLY
+
+    if [ -z "$REPLY" ]; then
+      REPLY=$default
+    fi
+
+    case "$REPLY" in
+      Y*|y*) return 0 ;;
+      N*|n*) return 1 ;;
+    esac
+
+  echo ""
+  done
+}
+
 link() {
   if [ -e "$1/$3$2" ]; then
-    read -p "$1/$3$2 exists! Delete? [y/N] " -n 1 -r
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if prompt "$1/$3$2 exists! Delete?" N; then
       # It might be a very, very bad idea to rm -rf.
       rm -rf "$1/$3$2"
       ln -sn "$DIR/$2" "$1/$3$2"
@@ -39,30 +66,27 @@ for i in $(ls "$DIR"); do
   fi
 done
 
-ln -fsn $DIR/../vim "$HOME"/.vim
-ln -fsn $DIR/../vim/pathogen/autoload "$DIR"/../vim/
-mkdir -p "$DIR"/../vim/tmp/{backup,swap,undo}
+ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
+mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
+
 git submodule update --init --recursive
 git submodule foreach --recursive git pull origin master
 
 #Very specific to Arch
-read -p "Install boost and airline glyphs [y/N] " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if prompt "Install boost and airline glyphs?" N; then
   yaourt -S boost powerline-fonts-git
 fi
 echo ""
 
-read -p "Auto compile YouCompleteMe? [y/N] " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if prompt "Auto compile YouCompleteMe?" N; then
   echo ""
   echo "Compiling YouCompleteMe"
-  cd "$DIR"/../vim/bundle/YouCompleteMe
+  cd "$DIR"/vim/bundle/YouCompleteMe
   ./install.sh
 fi
 echo ""
 
-read -p "Auto compile exuberant-ctags? [y/N] " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if prompt "Auto compile exuberant-ctags?" N; then
   echo ""
   git clone git://github.com/jakedouglas/exuberant-ctags.git "$DIR"/exuberant-ctags
   cd "$DIR"/exuberant-ctags
