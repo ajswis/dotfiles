@@ -26,6 +26,7 @@ prompt() {
     fi
 
     read -p "$1 [$options] " -n 1 -r REPLY
+    echo ""
 
     if [ -z "$REPLY" ]; then
       REPLY=$default
@@ -36,7 +37,6 @@ prompt() {
       N*|n*) return 1 ;;
     esac
 
-  echo ""
   done
 }
 
@@ -47,7 +47,7 @@ link() {
       rm -rf "$1/$3$2"
       ln -sn "$DIR/$2" "$1/$3$2"
     fi
-    echo ""
+    echo ""  # Intentional extra echo
   else
     ln -sn "$DIR/$2" "$1/$3$2"
   fi
@@ -76,7 +76,6 @@ git submodule foreach --recursive git pull origin master
 if prompt "Install boost and airline glyphs?" N; then
   yaourt -S boost powerline-fonts-git
 fi
-echo ""
 
 if prompt "Auto compile YouCompleteMe?" N; then
   echo ""
@@ -84,7 +83,6 @@ if prompt "Auto compile YouCompleteMe?" N; then
   cd "$DIR"/vim/bundle/YouCompleteMe
   ./install.sh
 fi
-echo ""
 
 if prompt "Auto compile exuberant-ctags?" N; then
   echo ""
@@ -95,4 +93,3 @@ if prompt "Auto compile exuberant-ctags?" N; then
   sudo make install
   rm -rf "$DIR"/exuberant-ctags
 fi
-echo ""
