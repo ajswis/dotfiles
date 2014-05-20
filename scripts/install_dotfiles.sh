@@ -2,7 +2,7 @@
 
 # BASH_SOURCE means the directory location of this bash script
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-exclude=("scripts")
+exclude=("scripts" "README.md")
 configs=("conky" "openbox" "tint2")
 
 elemIn() {
