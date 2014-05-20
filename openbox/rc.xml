@@ -360,48 +360,26 @@
     <keybind key="W-Down">
       <action name="Unmaximize"/>
     </keybind>
-    <!--
-    <keybind key="W-Up">
-      <action name="Execute">
-        <command>/home/drew/Documents/dotfilesarch/scripts/winsnap -u</command>
-      </action>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="Execute">
-        <command>/home/drew/Documents/dotfilesarch/scripts/winsnap -d</command>
-      </action>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="Execute">
-        <command>/home/drew/Documents/dotfilesarch/scripts/winsnap -r</command>
-      </action>
-    </keybind>
-    <keybind key="W-Left">
-      <action name="Execute">
-        <command>/home/drew/Documents/dotfilesarch/scripts/winsnap -l</command>
-      </action>
-    </keybind>
-    -->
     <!--Toggle Projector Mode-->
     <keybind key="XF86Display">
       <action name="Execute">
-        <command>~/Documents/dotfiles/arch/scripts/find_max_ext_monitor_res.rb</command>
+        <command>~/.dotfiles/scripts/find_max_ext_monitor_res.rb</command>
       </action>
     </keybind>
     <!--Volume Control-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>~/Documents/dotfiles/arch/scripts/volume-change.sh up</command>
+        <command>~/.dotfiles/scripts/volume-change.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>~/Documents/dotfiles/arch/scripts/volume-change.sh down</command>
+        <command>~/.dotfiles/scripts/volume-change.sh down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>~/Documents/dotfiles/arch/scripts/volume-change.sh toggle</command>
+        <command>~/.dotfiles/scripts/volume-change.sh toggle</command>
       </action>
     </keybind>
     <!--Keyboard Backlight Control-->
