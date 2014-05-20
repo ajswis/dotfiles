@@ -92,6 +92,7 @@ compile_ycm() {
 
   cd "$DIR"/vim/bundle/YouCompleteMe
   ./install.sh
+  cd "$DIR"
 }
 
 compile_exctags() {
@@ -123,7 +124,7 @@ case "$1" in
     compile_exctags
     ;;
   *)
-    echo "Usage:  install_dotfiles <option>"
+    echo "Usage: manage_dotfiles <option>"
     echo "Options:"
     echo "    -i --install_dotfiles       Install dotfiles to home directory"
     echo "    -g --update_git_submodules  Update git submodules"
