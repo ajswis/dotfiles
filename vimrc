@@ -128,6 +128,7 @@ set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set undodir=~/.vim/tmp/undo//
 set undofile
+macmenu File.Print key=<nop>
 
 """""""""""""""""""""""""""""""""""""""""
 " Ctrl-P Settings
