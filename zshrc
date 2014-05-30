@@ -24,6 +24,7 @@ alias ls='ls -G'
 
 export EDITOR="mvim"
 alias vim="mvim"
+alias vimdiff="mvimdiff"
 
 # OS X completions
 fpath=(/usr/local/share/zsh-completions $fpath)
