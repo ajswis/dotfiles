@@ -29,6 +29,10 @@ alias vimdiff="mvimdiff"
 # OS X completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# OS X keep current PWD when opening new tabs/windows
+precmd () {print -Pn "\e]2; %~/ \a"}
+preexec () {print -Pn "\e]2; %~/ \a"}
+
 # Set Home, End, Del, PgUp, PgDown keys to actually do something.
 bindkey '^[OH' beginning-of-line
 bindkey '^[OF' end-of-line
