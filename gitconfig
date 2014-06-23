@@ -1,0 +1,19 @@
+[user]
+	email = bs.of.dth@gmail.com
+	name = Andrew Swistak
+[push]
+	default = simple
+[merge]
+	tool = mvimdiff
+  conflictstyle = diff3
+[core]
+	editor = mvim -f
+[mergetool]
+  prompt = false
+[alias]
+	lol = log --oneline
+  c = commit
+  s = status
+  cam = commit -am
+  cm = commit -m
+  ca = commit -a
