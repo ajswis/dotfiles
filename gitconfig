@@ -4,12 +4,15 @@
 [push]
   default = simple
 [merge]
-  tool = mvimdiff
+  tool = gvimdiff
   conflictstyle = diff3
 [core]
   editor = mvim -f
 [mergetool]
   prompt = false
+  tool = gvimdiff
+[diff]
+  tool = gvimdiff
 [alias]
   lol = log --oneline
   c = commit
@@ -17,3 +20,7 @@
   cam = commit -am
   cm = commit -m
   ca = commit -a
+[difftool "gvimdiff"]
+	path = mvim
+[mergetool "gvimdiff"]
+	path = mvim
