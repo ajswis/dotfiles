@@ -21,6 +21,6 @@
   cm = commit -m
   ca = commit -a
 [difftool "gvimdiff"]
-	path = mvim
+  path = mvim
 [mergetool "gvimdiff"]
-	path = mvim
+  path = mvim
