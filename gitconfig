@@ -4,10 +4,10 @@
 [push]
   default = simple
 [merge]
-  tool = mvimdiff
+  tool = vimdiff
   conflictstyle = diff3
 [core]
-  editor = mvim -f
+  editor = vim -f
 [mergetool]
   prompt = false
 [alias]
@@ -17,3 +17,5 @@
   cam = commit -am
   cm = commit -m
   ca = commit -a
+  d = diff
+  ch = checkout
