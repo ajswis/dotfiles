@@ -20,6 +20,8 @@
   cam = commit -am
   cm = commit -m
   ca = commit -a
+  d = diff
+  ch = checkout
 [difftool "gvimdiff"]
   path = mvim
 [mergetool "gvimdiff"]
