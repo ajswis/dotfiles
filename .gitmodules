@@ -90,3 +90,7 @@
 	path = vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
   ignore = dirty
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+  ignore = dirty
