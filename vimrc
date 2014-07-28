@@ -54,6 +54,9 @@ set viminfo^=%
 " Set font for (m|g)vim
 set guifont=Meslo\ LG\ S\ for\ Powerline:h11
 
+" Which line is the 80th column?
+set cc=80
+
 """""""""""""""""""""""""""""""""""""""""
 " Keybinds
 """""""""""""""""""""""""""""""""""""""""
