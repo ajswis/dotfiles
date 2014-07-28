@@ -201,6 +201,12 @@ let g:LatexBox_latexmk_options = "-pvc -pdfps"
 autocmd FileType tex setlocal spell spelllang=en_us
 
 """""""""""""""""""""""""""""""""""""""""
+" Tex Settings
+"""""""""""""""""""""""""""""""""""""""""
+
+let g:ycm_register_as_syntastic_checker = 0
+
+"""""""""""""""""""""""""""""""""""""""""
 " Colors and Themes
 """""""""""""""""""""""""""""""""""""""""
 
