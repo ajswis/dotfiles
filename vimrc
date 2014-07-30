@@ -192,6 +192,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<D-S>"
 """""""""""""""""""""""""""""""""""""""""
 
 set regexpengine=1
+let g:easytags_updatetime_min = 4000
 
 """""""""""""""""""""""""""""""""""""""""
 " Tex Settings
