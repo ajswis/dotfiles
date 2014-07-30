@@ -85,6 +85,7 @@ nnoremap <silent> <C-w> :call CloseWindow()<CR>
 
 " Buffer magic
 nnoremap <leader>l :ls<CR>:b<space>
+nnoremap <leader>b :ls<CR>:bd<space>
 
 " Switch indentation settings
 nnoremap <leader>y :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
@@ -96,14 +97,14 @@ nnoremap <leader>M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
 nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " Window Switching and Resizing
-nnoremap <silent> <C-k> :wincmd k<CR>
-nnoremap <silent> <C-J> :wincmd j<CR>
-nnoremap <silent> <C-h> :wincmd h<CR>
-nnoremap <silent> <C-l> :wincmd l<CR>
-nnoremap <silent>   +   :wincmd +<CR>
-nnoremap <silent>   _   :wincmd -<CR>
-nnoremap <silent> ) :wincmd ><CR>
-nnoremap <silent> ( :wincmd <<CR>
+nnoremap <silent>   <C-k>   :wincmd k<CR>
+nnoremap <silent>   <C-J>   :wincmd j<CR>
+nnoremap <silent>   <C-h>   :wincmd h<CR>
+nnoremap <silent>   <C-l>   :wincmd l<CR>
+nnoremap <silent>     +     :wincmd +<CR>
+nnoremap <silent>     _     :wincmd -<CR>
+nnoremap <silent>     )     :wincmd ><CR>
+nnoremap <silent>     (     :wincmd <<CR>
 nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
