@@ -219,7 +219,7 @@ let g:rails_gem_projections = {
       \     }
       \   },
       \   "factory_girl_rails": {
-      \     "spec/factories/*.rb": {
+      \     "spec/factories/*_factory.rb": {
       \       "command": "factory",
       \       "affinity": "collection",
       \       "alternate": "app/models/%i.rb",
@@ -244,6 +244,16 @@ let g:rails_gem_projections = {
       \     "features/*.feature": {
       \       "command": "feature",
       \       "template": "Feature: \n\n  Scenario: " ,
+      \     }
+      \   },
+      \   "draper": {
+      \     "app/decorators/*_decorator.rb": {
+      \       "command": "decorator",
+      \       "affinity": "model",
+      \       "alternate": "app/models/%s.rb",
+      \       "related": "db/schema.rb#%p",
+      \       "test": "spec/decorators/%s_decorator_spec.rb",
+      \       "template": "class %SDecorator < Draper::Decorator\n\nend" ,
       \     }
       \   }
       \ }
