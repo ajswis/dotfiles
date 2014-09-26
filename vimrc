@@ -203,7 +203,53 @@ let g:LatexBox_latexmk_options = "-pvc -pdfps"
 autocmd FileType tex setlocal spell spelllang=en_us
 
 """""""""""""""""""""""""""""""""""""""""
-" Tex Settings
+" Rails.vim
+"""""""""""""""""""""""""""""""""""""""""
+
+let g:rails_gem_projections = {
+      \   "fabrication": {
+      \     "spec/fabricators/*_fabricator.rb": {
+      \       "command": "fabricator",
+      \       "affinity": "model",
+      \       "alternate": "app/models/%s.rb",
+      \       "related": "db/schema.rb#%p",
+      \       "test": "spec/models/%s_spec.rb",
+      \       "template": "Fabricator :%s do\nend",
+      \       "keywords": "Fabricate Fabricator sequence"
+      \     }
+      \   },
+      \   "factory_girl_rails": {
+      \     "spec/factories/*.rb": {
+      \       "command": "factory",
+      \       "affinity": "collection",
+      \       "alternate": "app/models/%i.rb",
+      \       "related": "db/schema.rb#%s",
+      \       "test": "spec/models/%i_spec.rb",
+      \       "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \       "keywords": "factory sequence"
+      \     }
+      \   },
+      \   "factory_girl": {
+      \     "spec/factories/*.rb": {
+      \       "command": "factory",
+      \       "affinity": "collection",
+      \       "alternate": "app/models/%i.rb",
+      \       "related": "db/schema.rb#%s",
+      \       "test": "spec/models/%i_spec.rb",
+      \       "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \       "keywords": "factory sequence"
+      \     }
+      \   },
+      \   "cucumber-rails": {
+      \     "features/*.feature": {
+      \       "command": "feature",
+      \       "template": "Feature: \n\n  Scenario: " ,
+      \     }
+      \   }
+      \ }
+
+"""""""""""""""""""""""""""""""""""""""""
+" YCM Settings
 """""""""""""""""""""""""""""""""""""""""
 
 let g:ycm_register_as_syntastic_checker = 0
