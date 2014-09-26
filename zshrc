@@ -39,3 +39,5 @@ bindkey '^[OF' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[[5~' beginning-of-buffer-or-history
 bindkey '^[[6~' end-of-buffer-or-history
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
