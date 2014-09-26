@@ -90,3 +90,7 @@
 	path = vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
   ignore = dirty
+[submodule "vim/bundle/vim-cucumber"]
+	path = vim/bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+  ignore = dirty
