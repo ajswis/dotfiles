@@ -69,16 +69,16 @@ nnoremap k gk
 
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
 " browse is only available in gvim
-command -nargs=0 -bar Update if &modified
+command -nargs=0 -bar Save if &modified
           \|  if empty(bufname('%'))
           \|    browse confirm write
           \|  else
           \|    confirm write
           \|  endif
           \|endif
-nnoremap <silent> <C-s> :Update<CR>
-inoremap <C-s> <C-o>:Update<CR>
-vnoremap <C-s> <C-o>:Update<CR>
+nnoremap <silent> <C-s> :Save<CR>
+inoremap <C-s> <C-o>:Save<CR>
+vnoremap <C-s> <C-o>:Save<CR>
 
 " CTRL+w to close the current buffer
 nnoremap <silent> <C-w> :call CloseWindow()<CR>
@@ -243,7 +243,11 @@ let g:rails_gem_projections = {
       \   "cucumber-rails": {
       \     "features/*.feature": {
       \       "command": "feature",
-      \       "template": "Feature: \n\n  Scenario: " ,
+      \       "template": "Feature: %h\n\n  Scenario: " ,
+      \     },
+      \     "features/step_definitions/*_steps.rb": {
+      \       "command": "steps",
+      \       "affinity": "collection"
       \     }
       \   },
       \   "draper": {
