@@ -70,12 +70,8 @@ nnoremap k gk
 
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
 " browse is only available in gvim
-command -nargs=0 -bar Save if &modified
-          \|  if empty(bufname('%'))
-          \|    browse confirm write
-          \|  else
-          \|    confirm write
-          \|  endif
+command! -nargs=0 -bar Save if &modified
+          \|  confirm write
           \|endif
 nnoremap <silent> <C-s> :Save<CR>
 inoremap <C-s> <C-o>:Save<CR>
@@ -83,6 +79,8 @@ vnoremap <C-s> <C-o>:Save<CR>
 
 " CTRL+w to close the current buffer
 nnoremap <silent> <C-w> :call CloseWindow()<CR>
+
+nnoremap <silent> <S-w> :hide<CR>
 
 " Buffer magic
 nnoremap <leader>l :ls<CR>:b<space>
@@ -287,7 +285,7 @@ colors Monokai
 """"""""""""""""""""""""""""""""""""""""
 
 " Delete trailing whitespaces on saving.
-func! DeleteTrailingWS()
+function! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
   exe "normal `z"
@@ -303,7 +301,7 @@ while c <= 'z'
 endw
 
 " Close current window or vim if no unsaved windows are open.
-fun! CloseWindow()
+function! CloseWindow()
   if &modified
     echo "Save first or manual exit."
   else
