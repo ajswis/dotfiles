@@ -97,9 +97,13 @@ nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " Window Switching and Resizing
 nnoremap <silent>   <C-k>   :wincmd k<CR>
-nnoremap <silent>   <C-J>   :wincmd j<CR>
+nnoremap <silent>   <C-j>   :wincmd j<CR>
 nnoremap <silent>   <C-h>   :wincmd h<CR>
 nnoremap <silent>   <C-l>   :wincmd l<CR>
+nnoremap <silent>   <D-K>   :wincmd K<CR>
+nnoremap <silent>   <D-J>   :wincmd J<CR>
+nnoremap <silent>   <D-H>   :wincmd H<CR>
+nnoremap <silent>   <D-L>   :wincmd L<CR>
 nnoremap <silent>     +     :wincmd +<CR>
 nnoremap <silent>     _     :wincmd -<CR>
 nnoremap <silent>     )     :wincmd ><CR>
