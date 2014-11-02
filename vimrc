@@ -3,11 +3,6 @@ execute pathogen#infect()
 Helptags
 filetype plugin indent on
 
-"""""""""""""""""""""""""""""""""""""""""
-" Some Basics
-" Note : vim-sensible does some of these
-" settings already
-"""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
 
 " Search settings
@@ -30,33 +25,23 @@ set nofoldenable
 set foldmethod=indent
 set foldnestmax=10
 set viewoptions=cursor,folds,slash,unix
-" let g:skipview_files = ['*\.vim']
-
-" Line numbers
-set number
-
-" Line Wrapping
-set nowrap
-
-" Automatically update externally updated files
-set autoread
 
 " Command expiration
 set timeout
 set ttimeoutlen=15
 
-" New window split settings
-set splitright
-
-" Remember buffer info on close
-set viminfo^=%
-
 " Set font for (m|g)vim
 set guifont=Meslo\ LG\ S\ for\ Powerline:h11
 set guioptions=ce
 
-" Which line is the 80th column?
-set cc=80
+set number      " Line numbers
+set nowrap      " Line Wrapping
+set hidden      " Just hide buffer when :bd'ing
+set autoread    " Automatically update externally updated files
+set cc=80       " Which line is the 80th column?
+set splitright  " New window split settings
+set viminfo^=%  " Remember buffer info on close
+
 
 """""""""""""""""""""""""""""""""""""""""
 " Keybinds
@@ -69,7 +54,6 @@ nnoremap j gj
 nnoremap k gk
 
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
-" browse is only available in gvim
 command! -nargs=0 -bar Save if &modified
           \|  confirm write
           \|endif
@@ -78,7 +62,7 @@ inoremap <C-s> <C-o>:Save<CR>
 vnoremap <C-s> <C-o>:Save<CR>
 
 " CTRL+w to close the current buffer
-nnoremap <silent> <C-w> :call CloseWindow()<CR>
+nnoremap <silent> <C-w> :bd<CR>
 
 nnoremap <silent> <S-w> :hide<CR>
 
@@ -117,11 +101,10 @@ vnoremap <D-d> y<C-o>p
 inoremap <D-d> <C-o>:yank<CR><C-o>:put<CR>
 
 " Open new files in new buffer or new windows
-nnoremap <C-o> :e<space>
 nnoremap <C-p> :sp<space>
 nnoremap <D-p> :vs<space>
 
-" Move lines of text via Alt+[jk] (Like sublime!)
+" Move lines of text via Cmd+[jk]
 nnoremap <D-j> :m+1<CR>==
 nnoremap <D-k> :m-2<CR>==
 vnoremap <D-j> :m '>+1<CR>gv=gv
@@ -134,8 +117,22 @@ nnoremap <silent> <C-i> :nohlsearch<CR>
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set undodir=~/.vim/tmp/undo//
+set viewdir=~/.vim/tmp/view//
 set undofile
+
 macmenu File.Print key=<nop>
+map <S-k> <nop>
+map <S-q> <nop>
+
+"""""""""""""""""""""""""""""""""""""""""
+" vim-rspec
+"""""""""""""""""""""""""""""""""""""""""
+
+map <silent> <leader>t :call RunCurrentSpecFile()<CR>
+map <silent> <leader>a :call RunAllSpecs()<CR>
+map <silent> <leader>s :call RunNearestSpec()<CR>
+map <silent> <leader>k :call RunLastSpec()<CR>
+let g:rspec_command = "bundle exec spec {spec}"
 
 """""""""""""""""""""""""""""""""""""""""
 " Ctrl-P Settings
@@ -304,22 +301,11 @@ while c <= 'z'
   let c = nr2char(1+char2nr(c))
 endw
 
-" Close current window or vim if no unsaved windows are open.
-function! CloseWindow()
-  if &modified
-    echo "Save first or manual exit."
-  else
-    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-      q
-    else
-      :bd
-    endif
-  endif
-endfunction
+" Close current window or quit vim if no active windows
+autocmd BufDelete * if len(filter(range(1, bufnr('$')), '!empty(bufname(v:val)) && buflisted(v:val)')) == 1 | q | endif
 
-" For auto-aligning cucumber tables
+" For auto-aligning Cucumber tables
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
