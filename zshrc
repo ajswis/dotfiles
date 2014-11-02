@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt incappendhistory nomatch correct_all
+setopt incappendhistory nomatch correct
 unsetopt beep
 bindkey -v
 
