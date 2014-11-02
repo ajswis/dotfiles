@@ -77,6 +77,7 @@ install_dotfiles() {
   if prompt "Install airline glyphs?" N; then
     yaourt -S powerline-fonts-git
   fi
+  mkdir -p "$DIR"/vim/tmp/{backup,swap,undo,view}
 }
 
 update_git_submodules() {
