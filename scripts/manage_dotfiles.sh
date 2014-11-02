@@ -72,7 +72,7 @@ install_dotfiles() {
 
   # Finish up linking and directory stuff
   ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
-  mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
+  mkdir -p "$DIR"/vim/tmp/{backup,swap,undo,view}
 }
 
 update_git_submodules() {
