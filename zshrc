@@ -28,6 +28,7 @@ alias vimdiff="mvimdiff"
 
 # OS X completions
 fpath=(/usr/local/share/zsh-completions $fpath)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # OS X keep current PWD when opening new tabs/windows
 precmd () {print -Pn "\e]2; %~/ \a"}
