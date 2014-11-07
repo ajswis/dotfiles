@@ -42,9 +42,9 @@ set cc=80       " Which line is the 80th column?
 set splitright  " New window split settings
 set viminfo^=%  " Remember buffer info on close
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Keybinds
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 let mapleader="\<space>"
 
@@ -56,12 +56,14 @@ nnoremap k gk
 command! -nargs=0 -bar Save if &modified
           \|  confirm write
           \|endif
-nnoremap <silent> <C-s> :Update<CR>
-inoremap <C-s> <C-o>:Update<CR>
-vnoremap <C-s> <C-o>:Update<CR>
+nnoremap <silent> <C-s> :Save<CR>
+inoremap <C-s> <C-o>:Save<CR>
+vnoremap <C-s> <C-o>:Save<CR>
 
 " CTRL+w to close the current buffer
 nnoremap <silent> <C-w> :bd<CR>
+
+nnoremap <silent> <S-w> :hide<CR>
 
 " Buffer magic
 nnoremap <leader>l :ls<CR>:b<space>
@@ -76,18 +78,24 @@ nnoremap <leader>M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
 nnoremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " Window Switching and Resizing
-nnoremap <silent> <C-k> :wincmd k<CR>
-nnoremap <silent> <C-J> :wincmd j<CR>
-nnoremap <silent> <C-h> :wincmd h<CR>
-nnoremap <silent> <C-l> :wincmd l<CR>
-nnoremap <silent>   +   :wincmd +<CR>
-nnoremap <silent>   _   :wincmd -<CR>
-nnoremap <silent> ) :wincmd ><CR>
-nnoremap <silent> ( :wincmd <<CR>
+nnoremap <silent>   <C-k>   :wincmd k<CR>
+nnoremap <silent>   <C-j>   :wincmd j<CR>
+nnoremap <silent>   <C-h>   :wincmd h<CR>
+nnoremap <silent>   <C-l>   :wincmd l<CR>
+nnoremap <silent>   <A-K>   :wincmd K<CR>
+nnoremap <silent>   <A-J>   :wincmd J<CR>
+nnoremap <silent>   <A-H>   :wincmd H<CR>
+nnoremap <silent>   <A-L>   :wincmd L<CR>
+nnoremap <silent>     +     :wincmd +<CR>
+nnoremap <silent>     _     :wincmd -<CR>
+nnoremap <silent>     )     :wincmd ><CR>
+nnoremap <silent>     (     :wincmd <<CR>
 nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
+
 " ALt+d to duplicate a line, vmode version is best for SHIFT+V, not the others
+nmap Y y$
 nnoremap <A-d> yyp
 vnoremap <A-d> y<C-o>p
 inoremap <A-d> <C-o>:yank<CR><C-o>:put<CR>
@@ -96,7 +104,7 @@ inoremap <A-d> <C-o>:yank<CR><C-o>:put<CR>
 nnoremap <C-p> :sp<space>
 nnoremap <A-p> :vs<space>
 
-" Move lines of text via Cmd+[jk]
+" Move lines of text via alt+[jk]
 nnoremap <A-j> :m+1<CR>==
 nnoremap <A-k> :m-2<CR>==
 vnoremap <A-j> :m '>+1<CR>gv=gv
@@ -115,9 +123,9 @@ set undofile
 map <S-k> <nop>
 map <S-q> <nop>
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " vim-rspec
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 map <silent> <leader>t :call RunCurrentSpecFile()<CR>
 map <silent> <leader>a :call RunAllSpecs()<CR>
@@ -125,9 +133,9 @@ map <silent> <leader>s :call RunNearestSpec()<CR>
 map <silent> <leader>k :call RunLastSpec()<CR>
 let g:rspec_command = "bundle exec spec {spec}"
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Ctrl-P Settings
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 " Keybinding and functionality
 let g:ctrlp_map = "<leader>o"
@@ -147,22 +155,22 @@ let g:ctrlp_clear_cache_on_exit = 0
 " Uncomment to show hidden directories.
 "let g:ctrlp_show_hidden = 1
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Airline (Powerline replacement)
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " NerdTree
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 " Directory tree toggle
 nnoremap <leader>e :NERDTreeToggle<CR>
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " NerdCommenter
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 map <leader>cc <plug>NERDCommenterToggle
 
@@ -178,23 +186,90 @@ let g:UltiSnipsExpandTrigger = "<A-c>"
 let g:UltiSnipsJumpForwardTrigger = "<A-w>"
 let g:UltiSnipsJumpBackwardTrigger = "<A-s>"
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Easytags
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
-let g:easytags_updatetime_min = 2000
+set regexpengine=1
+let g:easytags_updatetime_min = 4000
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Tex Settings
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 let g:tex_flavor = "latex"
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
 autocmd FileType tex setlocal spell spelllang=en_us
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
+" Rails.vim
+""""""""""""""""""""""""""""
+
+let g:rails_gem_projections = {
+      \   "fabrication": {
+      \     "spec/fabricators/*_fabricator.rb": {
+      \       "command": "fabricator",
+      \       "affinity": "model",
+      \       "alternate": "app/models/%s.rb",
+      \       "related": "db/schema.rb#%p",
+      \       "test": "spec/models/%s_spec.rb",
+      \       "template": "Fabricator :%s do\nend",
+      \       "keywords": "Fabricate Fabricator sequence"
+      \     }
+      \   },
+      \   "factory_girl_rails": {
+      \     "spec/factories/*_factory.rb": {
+      \       "command": "factory",
+      \       "affinity": "collection",
+      \       "alternate": "app/models/%i.rb",
+      \       "related": "db/schema.rb#%s",
+      \       "test": "spec/models/%i_spec.rb",
+      \       "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \       "keywords": "factory sequence"
+      \     }
+      \   },
+      \   "factory_girl": {
+      \     "spec/factories/*.rb": {
+      \       "command": "factory",
+      \       "affinity": "collection",
+      \       "alternate": "app/models/%i.rb",
+      \       "related": "db/schema.rb#%s",
+      \       "test": "spec/models/%i_spec.rb",
+      \       "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \       "keywords": "factory sequence"
+      \     }
+      \   },
+      \   "cucumber-rails": {
+      \     "features/*.feature": {
+      \       "command": "feature",
+      \       "template": "Feature: %h\n\n  Scenario: " ,
+      \     },
+      \     "features/step_definitions/*_steps.rb": {
+      \       "command": "steps",
+      \       "affinity": "collection"
+      \     }
+      \   },
+      \   "draper": {
+      \     "app/decorators/*_decorator.rb": {
+      \       "command": "decorator",
+      \       "affinity": "model",
+      \       "alternate": "app/models/%s.rb",
+      \       "related": "db/schema.rb#%p",
+      \       "test": "spec/decorators/%s_decorator_spec.rb",
+      \       "template": "class %SDecorator < Draper::Decorator\n\nend" ,
+      \     }
+      \   }
+      \ }
+
+""""""""""""""""""""""""""""
+" YCM Settings
+""""""""""""""""""""""""""""
+
+let g:ycm_register_as_syntastic_checker = 0
+
+""""""""""""""""""""""""""""
 " Colors and Themes
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 syntax enable
 "Set 256 color mode (not always needed).
@@ -210,11 +285,11 @@ colors Monokai
 """"""""""""""""""""""""""""""""""""""""
 
 " Delete trailing whitespaces on saving.
-func! DeleteTrailingWS()
+function! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
   exe "normal `z"
-endfunc
+endfunction
 autocmd BufWrite * :call DeleteTrailingWS()
 
 " Allow the use of ALT as a function key.
