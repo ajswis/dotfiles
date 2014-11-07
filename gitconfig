@@ -6,6 +6,8 @@
 [merge]
   tool = vimdiff
   conflictstyle = diff3
+[mergetool]
+  prompt = false
 [core]
   editor = vim -f
 [mergetool]
@@ -19,3 +21,5 @@
   ca = commit -a
   d = diff
   ch = checkout
+[diff]
+  tool = vimdiff
