@@ -94,10 +94,6 @@
 	path = vim/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber
   ignore = dirty
-[submodule "vim/bundle/dbext.vim"]
-  path = vim/bundle/dbext.vim
-  url = https://github.com/vim-scripts/dbext.vim.git
-  ignore = dirty
 [submodule "vim/bundle/tabular"]
   path = vim/bundle/tabular
   url = https://github.com/godlygeek/tabular.git
