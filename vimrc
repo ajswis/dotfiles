@@ -43,9 +43,9 @@ set splitright  " New window split settings
 set viminfo^=%  " Remember buffer info on close
 
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Keybinds
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 let mapleader="\<space>"
 
@@ -96,6 +96,7 @@ nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
 " ALt+d to duplicate a line, vmode version is best for SHIFT+V, not the others
+nmap Y y$
 nnoremap <D-d> yyp
 vnoremap <D-d> y<C-o>p
 inoremap <D-d> <C-o>:yank<CR><C-o>:put<CR>
@@ -124,9 +125,9 @@ macmenu File.Print key=<nop>
 map <S-k> <nop>
 map <S-q> <nop>
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " vim-rspec
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 map <silent> <leader>t :call RunCurrentSpecFile()<CR>
 map <silent> <leader>a :call RunAllSpecs()<CR>
@@ -134,9 +135,9 @@ map <silent> <leader>s :call RunNearestSpec()<CR>
 map <silent> <leader>k :call RunLastSpec()<CR>
 let g:rspec_command = "bundle exec spec {spec}"
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Ctrl-P Settings
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 " Keybinding and functionality
 let g:ctrlp_map = "<leader>o"
@@ -156,22 +157,22 @@ let g:ctrlp_clear_cache_on_exit = 0
 " Uncomment to show hidden directories.
 "let g:ctrlp_show_hidden = 1
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Airline (Powerline replacement)
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " NerdTree
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 " Directory tree toggle
 nnoremap <leader>e :NERDTreeToggle<CR>
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " NerdCommenter
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 map <leader>cc <plug>NERDCommenterToggle
 
@@ -187,24 +188,24 @@ let g:UltiSnipsExpandTrigger = "<D-C>"
 let g:UltiSnipsJumpForwardTrigger = "<D-W>"
 let g:UltiSnipsJumpBackwardTrigger = "<D-S>"
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Easytags
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 set regexpengine=1
 let g:easytags_updatetime_min = 4000
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Tex Settings
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 let g:tex_flavor = "latex"
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
 autocmd FileType tex setlocal spell spelllang=en_us
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Rails.vim
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 let g:rails_gem_projections = {
       \   "fabrication": {
@@ -262,15 +263,15 @@ let g:rails_gem_projections = {
       \   }
       \ }
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " YCM Settings
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 let g:ycm_register_as_syntastic_checker = 0
 
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Colors and Themes
-"""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 syntax enable
 "Set 256 color mode (not always needed).
@@ -290,7 +291,7 @@ function! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
   exe "normal `z"
-endfunc
+endfunction
 autocmd BufWrite * :call DeleteTrailingWS()
 
 " Allow the use of ALT as a function key.
