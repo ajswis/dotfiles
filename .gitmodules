@@ -102,3 +102,6 @@
   path = vim/bundle/vim-rspec
   url = https://github.com/thoughtbot/vim-rspec.git
   ignore = dirty
+[submodule "vim/bundle/tabular.vim"]
+	path = vim/bundle/tabular.vim
+	url = https://github.com/godlygeek/tabular.git
