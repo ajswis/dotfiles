@@ -5,13 +5,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 exclude=("scripts" "README.md")
 configs=("conky" "openbox" "tint2")
 
-elem_in() {
-  for e in "${@:2}"; do
-    [[ "$e" = "$1" ]] && return 1
-  done
-  return 0
-}
-
 prompt() {
   while true; do
     if [ "${2:-}" = "Y" ]; then
@@ -41,33 +34,29 @@ prompt() {
 }
 
 link() {
-  if [ -e "$1/$3$2" ]; then
-    if prompt "$1/$3$2 exists! Delete?" N; then
+  if [ -e "$1/.$2" ]; then
+    if prompt "$1/.$2 exists! Delete?" N; then
       # It might be a very, very bad idea to rm -rf.
-      rm -rf "$1/$3$2"
-      ln -sn "$DIR/$2" "$1/$3$2"
+      rm -rf "$1/.$2"
+      ln -sn "$DIR/$2" "$1/.$2"
     fi
     echo ""  # Intentional extra echo
   else
-    ln -sn "$DIR/$2" "$1/$3$2"
+    ln -sn "$DIR/$2" "$1/.$2"
   fi
 }
 
 install_dotfiles() {
-  for i in $(ls "$DIR"); do
-    # Ignore some files
-    elem_in "$i" "${exclude[@]}"
-    if [[  $? == 1 ]]; then continue; fi
-
-    # Differentiate between dotfiles and .config/* files
-    elem_in "$i" "${configs[@]}"
-    if [[ $? == 1 ]]; then
-      echo "Linking $i to $HOME/.config/$i"
-      link "$HOME/.config" "$i"
-    else
-      echo "Linking $i to $HOME/.$i"
-      link "$HOME" "$i" "."
-    fi
+  confs=(
+    'bashrc'
+    'gitconfig'
+    'vim'
+    'vimrc'
+    'zshrc'
+  )
+  for conf in ${confs[@]}; do
+    echo "Linking $conf to $HOME/.$conf"
+    link "$HOME" "$conf"
   done
 
   # Finish up linking and directory stuff
