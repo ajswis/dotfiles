@@ -87,22 +87,21 @@
   url = https://github.com/mileszs/ack.vim.git
   ignore = dirty
 [submodule "vim/bundle/vim-bundler"]
-  path = vim/bundle/vim-bundler
-  url = https://github.com/tpope/vim-bundler.git
+	path = vim/bundle/vim-bundler
+	url = https://github.com/tpope/vim-bundler
   ignore = dirty
 [submodule "vim/bundle/vim-cucumber"]
   path = vim/bundle/vim-cucumber
-  url = https://github.com/tpope/vim-cucumber.git
-  ignore = dirty
-[submodule "vim/bundle/dbext.vim"]
-  path = vim/bundle/dbext.vim
-  url = https://github.com/vim-scripts/dbext.vim.git
+  url = github:tpope/vim-cucumber.git
   ignore = dirty
 [submodule "vim/bundle/tabular"]
   path = vim/bundle/tabular
   url = https://github.com/godlygeek/tabular.git
   ignore = dirty
 [submodule "vim/bundle/vim-rspec"]
-  path = vim/bundle/vim-rspec
-  url = https://github.com/thoughtbot/vim-rspec.git
+	path = vim/bundle/vim-rspec
+	url = https://github.com/tpope/vim-rspec
   ignore = dirty
+[submodule "vim/bundle/tabular.vim"]
+	path = vim/bundle/tabular.vim
+	url = https://github.com/godlygeek/tabular.git
