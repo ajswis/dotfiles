@@ -1,7 +1,4 @@
 ~/.fehbg &
 tint2 &
-#orage &
 (sleep 2 && compton_openbox --toggle) &
-(sleep 2 && pnmixer) &
-(sleep 2 && dropboxd) &
 (sleep 2 && conky -c /home/drew/.config/conky/conkyrc) &
