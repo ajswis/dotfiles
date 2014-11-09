@@ -11,13 +11,10 @@ zstyle :compinstall filename '/home/drew/.zshrc'
 autoload -Uz compinit
 compinit
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 export EDITOR="vim"
-export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
-export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
-export PATH="$PATH:$HOME/.rvm/bin"
 
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
