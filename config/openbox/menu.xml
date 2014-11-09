@@ -21,17 +21,6 @@
   </item>
 </menu>
 
-<menu id="apps-accessories-menu" label="Accessories">
-  <item label="Calculator">
-    <action name="Execute">
-      <command>gnome-calculator</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-</menu>
-
 <menu id="apps-editors-menu" label="Editors">
   <item label="Sublime Text">
     <action name="Execute">
@@ -88,53 +77,6 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Firefox">
-    <action name="Execute">
-      <command>firefox</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-        <wmclass>Firefox</wmclass>
-      </startupnotify>
-    </action>
-  </item>
-</menu>
-
-<menu id="apps-office-menu" label="Office">
-  <item label="OpenOffice Base">
-    <action name="Execute">
-      <command>libreoffice -base</command>
-    </action>
-  </item>
-  <item label="OpenOffice Calc">
-    <action name="Execute">
-      <command>libreoffice -calc</command>
-    </action>
-  </item>
-  <item label="OpenOffice Draw">
-    <action name="Execute">
-      <command>libreoffice -draw</command>
-    </action>
-  </item>
-  <item label="OpenOffice Impress">
-    <action name="Execute">
-      <command>libreoffice -impress</command>
-    </action>
-  </item>
-  <item label="OpenOffice Math">
-    <action name="Execute">
-      <command>libreoffice -math</command>
-    </action>
-  </item>
-  <item label="OpenOffice Printer Administration">
-    <action name="Execute">
-      <command>libreoffice-printeradmin</command>
-    </action>
-  </item>
-  <item label="OpenOffice Writer">
-    <action name="Execute">
-      <command>libreoffice -writer</command>
-    </action>
-  </item>
 </menu>
 
 <menu id="apps-multimedia-menu" label="Multimedia">
@@ -179,12 +121,6 @@
 </menu>
 
 <menu id="system-menu" label="System">
-  <item label="Openbox Configuration Manager">
-    <action name="Execute">
-      <command>obconf</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
   <menu execute="compton_openbox" id="CompositingPipeMenu" label="Compositing"/>
   <separator />
   <item label="Reconfigure Openbox">
@@ -220,16 +156,15 @@
       <execute>pkill -KILL -u $USER</execute>
     </action>
   </item>
-  <!--TODO: Find a way to not use sudo/editing sudoers-->
   <item label="Suspend">
     <action name="Execute">
-      <execute>sudo systemctl suspend</execute>
+      <execute>systemctl suspend</execute>
     </action>
   </item>
   <item label="Hibernate">
     <action name="Execute">
       <prompt>Hibernate?</prompt>
-      <execute>sudo systemctl hibernate</execute>
+      <execute>systemctl hibernate</execute>
     </action>
   </item>
   <item label="Restart">

@@ -363,23 +363,23 @@
     <!--Toggle Projector Mode-->
     <keybind key="XF86Display">
       <action name="Execute">
-        <command>~/.dotfiles/bin/find_max_ext_monitor_res.rb</command>
+        <command>~/Documents/dotfiles/bin/find_max_ext_monitor_res.rb</command>
       </action>
     </keybind>
     <!--Volume Control-->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>~/.dotfiles/bin/volume-change.sh up</command>
+        <command>~/Documents/dotfiles/bin/volume-change.sh up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>~/.dotfiles/bin/volume-change.sh down</command>
+        <command>~/Documents/dotfiles/bin/volume-change.sh down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>~/.dotfiles/bin/volume-change.sh toggle</command>
+        <command>~/Documents/dotfiles/bin/volume-change.sh toggle</command>
       </action>
     </keybind>
     <!--Keyboard Backlight Control-->
