@@ -1,0 +1,13 @@
+! Swap Alt and Super (CMD on Mac)
+remove Mod4 = Super_L
+remove Mod1 = Alt_L
+keysym Alt_L = Super_L
+keysym Super_L = Alt_L
+add Mod4 = Super_L
+add Mod1 = Alt_L
+
+! Make Caps behave like Control
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L
+

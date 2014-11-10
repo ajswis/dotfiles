@@ -56,6 +56,7 @@ install_dotfiles() {
     'vimrc'
     'xinitrc'
     'zshrc'
+    'Xmodmap'
     'config/conky'
     'config/openbox'
     'config/tint2'
