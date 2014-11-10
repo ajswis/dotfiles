@@ -54,7 +54,7 @@
 <menu id="apps-term-menu" label="Terminals">
   <item label="Rxvt Unicode">
     <action name="Execute">
-      <command>urxvt</command>
+      <command>urxvtc</command>
     </action>
   </item>
   <item label="Xfce Terminal">

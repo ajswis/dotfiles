@@ -47,6 +47,7 @@ link() {
 }
 
 install_dotfiles() {
+  mkdir -p $HOME/.config
   confs=(
     'bashrc'
     'fehbg'
@@ -57,6 +58,7 @@ install_dotfiles() {
     'xinitrc'
     'zshrc'
     'Xmodmap'
+    'Xresources'
     'config/conky'
     'config/openbox'
     'config/tint2'
