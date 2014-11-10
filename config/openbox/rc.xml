@@ -307,6 +307,12 @@
         <direction>down</direction>
       </action>
     </keybind>
+    <!-- Menu show with Super Key -->
+    <keybind key="A-Super_L">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
     <!--Backlight Control-->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
