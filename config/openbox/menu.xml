@@ -90,6 +90,25 @@
   </item>
 </menu>
 
+<menu id="apps-that-thing-i-dislike-menu" label="Communication">
+  <item label="Skype">
+    <action name="Execute">
+      <command>sskype</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Pidgin">
+    <action name="Execute">
+      <command>pidgin</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
 <menu id="apps-fileman-menu" label="File Managers">
   <item label="Thunar">
     <action name="Execute">
@@ -139,6 +158,7 @@
     </action>
   </item>
   <menu id="games-menu"/>
+  <menu id="apps-that-thing-i-dislike-menu"/>
   <menu id="apps-accessories-menu"/>
   <menu id="apps-editors-menu"/>
   <menu id="apps-graphics-menu"/>
