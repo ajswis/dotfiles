@@ -33,6 +33,7 @@ set ttimeoutlen=15
 " Set font for (m|g)vim
 set guifont=Meslo\ LG\ S\ for\ Powerline:h11
 set guioptions=ce
+set mouse=a
 
 set number      " Line numbers
 set nowrap      " Line Wrapping
