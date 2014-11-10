@@ -1,6 +1,4 @@
-if [ -e $HOME/.Xmodmap ]; then
-  xmodmap $HOME/.Xmodmap &
-fi
+([[ -e $HOME/.Xmodmap ]] && xmodmap $HOME/.Xmodmap) &
 
 exec openbox-session
 #exec awesome
