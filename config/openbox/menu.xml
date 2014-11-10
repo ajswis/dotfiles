@@ -93,7 +93,7 @@
 <menu id="apps-that-thing-i-dislike-menu" label="Communication">
   <item label="Skype">
     <action name="Execute">
-      <command>sskype</command>
+      <command>~/Documents/dotfiles/bin/pskype</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
