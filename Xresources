@@ -15,7 +15,7 @@ URxvt*scrollTtyKeypress: true
 URxvt*.autohide: true
 URxvt.keysym.C-t: perl:tabbedex:new_tab
 URxvt.keysym.C-Tab: perl:tabbedex:next_tab
-URxvt.keysym.C-Shift-Tab: perl:tabbedex:prev_tab
+URxvt.keysym.Control-Shift-Tab: perl:tabbedex:prev_tab
 
 URxvt.url-select.launcher: chromium
 URxvt.url-select.underline: true
