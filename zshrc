@@ -24,6 +24,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
+eval "$(hub alias -s)"
 
 # Allow ctrl+S in vim to save files, ie pass
 # the command to vim when vim is open.

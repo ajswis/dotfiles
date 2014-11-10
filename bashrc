@@ -43,6 +43,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+eval "$(hub alias -s)"
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
