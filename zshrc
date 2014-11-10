@@ -5,16 +5,10 @@ SAVEHIST=1000
 setopt incappendhistory nomatch correct
 unsetopt beep
 bindkey -v
-
 zstyle :compinstall filename '/home/drew/.zshrc'
 
 autoload -Uz compinit
 compinit
-
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-export EDITOR="vim"
 
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
@@ -34,6 +28,7 @@ vim() {
   command vim --servername vim "$@"
   stty "$STTYOPTS"
 }
+export EDITOR="vim"
 
 # Set Home, End, Del, PgUp, PgDown keys to actually do something.
 bindkey '^[OH' beginning-of-line
@@ -45,6 +40,9 @@ bindkey '^[[6~' end-of-buffer-or-history
 if [ -x /usr/bin/ssh-agent -a -z "$SSH_AUTH_SOCK" ]; then
   eval "$(keychain --eval -Q -q --agents ssh  `find $HOME/.ssh/*  ! -name '*.pub' ! -name 'config' ! -name 'known_hosts'`)"
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
