@@ -66,7 +66,7 @@ nnoremap <silent> <S-w> :hide<CR>
 
 " Buffer magic
 nnoremap <leader>l :ls<CR>:b<space>
-nnoremap <leader>b :ls<CR>:bd<space>
+nnoremap <leader>; :tabs<CR>:tabn<space>
 
 " Switch indentation settings
 nnoremap <leader>y :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
