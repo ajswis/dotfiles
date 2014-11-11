@@ -54,9 +54,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
-command! -nargs=0 -bar Save if &modified
-          \|  confirm write
-          \|endif
+command! -nargs=0 Save if &modified | confirm write | endif
 nnoremap <silent> <C-s> :Save<CR>
 inoremap <C-s> <C-o>:Save<CR>
 vnoremap <C-s> <C-o>:Save<CR>
