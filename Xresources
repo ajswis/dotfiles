@@ -1,21 +1,43 @@
+*color0:  #000000
+*color1:  #aa0000
+*color2:  #00aa00
+*color3:  #aa5500
+*color4:  #0000aa
+*color5:  #aa00aa
+*color6:  #00aaaa
+*color7:  #ababab
+*color8:  #bbbbbb
+*color9:  #ff5555
+*color10: #55ff55
+*color11: #ffff55
+*color12: #5555ff
+*color13: #ff55ff
+*color14: #55ffff
+*color15: #ffffff
+
 URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,keyboard-select,url-select
 URxvt.iso14755: false
 URxvt.loginShell: true
 URxvt.depth: 32
 URxvt.foreground: white
 URxvt.background: [75]black
-URxvt.cursorColor: darkgreen
+URxvt.cursorColor: #00aa00
 URxvt.internalBorder: 0
 URxvt.font: xft:Meslo LG S for Powerline:size=10
 URxvt.scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
+URxvt.keysym.C-k: echo -ne '\\033c'\n
 
 URxvt*.autohide: true
 URxvt.keysym.C-t: perl:tabbedex:new_tab
 URxvt.keysym.C-Tab: perl:tabbedex:next_tab
 URxvt.keysym.Control-Shift-Tab: perl:tabbedex:prev_tab
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
 
 URxvt.url-select.launcher: chromium
 URxvt.url-select.underline: true
