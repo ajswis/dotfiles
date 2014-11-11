@@ -178,14 +178,6 @@ map <leader>cc <plug>NERDCommenterToggle
 " remapped, so remapping it to something I won't ever use.
 map <leader><A-/><space> <plug>NERDCommenterComment
 
-""""""""""""""""""""""""""""""""""""""""
-" UltiSnips
-""""""""""""""""""""""""""""""""""""""""
-
-let g:UltiSnipsExpandTrigger = "<A-c>"
-let g:UltiSnipsJumpForwardTrigger = "<A-w>"
-let g:UltiSnipsJumpBackwardTrigger = "<A-s>"
-
 """"""""""""""""""""""""""""
 " Easytags
 """"""""""""""""""""""""""""
