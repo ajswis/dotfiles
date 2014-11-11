@@ -266,6 +266,7 @@ let g:rails_gem_projections = {
 """"""""""""""""""""""""""""
 
 let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_server_log_level = 'error'
 
 """"""""""""""""""""""""""""
 " Colors and Themes
