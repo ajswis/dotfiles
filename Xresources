@@ -23,17 +23,17 @@ URxvt.foreground: 15
 URxvt.background: 0
 URxvt.cursorColor: 2
 URxvt.internalBorder: 0
+URxvt*borderLess: true
 URxvt.font: xft:Meslo LG S for Powerline:size=10
 URxvt.scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
-URxvt.keysym.C-k: echo -ne '\\033c'\n
 
 URxvt*.autohide: true
 URxvt.keysym.C-t: perl:tabbedex:new_tab
 URxvt.keysym.C-Tab: perl:tabbedex:next_tab
-URxvt.keysym.Control-Shift-Tab: perl:tabbedex:prev_tab
+URxvt.keysym.C-S-ISO_Left_Tab: perl:tabbedex:prev_tab
 URxvt.tabbed.tabbar-fg: 2
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 3
