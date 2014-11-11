@@ -1,4 +1,4 @@
-*color0:  #000000
+*color0:  [75]#000000
 *color1:  #aa0000
 *color2:  #00aa00
 *color3:  #aa5500
@@ -19,9 +19,9 @@ URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,keyboard-select,url-se
 URxvt.iso14755: false
 URxvt.loginShell: true
 URxvt.depth: 32
-URxvt.foreground: white
-URxvt.background: [75]black
-URxvt.cursorColor: #00aa00
+URxvt.foreground: 15
+URxvt.background: 0
+URxvt.cursorColor: 2
 URxvt.internalBorder: 0
 URxvt.font: xft:Meslo LG S for Powerline:size=10
 URxvt.scrollBar: false
