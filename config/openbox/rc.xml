@@ -286,28 +286,6 @@
         </finalactions>
       </action>
     </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows">
-        <direction>right</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows">
-        <direction>left</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows">
-        <direction>up</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows">
-        <direction>down</direction>
-      </action>
-    </keybind>
-    <!-- Menu show with Super Key -->
     <keybind key="A-Super_L">
       <action name="ShowMenu">
         <menu>root-menu</menu>
@@ -365,6 +343,31 @@
     </keybind>
     <keybind key="W-Down">
       <action name="Unmaximize"/>
+    </keybind>
+    <keybind key="S-W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>33%</width>
+      </action>
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="S-W-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <x>33%</x>
+        <width>33%</width>
+      </action>
+      <!--<action name="MoveToEdgeEast"/>-->
+    </keybind>
+    <keybind key="S-W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>33%</width>
+      </action>
+      <action name="MoveToEdgeEast"/>
     </keybind>
     <!--Toggle Projector Mode-->
     <keybind key="XF86Display">
