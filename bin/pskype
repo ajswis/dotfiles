@@ -1,6 +1,0 @@
-#!/bin/bash
-
-pulseaudio --start
-trap 'pulseaudio -k' EXIT
-
-sskype
