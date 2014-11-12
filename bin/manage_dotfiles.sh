@@ -47,7 +47,7 @@ link() {
 }
 
 install_dotfiles() {
-  mkdir -p $HOME/.config
+  mkdir -p $HOME/.config/{,xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml/}
   confs=(
     'bashrc'
     'fehbg'
@@ -64,6 +64,7 @@ install_dotfiles() {
     'config/tint2'
     'config/touchegg'
     'config/awesome'
+    'config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml'
   )
   for conf in ${confs[@]}; do
     echo "Linking $conf to $HOME/.$conf"
