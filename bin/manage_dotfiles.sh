@@ -63,6 +63,7 @@ install_dotfiles() {
     'config/openbox'
     'config/tint2'
     'config/touchegg'
+    'config/awesome'
   )
   for conf in ${confs[@]}; do
     echo "Linking $conf to $HOME/.$conf"
