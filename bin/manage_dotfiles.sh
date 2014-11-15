@@ -59,6 +59,7 @@ install_dotfiles() {
     'zshrc'
     'Xmodmap'
     'Xresources'
+    'xbindkeysrc'
     'config/conky'
     'config/openbox'
     'config/tint2'

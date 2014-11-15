@@ -291,36 +291,6 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <!--Backlight Control-->
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>xbacklight +5</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute">
-        <command>xbacklight -5</command>
-      </action>
-    </keybind>
-    <!-- Keybindings for running applications -->
-    <keybind key="A-1">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Chromium</name>
-        </startupnotify>
-        <command>chromium</command>
-      </action>
-    </keybind>
-    <keybind key="A-t">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Shell</name>
-        </startupnotify>
-        <command>/usr/bin/urxvtc</command>
-      </action>
-    </keybind>
     <!--Window Managing-->
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
@@ -368,39 +338,6 @@
         <width>33%</width>
       </action>
       <action name="MoveToEdgeEast"/>
-    </keybind>
-    <!--Toggle Projector Mode-->
-    <keybind key="XF86Display">
-      <action name="Execute">
-        <command>~/Documents/dotfiles/bin/find_max_ext_monitor_res.rb</command>
-      </action>
-    </keybind>
-    <!--Volume Control-->
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>~/Documents/dotfiles/bin/volume-change.sh up</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <command>~/Documents/dotfiles/bin/volume-change.sh down</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>~/Documents/dotfiles/bin/volume-change.sh toggle</command>
-      </action>
-    </keybind>
-    <!--Keyboard Backlight Control-->
-    <keybind key="XF86KbdBrightnessUp">
-      <action name="Execute">
-        <command>/usr/bin/kbdlight up</command>
-      </action>
-    </keybind>
-    <keybind key="XF86KbdBrightnessDown">
-      <action name="Execute">
-        <command>/usr/bin/kbdlight down</command>
-      </action>
     </keybind>
   </keyboard>
   <mouse>

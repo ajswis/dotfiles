@@ -1,0 +1,20 @@
+"/usr/bin/urxvtc"
+  Alt + t
+"/usr/bin/chromium"
+  Alt + 1
+"/usr/bin/amixer sset Master on; amixer sset Master 5%+"
+  XF86AudioRaiseVolume
+"/usr/bin/amixer sset Master 5%-"
+  XF86AudioLowerVolume
+"/usr/bin/amixer sset Master toggle"
+  XF86AudioMute
+"/usr/bin/kbdlight down"
+  XF86KbdBrightnessDown
+"/usr/bin/kbdlight up"
+  XF86KbdBrightnessUp
+"$HOME/Documents/dotfiles/bin/find_max_ext_monitor_res.rb"
+  XF86Display
+"/usr/bin/xbacklight +5"
+  XF86MonBrightnessUp
+"/usr/bin/xbacklight -5"
+  XF86MonBrightnessDown
