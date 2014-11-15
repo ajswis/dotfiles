@@ -1,1 +1,1 @@
-feh  --bg-scale '/home/drew/Pictures/triforce_1680.jpg' 
+feh  --bg-scale "$HOME/Documents/dotfiles/backgrounds/triforce_1680.jpg"
