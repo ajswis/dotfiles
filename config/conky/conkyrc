@@ -8,7 +8,7 @@ double_buffer yes
 # -- Window specifications -- #
 own_window yes
 own_window_type desktop
-own_window_hints below,skip_taskbar,skip_pager
+own_window_hints below,skip_taskbar,skip_pager,undecorated
 
 minimum_size 200 800
 maximum_width 200
