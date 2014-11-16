@@ -23,7 +23,9 @@ URxvt.foreground: 15
 URxvt.background: 0
 URxvt.cursorColor: 2
 URxvt.internalBorder: 0
-URxvt.borderColor: #1793d1
+URxvt.externalBorder: 0
+URxvt.borderColor: 0
+!URxvt.borderLess: true
 URxvt.font: xft:Meslo LG S for Powerline:size=10
 URxvt.scrollBar: false
 URxvt*scrollTtyOutput: false

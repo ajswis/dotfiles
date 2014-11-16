@@ -1,5 +1,5 @@
-~/.fehbg &
+$HOME/.fehbg &
 tint2 &
 (sleep 2 && pidgin) &
 (sleep 2 && compton_openbox --toggle) &
-(sleep 2 && conky -c /home/drew/.config/conky/conkyrc) &
+(sleep 2 && conky -c $HOME/.config/conky/conkyrc) &
