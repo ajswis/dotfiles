@@ -28,7 +28,7 @@ maximum_width 200
 
 alignment top_right
 gap_x 0
-gap_y 0
+gap_y 20
 
 # -- Graphics settings -- #
 draw_shades no
@@ -44,36 +44,32 @@ xftalpha 0.5
 uppercase no
 
 #colors
-#good blue 1994d1
-#medium blue 083146
-#dark blue 041e2c
-#lime 86c113
 color1 cdcdcd
 color2 efefef
 color3 1994d1
 color4 0FC4E3
 
-default_color EEEEEE
+default_color eeeeee
 
 # -- Lua Load -- #
-lua_load /home/drew/.config/conky/conkyrings.lua
+lua_load $HOME/.config/conky/conkyrings.lua
 lua_draw_hook_pre ring_stats
 
 TEXT
-${voffset 78}${goto 75}${font Ds\-Digital:size=20}${color2}${time %I}${color3}${time %M}
+${voffset 81}${goto 75}${font Ds\-Digital:size=20}${color2}${time %I}${color3}${time %M}
 
 ${goto 75}${color1}${font Nu:size=9}Uptime:
 ${goto 75}${font Nu:size=9}${uptime_short}
-${voffset 35}${font snap:size=7}${goto 40}${color}CPU
+${voffset 40}${font snap:size=7}${goto 40}${color}CPU
 ${voffset 5}${goto 52}${color3}${execi 10 sensors coretemp-isa-0000 | grep Physical | cut -c 18-21}°C
 ${goto 52}${color2}${freq_g 1}GHz
-${voffset -37}${goto 138}${color}MEM
+${voffset -35}${goto 138}${color}MEM
 ${voffset 5}${goto 109}${color3}${swap}
 ${goto 109}${color2}${mem}
-${voffset 56}${goto 40}${color}NET
+${voffset 60}${goto 40}${color}NET
 ${voffset -40}${goto 52}${color2}${downspeedf wlp3s0}
 ${goto 52}${color3}${upspeedf wlp3s0}
-${voffset 6}${goto 138}${color}HDD
+${voffset 10}${goto 138}${color}HDD
 ${voffset -40}${goto 108}${color2}${fs_free /home}
 ${goto 60}${goto 108}${color3}${fs_free /}
 ${color1}${voffset 45}${goto 55}${font Nu:size=9}${execi 3600 uname -r}
