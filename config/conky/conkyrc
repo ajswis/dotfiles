@@ -1,49 +1,26 @@
 # -- Conky settings -- #
-background no
 update_interval 1
-
 cpu_avg_samples 2
 net_avg_samples 2
 
-override_utf8_locale yes
-
 double_buffer yes
-no_buffers yes
-
-text_buffer_size 2048
-imlib_cache_size 0
 
 # -- Window specifications -- #
-
 own_window yes
 own_window_type desktop
-own_window_transparent yes
-own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
-
-border_inner_margin 0
-border_outer_margin 0
+own_window_hints below,skip_taskbar,skip_pager
 
 minimum_size 200 800
 maximum_width 200
 
 alignment top_right
 gap_x 0
-gap_y 20
-
-# -- Graphics settings -- #
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders no
+gap_y 25
 
 # -- Text settings -- #
 use_xft yes
 xftfont Sans:size=24
-xftalpha 0.5
 
-uppercase no
-
-#colors
 color1 cdcdcd
 color2 efefef
 color3 1994d1
