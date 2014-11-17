@@ -1,7 +1,7 @@
 "/usr/bin/urxvtc"
   Alt + t
 "/usr/bin/chromium"
-  Alt + 1
+  Alt + b
 "/usr/bin/amixer sset Master on; amixer sset Master 5%+"
   XF86AudioRaiseVolume
 "/usr/bin/amixer sset Master 5%-"
