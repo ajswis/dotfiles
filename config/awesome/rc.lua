@@ -73,12 +73,31 @@ local layouts =
 }
 -- }}}
 
+-- {{{ Wallpaper
+if beautiful.wallpaper then
+  for s = 1, screen.count() do
+    gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+  end
+end
+-- }}}
+
 -- {{{ Tags
--- Define a tag table which hold all screen tags.
 tags = {}
 for s = 1, screen.count() do
-  -- Each screen has its own tag table.
-  tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+  tags[s] = awful.tag({ '1: main', '2: www', '3: im', '4: misc', '5: media', 6, 7, 8, 9 }, s,
+    {
+      layouts[1], layouts[1], layouts[4],
+      layouts[4], layouts[2], layouts[1],
+      layouts[1], layouts[1], layouts[1]
+    }
+  )
+
+  -- 21:9 is really wide, so 3 columns makes sense. 16:9 is not, so 2 columns makes sense
+  columns = math.ceil(screen[s].geometry.width / screen[s].geometry.height)
+  for i,v in ipairs(tags[s]) do
+    awful.tag.setncol(columns, tags[s][i])
+    awful.tag.setmwfact(1/columns, tags[s][i])
+  end
 end
 -- }}}
 
