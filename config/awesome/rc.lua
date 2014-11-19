@@ -302,6 +302,8 @@ clientkeys = awful.util.table.join(
   awful.key({ s_mod, "Shift"   }, "c",      function(c) c:kill()                         end),
   awful.key({ s_mod, "Control" }, "space",  awful.client.floating.toggle                    ),
   awful.key({ s_mod, "Control" }, "Return", function(c) c:swap(awful.client.getmaster()) end),
+  awful.key({ s_mod,           }, "i",      function(c) awful.client.movetoscreen(c, c.screen-1) end ),
+  awful.key({ s_mod,           }, "o",      function(c) awful.client.movetoscreen(c, c.screen+1) end ),
   awful.key({ s_mod,           }, "t",      function(c) c.ontop = not c.ontop            end),
   awful.key({ s_mod,           }, "n",      function(c)
                                               -- The client currently has the input focus, so it cannot be
