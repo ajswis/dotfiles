@@ -99,7 +99,7 @@ for s = 1, screen.count() do
   -- 21:9 is really wide, so 3 columns makes sense. 16:9 is not, so 2 columns makes sense
   columns = math.ceil(screen[s].geometry.width / screen[s].geometry.height)
   for i,v in ipairs(tags[s]) do
-    awful.tag.setncol(columns, tags[s][i])
+    awful.tag.setncol(columns-1, tags[s][i])
     awful.tag.setmwfact(1/columns, tags[s][i])
   end
 end
