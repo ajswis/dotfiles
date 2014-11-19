@@ -208,14 +208,17 @@ for s = 1, screen.count() do
   -- Widgets that are aligned to the right
   local right_layout = wibox.layout.fixed.horizontal()
   local seperator = wibox.widget.textbox()
-  seperator:set_text(' | ')
-  if s == 1 then right_layout:add(wibox.widget.systray()) end
+  seperator:set_text('  |  ')
+  local simple_seperator = wibox.widget.textbox()
+  simple_seperator:set_text('  ')
+  right_layout:add(simple_seperator)
+  right_layout:add(wibox.widget.systray())
   right_layout:add(textclock)
   right_layout:add(seperator)
   right_layout:add(obvious.volume_alsa(1, "Master"))
   right_layout:add(seperator)
   right_layout:add(obvious.battery())
-  right_layout:add(seperator)
+  right_layout:add(simple_seperator)
   right_layout:add(layoutbox[s])
 
   -- Now bring it all together (with the tasklist in the middle)
