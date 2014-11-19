@@ -219,7 +219,7 @@ for s = 1, screen.count() do
   local simple_seperator = wibox.widget.textbox()
   simple_seperator:set_text('  ')
   right_layout:add(simple_seperator)
-  right_layout:add(wibox.widget.systray())
+  if s == 1 then right_layout:add(wibox.widget.systray()) end
   right_layout:add(textclock)
   right_layout:add(seperator)
   right_layout:add(obvious.volume_alsa(1, "Master"))
