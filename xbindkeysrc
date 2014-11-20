@@ -12,11 +12,13 @@
   XF86KbdBrightnessDown
 "/usr/bin/kbdlight up"
   XF86KbdBrightnessUp
-"$HOME/Documents/dotfiles/bin/find_max_ext_monitor_res.rb"
-  XF86Display
 "/usr/bin/xbacklight +5"
   XF86MonBrightnessUp
 "/usr/bin/xbacklight -5"
   XF86MonBrightnessDown
 "/usr/local/bin/bluetooth_toggle --toggle"
   XF86LaunchB
+"$HOME/Documents/dotfiles/bin/toggle_external_display.rb"
+  XF86LaunchA
+"$HOME/Documents/dotfiles/bin/toggle_external_display.rb"
+  XF86Display
