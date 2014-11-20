@@ -4,14 +4,12 @@ xrandr = `xrandr`.to_s
 
 @common_monitors = { '3440x1440' => 'left', '2560x1440' => 'left' }
 @audio_enabled_monitors = [ '3440x1440' ]
-@restart_background = ARGV.include?('--restart-background') || system('pgrep openbox -u $USER >/dev/null')
+@restart_conky = ARGV.include?('--restart-conky') || system('pgrep openbox -u $USER >/dev/null')
 @internal_monitor = xrandr.match(/((LVDS|eDP)\d*) connected/)[1]
 
 def restart_background
-  if @restart_background
-    system "$HOME/.conkyinit --restart >/dev/null 2>&1"
-    system "$HOME/.fehbg"
-  end
+  system "$HOME/.conkyinit --restart >/dev/null 2>&1" if @restart_conky
+  system "(sleep 1 && $HOME/.fehbg) &"
 end
 
 def disable_monitor(external_monitor)
