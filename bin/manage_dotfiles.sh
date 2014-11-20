@@ -60,6 +60,7 @@ install_dotfiles() {
     'Xmodmap'
     'Xresources'
     'xbindkeysrc'
+    'conkyinit'
     'config/conky'
     'config/openbox'
     'config/tint2'

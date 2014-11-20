@@ -44,7 +44,7 @@ end
 -- }}}
 
 awful.util.spawn('compton')
-awful.util.spawn_with_shell('killall conky 2>/dev/null 1>&2; conky -c ' .. os.getenv('HOME') .. '/.config/conky/conkyrc')
+awful.util.spawn_with_shell(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
 awful.util.spawn('pidgin')
 
 -- {{{ Variable definitions
