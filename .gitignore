@@ -2,3 +2,4 @@ vim/autoload
 vim/view
 vim/.netrwhist
 vim/tmp/*
+.notebook

@@ -3,6 +3,7 @@
 xrandr = `xrandr`.to_s
 
 @common_monitors = { '3440x1440' => 'left', '2560x1440' => 'left' }
+@audio_enabled_monitors = [ '3440x1440' ]
 @restart_background = ARGV.include?('--restart-background') || system('pgrep openbox -u $USER >/dev/null')
 @internal_monitor = xrandr.match(/((LVDS|eDP)\d*) connected/)[1]
 
@@ -15,6 +16,7 @@ end
 
 def disable_monitor(external_monitor)
   system "xrandr --output #{external_monitor} --off --output #{@internal_monitor} --auto --scale 1.0x1.0"
+  system "rm $HOME/.asoundrc 2>/dev/null"
   restart_background
 end
 
@@ -25,6 +27,10 @@ end
 
 def enable_multihead(external_monitor, resolution, side)
   system "xrandr --output #{external_monitor} --mode #{resolution} --#{side}-of #{@internal_monitor}"
+  if @audio_enabled_monitors.include? resolution
+    asoundrc = `cat $DOTFILES/.notebook`.strip
+    system "ln -sf $DOTFILES/asound/asoundrc-#{asoundrc} $HOME/.asoundrc"
+  end
   restart_background
 end
 
