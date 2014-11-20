@@ -39,6 +39,9 @@ fi
 export EDITOR="mvim"
 alias vim="mvim"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export DOTFILES=$HOME/Documents/dotfiles
+export PATH=$DOTFILES/bin:$PATH
+export PATH=$PATH:$HOME/.rvm/bin
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+

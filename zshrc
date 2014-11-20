@@ -1,4 +1,3 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -41,4 +40,10 @@ bindkey '^[[3~' delete-char
 bindkey '^[[5~' beginning-of-buffer-or-history
 bindkey '^[[6~' end-of-buffer-or-history
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export DOTFILES=$HOME/Documents/dotfiles
+export PATH=$DOTFILES/bin:$PATH
+export PATH=$PATH:$HOME/.rvm/bin
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
