@@ -1,3 +1,3 @@
 #!/bin/sh
 
-feh --no-fehbg --bg-scale $HOME/Documents/dotfiles/backgrounds/triforce_1680.jpg
+feh --no-fehbg --bg-scale $DOTFILES/backgrounds/triforce_1680.jpg

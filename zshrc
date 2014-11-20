@@ -1,4 +1,3 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -41,7 +40,11 @@ if [ -x /usr/bin/ssh-agent -a -z "$SSH_AUTH_SOCK" ]; then
   eval "$(keychain --eval -Q -q --agents ssh  `find $HOME/.ssh/*  ! -name '*.pub' ! -name 'config' ! -name 'known_hosts'`)"
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin"
+export DOTFILES=$HOME/Documents/dotfiles
+export PATH=$DOTFILES/bin:$PATH
+export PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

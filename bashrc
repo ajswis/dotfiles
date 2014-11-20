@@ -66,9 +66,12 @@ vim() {
   stty "$STTYOPTS"
 }
 
-export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin
+export DOTFILES=$HOME/Documents/dotfiles
+export PATH=$DOTFILES/bin:$PATH
+export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
-export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 if [ -x /usr/bin/ssh-agent -a -z "$SSH_AUTH_SOCK" ]; then
   eval "$(keychain --eval -Q -q --agents ssh  `find $HOME/.ssh/*  ! -name '*.pub' ! -name 'config' ! -name 'known_hosts'`)"

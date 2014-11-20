@@ -1,4 +1,5 @@
 #!/bin/sh
+export DOTFILES=$HOME/Documents/dotfiles
 
 ([[ -e $HOME/.Xmodmap ]] && xmodmap $HOME/.Xmodmap) &
 ([[ -e $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources) &
