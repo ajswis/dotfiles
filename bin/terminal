@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+/usr/bin/pgrep -u $USER urxvtd || /usr/bin/urxvtd -q -o -f
+/usr/bin/urxvtc

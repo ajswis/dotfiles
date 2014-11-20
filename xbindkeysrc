@@ -1,4 +1,4 @@
-"/usr/bin/urxvtc"
+"$DOTFILES/bin/terminal"
   Alt + t
 "/usr/bin/chromium"
   Alt + b
