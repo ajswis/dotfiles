@@ -6,6 +6,11 @@
 [merge]
   tool = gvimdiff
   conflictstyle = diff3
+  summary = true
+[interactive]
+  singlekey = true
+[mergetool]
+  prompt = false
 [core]
   editor = mvim -f
 [mergetool]
@@ -27,3 +32,10 @@
   path = mvim
 [mergetool "gvimdiff"]
   path = mvim
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  grep = auto
