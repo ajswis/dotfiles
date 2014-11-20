@@ -29,6 +29,19 @@ vim() {
 }
 export EDITOR="vim"
 
+dot_sync() {
+  current_branch=$(git branch | grep '\*.*' | cut -d '*' -f 2 | tr -d ' ')
+  if [ -z "$1" ]; then
+    1=$current_branch
+  fi
+
+  for branch in $(git branch | grep '^[^*].*$'); do
+    git ch $branch
+    git cherry-pick $1 || { echo 'Problems.. manually cherry-pick'; return 0 }
+  done
+  git ch $current_branch
+}
+
 # Set Home, End, Del, PgUp, PgDown keys to actually do something.
 bindkey '^[OH' beginning-of-line
 bindkey '^[OF' end-of-line
