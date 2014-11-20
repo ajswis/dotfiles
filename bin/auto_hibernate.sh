@@ -2,7 +2,7 @@
 
 stat=$(cat /sys/class/power_supply/BAT0/status)
 batperc=$(cat /sys/class/power_supply/BAT0/capacity)
-if [[ $stat -eq "Discharging" ]]; then
+if [[ $stat = "Discharging" ]]; then
   if [ $batperc -le 8 ]; then
     notify-send 'HEY! Your battery is low!' 'Save your work!!' -i battery-low -t 20000
   fi
