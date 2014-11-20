@@ -39,6 +39,19 @@ fi
 export EDITOR="mvim"
 alias vim="mvim"
 
+dot_sync() {
+  current_branch=$(git branch | grep '\*.*' | cut -d '*' -f 2 | tr -d ' ')
+  if [ -z "$1" ]; then
+    1=$current_branch
+  fi
+
+  for branch in $(git branch | grep '^[^*].*$'); do
+    git ch $branch
+    git cherry-pick $1 || { echo 'Problems.. manually cherry-pick'; return 0 }
+  done
+  git ch $current_branch
+}
+
 export DOTFILES=$HOME/Documents/dotfiles
 export PATH=$DOTFILES/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
