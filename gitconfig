@@ -6,6 +6,9 @@
 [merge]
   tool = vimdiff
   conflictstyle = diff3
+  summary = true
+[interactive]
+  singlekey = true
 [mergetool]
   prompt = false
 [core]
@@ -24,3 +27,10 @@
   ch = checkout
 [diff]
   tool = vimdiff
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  grep = auto
