@@ -33,9 +33,9 @@ def enable_multihead(external_monitor, resolution, side)
 end
 
 if xrandr =~ /((HDMI|[^e]DP)(\d*)) (dis)?connected \d+x\d+/
-  disable_monitor($1)
+  disable_monitor($1.strip)
 elsif xrandr =~ /((HDMI|[^e]DP)(\d*)) connected/
-  ext_mon = $1
+  ext_mon = $1.strip
   resolutions = xrandr.sub(/.*#{ext_mon}.*?\n/m, '').scan(/\d{1,4}x\d{1,4}.*?(?=\s)/)
   resolutions = resolutions.sort_by { |res| x, y = res.split(/[^\d]/).map(&:to_f); -x*y }
 
