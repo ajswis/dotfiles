@@ -229,7 +229,7 @@ let g:rails_gem_projections = {
       \     }
       \   },
       \   "factory_girl": {
-      \     "spec/factories/*.rb": {
+      \     "spec/factories/*_factory.rb": {
       \       "command": "factory",
       \       "affinity": "collection",
       \       "alternate": "app/models/%i.rb",
