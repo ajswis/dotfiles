@@ -9,9 +9,6 @@ zstyle :compinstall filename '/Users/drew/.zshrc'
 autoload -Uz compinit
 compinit
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 autoload -U colors && colors
 # Have to reset color to cyan after the bold tags for some reason.
 PROMPT="%{$fg[cyan]%}[%n@%M %B%1~%b%{$fg[cyan]%}]%# %{$reset_color%}"
@@ -53,6 +50,7 @@ bindkey '^[[3~' delete-char
 bindkey '^[[5~' beginning-of-buffer-or-history
 bindkey '^[[6~' end-of-buffer-or-history
 
+export PAGER=less
 export DOTFILES=$HOME/Documents/dotfiles
 export PATH=$DOTFILES/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin

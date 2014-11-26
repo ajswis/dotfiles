@@ -52,6 +52,7 @@ dot_sync() {
   git ch $current_branch
 }
 
+export PAGER=less
 export DOTFILES=$HOME/Documents/dotfiles
 export PATH=$DOTFILES/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
