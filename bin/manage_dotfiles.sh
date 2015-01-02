@@ -49,6 +49,7 @@ link() {
 install_dotfiles() {
   mkdir -p $HOME/.config/{,xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml/}
   confs=(
+    'tmux.conf'
     'bashrc'
     'fehbg'
     'gitconfig'
