@@ -48,6 +48,7 @@ link() {
 
 install_dotfiles() {
   confs=(
+    'tmux.conf'
     'bashrc'
     'gitconfig'
     'vim'
