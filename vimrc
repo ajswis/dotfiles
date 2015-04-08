@@ -239,6 +239,18 @@ let g:rails_gem_projections = {
       \       "keywords": "factory sequence"
       \     }
       \   },
+      \   "jasmine": {
+      \     "spec/javascripts/*_spec.coffee": {
+      \       "command": "rice",
+      \       "template": "describe %S, ->\n  ",
+      \       "keywords": "describe it beforeEach expect loadFixtures xit"
+      \     },
+      \     "spec/javascripts/*_spec.js": {
+      \       "command": "rice",
+      \       "template": "describe(%S, function() {\n  \n})",
+      \       "keywords": "describe it beforeEach expect loadFixtures xit"
+      \     }
+      \   },
       \   "cucumber-rails": {
       \     "features/*.feature": {
       \       "command": "feature",
@@ -256,9 +268,14 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/%s.rb",
       \       "related": "db/schema.rb#%p",
       \       "test": "spec/decorators/%s_decorator_spec.rb",
-      \       "template": "class %SDecorator < Draper::Decorator\n\nend" ,
+      \       "template": "class %SDecorator < Draper::Decorator\n\nend",
+      \       "keywords": "delegate_all"
       \     }
       \   }
+      \ }
+
+let g:rails_projections = {
+      \   "app/services/*.rb": {"command": "service"}
       \ }
 
 """"""""""""""""""""""""""""
