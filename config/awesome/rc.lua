@@ -392,6 +392,7 @@ awful.rules.rules = {
     properties = { border = 0 } },
   { rule = { class = "Conky" },
     properties = {
+      border_with = 0,
       floating = true,
       sticky = true,
       ontop = false,
