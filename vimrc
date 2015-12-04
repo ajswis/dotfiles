@@ -243,6 +243,12 @@ let g:rails_gem_projections = {
       \       "keywords": "describe it beforeEach expect loadFixtures xit"
       \     }
       \   },
+      \   "interactor-rails": {
+      \     "app/interactors/*.rb": {
+      \       "command": "interactor",
+      \       "template": "class %S\n\nend"
+      \     },
+      \   },
       \   "cucumber-rails": {
       \     "features/*.feature": {
       \       "command": "feature",
