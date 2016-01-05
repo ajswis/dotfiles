@@ -44,7 +44,7 @@ end
 -- }}}
 
 awful.util.spawn('compton')
-awful.util.spawn_with_shell(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
+--awful.util.spawn_with_shell(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
 awful.util.spawn('pidgin')
 
 -- {{{ Variable definitions
@@ -220,11 +220,11 @@ for s = 1, screen.count() do
   simple_seperator:set_text('  ')
   right_layout:add(simple_seperator)
   if s == 1 then right_layout:add(wibox.widget.systray()) end
-  right_layout:add(textclock)
+  right_layout:add(obvious.battery())
   right_layout:add(seperator)
   right_layout:add(obvious.volume_alsa(1, "Master"))
   right_layout:add(seperator)
-  right_layout:add(obvious.battery())
+  right_layout:add(textclock)
   right_layout:add(simple_seperator)
   right_layout:add(layoutbox[s])
 
@@ -322,7 +322,7 @@ clientkeys = awful.util.table.join(
 for i = 1, 9 do
   globalkeys = awful.util.table.join(globalkeys,
     -- View tag only.
-    awful.key({ s_mod }, "#" .. i + 9, function()
+    awful.key({ alt_mod }, "#" .. i + 9, function()
       local screen = mouse.screen
       local tag = awful.tag.gettags(screen)[i]
       if tag then
@@ -330,7 +330,7 @@ for i = 1, 9 do
       end
     end),
     -- Toggle tag.
-    awful.key({ s_mod, "Control" }, "#" .. i + 9, function()
+    awful.key({ alt_mod, "Control" }, "#" .. i + 9, function()
       local screen = mouse.screen
       local tag = awful.tag.gettags(screen)[i]
       if tag then
@@ -338,7 +338,7 @@ for i = 1, 9 do
       end
     end),
     -- Move client to tag.
-    awful.key({ s_mod, "Shift" }, "#" .. i + 9, function()
+    awful.key({ alt_mod, "Shift" }, "#" .. i + 9, function()
       if client.focus then
         local tag = awful.tag.gettags(client.focus.screen)[i]
         if tag then
@@ -361,7 +361,7 @@ end
 clientbuttons = awful.util.table.join(
   awful.button({ }, 1, function(c) client.focus = c; c:raise() end),
   awful.button({ s_mod }, 1, awful.mouse.client.move),
-  awful.button({ s_mod }, 3, awful.mouse.client.resize)
+  awful.button({ alt_mod }, 1, awful.mouse.client.resize)
 )
 
 -- Set keys
