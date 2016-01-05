@@ -66,14 +66,15 @@ install_dotfiles() {
 }
 
 update_git_submodules() {
-  git submodule update --init --recursive
+  git submodule foreach --recursive git reset --hard origin/master
   git submodule foreach --recursive git pull origin master
+  git submodule foreach git submodule update --init --recursive
 }
 
 compile_ycm() {
   echo "Compiling YouCompleteMe"
   cd "$DIR"/vim/bundle/YouCompleteMe
-  ./install.sh
+  python2 ./install.py
   cd "$DIR"
 }
 
