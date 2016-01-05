@@ -79,6 +79,14 @@ dot_sync() {
   git ch $current_branch
 }
 
+rmorig() {
+  if [ "$1" = "-f" ]; then
+    find . -name "*.orig" -print -delete
+  else
+    find . -name "*.orig" -print
+  fi
+}
+
 export PAGER=less
 export DOTFILES=$HOME/Documents/dotfiles
 export PATH=$DOTFILES/bin:$PATH

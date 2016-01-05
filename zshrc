@@ -42,6 +42,14 @@ dot_sync() {
   git ch $current_branch
 }
 
+rmorig() {
+  if [ "$1" = "-f" ]; then
+    find . -name "*.orig" -print -delete
+  else
+    find . -name "*.orig" -print
+  fi
+}
+
 # Set Home, End, Del, PgUp, PgDown keys to actually do something.
 bindkey '^[OH' beginning-of-line
 bindkey '^[OF' end-of-line
