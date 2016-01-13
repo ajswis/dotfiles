@@ -132,7 +132,7 @@ map <silent> <leader>t :call RunCurrentSpecFile()<CR>
 map <silent> <leader>a :call RunAllSpecs()<CR>
 map <silent> <leader>s :call RunNearestSpec()<CR>
 map <silent> <leader>k :call RunLastSpec()<CR>
-let g:rspec_command = "!if command -v rspec >/dev/null 2>&1; then rspec {spec}; else bundle exec spec {spec}; fi"
+let g:rspec_command = "if command -v rspec >/dev/null 2>&1; then rspec {spec}; else bundle exec spec {spec}; fi"
 
 """"""""""""""""""""""""""""
 " Ctrl-P Settings
