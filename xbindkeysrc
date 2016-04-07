@@ -2,11 +2,11 @@
   Alt + t
 "/usr/bin/chromium"
   Alt + b
-"/usr/bin/amixer sset Master on; amixer sset Master 5%+"
+"/usr/bin/amixer -c 1 sset Master on; /usr/bin/amixer -c 1 sset Speaker on; /usr/bin/amixer -c 1 sset 'Bass Speaker' on; amixer -c 1 sset Master 5%+"
   XF86AudioRaiseVolume
-"/usr/bin/amixer sset Master 5%-"
+"/usr/bin/amixer -c 1 sset Master 5%-"
   XF86AudioLowerVolume
-"/usr/bin/amixer sset Master toggle"
+"/usr/bin/amixer -c 1 sset Master toggle"
   XF86AudioMute
 "/usr/bin/kbdlight down"
   XF86KbdBrightnessDown
