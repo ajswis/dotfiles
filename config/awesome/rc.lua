@@ -87,7 +87,7 @@ end
 -- {{{ Tags
 tags = {}
 for s = 1, screen.count() do
-  tags[s] = awful.tag({ '1: main', '2: www', '3: im', '4: misc', '5: media', 6, 7, 8, 9 }, s,
+  tags[s] = awful.tag({ '1: main', '2: aux', '3: im', '4: misc', 5, 6, 7, 8, 9 }, s,
     {
       layouts[1], layouts[1], layouts[4],
       layouts[4], layouts[2], layouts[1],
@@ -383,6 +383,10 @@ awful.rules.rules = {
   }},
   { rule = { class = "Pidgin", role = "buddy_list" },
     properties = { floating = true, width = 235, height = 450 } },
+  { rule = { class = "Slack", role = "browser-window" },
+    properties = { modkey = a_mod } },
+  { rule = { instance = "crx_nckgahadagoaajjgafhacjanaoiihapd" },
+    properties = { floating = true, ontop = true, width = 280, height = 420 } },
   { rule = { class = "Skype" },
     properties = { floating = true} },
   { rule = { class = "gimp" },
