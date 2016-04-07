@@ -45,7 +45,6 @@ end
 
 awful.util.spawn('compton')
 --awful.util.spawn_with_shell(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
-awful.util.spawn('pidgin')
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
