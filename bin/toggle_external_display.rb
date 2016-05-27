@@ -2,7 +2,7 @@
 
 xrandr = `xrandr`.to_s
 
-@common_monitors = { '3440x1440' => 'left', '2560x1440' => 'left' }
+@common_monitors = { '3440x1440' => 'right', '2560x1440' => 'left' }
 @audio_enabled_monitors = [ '3440x1440' ]
 @restart_conky = ARGV.include?('--restart-conky') || system('pgrep openbox -u $USER >/dev/null')
 @internal_monitor = xrandr.match(/((LVDS|eDP)\d*) connected/)[1]
