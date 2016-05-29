@@ -76,7 +76,11 @@
   ignore = dirty
 [submodule "vim/bundle/vim-airline"]
   path = vim/bundle/vim-airline
-  url = https://github.com/bling/vim-airline.git
+  url = https://github.com/vim-airline/vim-airline.git
+  ignore = dirty
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline.git
   ignore = dirty
 [submodule "vim/bundle/vim-coffee-script"]
   path = vim/bundle/vim-coffee-script
@@ -106,3 +110,6 @@
 	path = vim/bundle/tabular.vim
 	url = https://github.com/godlygeek/tabular.git
   ignore = dirty
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
