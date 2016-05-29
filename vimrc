@@ -309,13 +309,15 @@ function! DeleteTrailingWS()
 endfunction
 autocmd BufWrite * :call DeleteTrailingWS()
 
-" Allow the use of ALT as a function key.
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
+if !has("nvim")
+  " Allow the use of ALT as a function key.
+  let c='a'
+  while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+  endw
+endif
 
 " Close current window or quit vim if no active windows
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '!empty(bufname(v:val)) && buflisted(v:val)')) == 1 | q | endif

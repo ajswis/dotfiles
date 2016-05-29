@@ -59,12 +59,7 @@ fi
 
 # allow ctrl+S in vim to save files, ie pass the command to vim when vim is open.
 export EDITOR="vim"
-vim() {
-  local STTYOPTS="$(stty --save)"
-  stty stop '' -ixoff
-  command vim --servername vim "$@"
-  stty "$STTYOPTS"
-}
+alias vim="nvim"
 
 dot_sync() {
   current_branch=$(git branch | grep '\*.*' | cut -d '*' -f 2 | tr -d ' ')

@@ -74,6 +74,10 @@ install_dotfiles() {
     link "$HOME" "$conf"
   done
 
+  # For neovim
+  ln -sn $DIR/vim $HOME/.config/nvim
+  ln -sn $DIR/vimrc $HOME/.config/nvim/init.vim
+
   # Finish up linking and directory stuff
   ln -fsn "$DIR"/vim/pathogen/autoload "$DIR"/vim/
   mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}

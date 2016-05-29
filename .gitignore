@@ -3,3 +3,4 @@ vim/view
 vim/.netrwhist
 vim/tmp/*
 .notebook
+vim/init.vim
