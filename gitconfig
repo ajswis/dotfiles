@@ -12,9 +12,7 @@
 [mergetool]
   prompt = false
 [core]
-  editor = vim -f
-[mergetool]
-  prompt = false
+  editor = vim
 [alias]
   lol = log --oneline
   c = commit
@@ -25,6 +23,8 @@
   ca = commit -a
   d = diff
   ch = checkout
+[mergetool "vimdiff"]
+  cmd = nvim -d
 [diff]
   tool = vimdiff
 [color]
