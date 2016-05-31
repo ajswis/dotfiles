@@ -83,10 +83,17 @@ nnoremap <silent>   <C-k>   :wincmd k<CR>
 nnoremap <silent>   <C-j>   :wincmd j<CR>
 nnoremap <silent>   <C-h>   :wincmd h<CR>
 nnoremap <silent>   <C-l>   :wincmd l<CR>
-nnoremap <silent>    K    :wincmd K<CR>
-nnoremap <silent>    J    :wincmd J<CR>
-nnoremap <silent>    H    :wincmd H<CR>
-nnoremap <silent>    L    :wincmd L<CR>
+if has("nvim")
+  nnoremap <silent>   <A-K>   :wincmd K<CR>
+  nnoremap <silent>   <A-J>   :wincmd J<CR>
+  nnoremap <silent>   <A-H>   :wincmd H<CR>
+  nnoremap <silent>   <A-L>   :wincmd L<CR>
+else
+  nnoremap <silent>    K    :wincmd K<CR>
+  nnoremap <silent>    J    :wincmd J<CR>
+  nnoremap <silent>    H    :wincmd H<CR>
+  nnoremap <silent>    L    :wincmd L<CR>
+endif
 nnoremap <silent>     +     :wincmd +<CR>
 nnoremap <silent>     _     :wincmd -<CR>
 nnoremap <silent>     )     :wincmd ><CR>
