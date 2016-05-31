@@ -5,8 +5,6 @@
   default = simple
 [merge]
   tool = vimdiff
-  conflictstyle = diff3
-  summary = true
 [interactive]
   singlekey = true
 [mergetool]
@@ -24,7 +22,7 @@
   d = diff
   ch = checkout
 [mergetool "vimdiff"]
-  cmd = nvim -d
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd W' -c '$wincmd J'
 [diff]
   tool = vimdiff
 [color]
