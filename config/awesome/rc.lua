@@ -260,7 +260,7 @@ globalkeys = awful.util.table.join(
                                               awful.client.focus.byidx(-1)
                                               if client.focus then client.focus:raise() end
                                             end),
-  awful.key({ s_mod,           }, "Space",  function() mainmenu:show() end),
+  awful.key({ s_mod, alt_mod }, "space",    function() mainmenu:show() end),
 
   -- Layout manipulation
   awful.key({ s_mod, "Shift"   }, "j",      function() awful.client.swap.byidx(  1)    end),
