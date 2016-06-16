@@ -32,3 +32,5 @@
   branch = auto
   interactive = auto
   grep = auto
+[url "github:"]
+  insteadOf = https://github.com/

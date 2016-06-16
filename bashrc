@@ -84,9 +84,11 @@ rmorig() {
 
 export PAGER=less
 export DOTFILES=$HOME/Documents/dotfiles
+export GOPATH=$HOME/Documents/go
 export PATH=$DOTFILES/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
+export PATH=$PATH:$GOPATH/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
