@@ -10,7 +10,7 @@
 [mergetool]
   prompt = false
 [core]
-  editor = vim
+  editor = nvim
 [alias]
   lol = log --oneline
   c = commit
