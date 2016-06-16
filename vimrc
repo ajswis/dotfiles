@@ -326,6 +326,8 @@ if !has("nvim")
   endw
 endif
 
+au BufRead,BufNewFile *.Dockerfile setfiletype dockerfile
+
 " Close current window or quit vim if no active windows
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '!empty(bufname(v:val)) && buflisted(v:val)')) == 1 | q | endif
 
