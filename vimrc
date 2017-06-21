@@ -367,3 +367,16 @@ function! Tabline()
   return s
 endfunction
 set tabline=%!Tabline()
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_generate_tags = 1
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
