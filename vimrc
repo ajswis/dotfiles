@@ -88,11 +88,13 @@ if has("nvim")
   nnoremap <silent>   <A-J>   :wincmd J<CR>
   nnoremap <silent>   <A-H>   :wincmd H<CR>
   nnoremap <silent>   <A-L>   :wincmd L<CR>
+  nnoremap <silent>   <A-T>   :wincmd T<CR>
 else
   nnoremap <silent>    K    :wincmd K<CR>
   nnoremap <silent>    J    :wincmd J<CR>
   nnoremap <silent>    H    :wincmd H<CR>
   nnoremap <silent>    L    :wincmd L<CR>
+  nnoremap <silent>    T    :wincmd T<CR>
 endif
 nnoremap <silent>     +     :wincmd +<CR>
 nnoremap <silent>     _     :wincmd -<CR>
