@@ -121,3 +121,6 @@
 [submodule "vim/bundle/gotests-vim"]
 	path = vim/bundle/gotests-vim
 	url = https://github.com/buoto/gotests-vim
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json
