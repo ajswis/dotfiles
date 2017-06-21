@@ -87,6 +87,7 @@ nnoremap <silent>   <D-K>   :wincmd K<CR>
 nnoremap <silent>   <D-J>   :wincmd J<CR>
 nnoremap <silent>   <D-H>   :wincmd H<CR>
 nnoremap <silent>   <D-L>   :wincmd L<CR>
+nnoremap <silent>   <D-T>   :wincmd T<CR>
 nnoremap <silent>     +     :wincmd +<CR>
 nnoremap <silent>     _     :wincmd -<CR>
 nnoremap <silent>     )     :wincmd ><CR>
