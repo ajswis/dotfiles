@@ -112,3 +112,12 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go
+[submodule "vim/bundle/mustache"]
+	path = vim/bundle/mustache
+	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule "vim/bundle/vim-polyglot"]
+	path = vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "vim/bundle/gotests-vim"]
+	path = vim/bundle/gotests-vim
+	url = https://github.com/buoto/gotests-vim
