@@ -379,6 +379,7 @@ awful.rules.rules = {
       raise = true,
       keys = clientkeys,
       buttons = clientbuttons,
+      screen = awful.screen.focused,
       size_hints_honor = false
   }},
   { rule = { class = "Pidgin", role = "buddy_list" },
@@ -409,6 +410,7 @@ awful.rules.rules = {
 -- Signal functionto execute when a new client appears.
 client.connect_signal("manage", function(c, startup)
   -- Enable sloppy focus
+  awful.client.movetoscreen(c, mouse.screen)
   c:connect_signal("mouse::enter", function(c)
     if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
       and awful.client.focus.filter(c) then
