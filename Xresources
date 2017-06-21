@@ -15,7 +15,7 @@
 *color14: #55ffff
 *color15: #ffffff
 
-URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,keyboard-select,url-select
+URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,keyboard-select,url-select,resize-font,clipboard-osc
 URxvt.iso14755: false
 URxvt.loginShell: true
 URxvt.depth: 32
@@ -31,6 +31,7 @@ URxvt.scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
+URxvt*saveLines: 25000
 
 URxvt*.autohide: true
 URxvt.keysym.C-t: perl:tabbedex:new_tab
@@ -46,4 +47,5 @@ URxvt.url-select.underline: true
 URxvt.keysym.C-C: perl:clipboard:copy
 URxvt.keysym.C-V: perl:clipboard:paste
 URxvt.keysym.C-Escape: perl:keyboard-select:activate
-URxvt.keysym.C-S: perl:keyboard-select:search
+!URxvt.keysym.C-S: perl:keyboard-select:search
+URxvt.keysym.C-Down: perl:tabbedex:kill_tab
