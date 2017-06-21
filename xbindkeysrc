@@ -14,7 +14,7 @@
   XF86KbdBrightnessUp
 "/usr/bin/xbacklight +5"
   XF86MonBrightnessUp
-"/usr/bin/xbacklight -5"
+"/usr/bin/xbacklight -4"
   XF86MonBrightnessDown
 "/usr/local/bin/bluetooth_toggle --toggle"
   XF86LaunchB
