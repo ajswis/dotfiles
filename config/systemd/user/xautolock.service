@@ -1,0 +1,9 @@
+[Unit]
+Description=Lock screen after timeout
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xautolock -time 10 -locker "/usr/bin/slimlock" -nowlocker "/usr/bin/slimlock" -detectsleep
+
+[Install]
+WantedBy=default.target

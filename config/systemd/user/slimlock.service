@@ -1,0 +1,24 @@
+;[Unit]
+;Description=User suspend actions
+;Before=suspend.target
+
+;[Service]
+;User=%u
+;Type=forking
+;Environment=DISPLAY=:0
+;ExecStart=/usr/bin/xautolock -locknow
+
+;[Install]
+;WantedBy=suspend.target
+
+[Unit]
+Description=Lock X session using slimlock
+Before=suspend.target
+
+[Service]
+User=%u
+Type=simple
+ExecStart=/usr/bin/xautolock -locknow
+
+[Install]
+WantedBy=suspend.target

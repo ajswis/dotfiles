@@ -43,8 +43,8 @@ do
 end
 -- }}}
 
-awful.util.spawn('compton')
---awful.util.spawn_with_shell(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
+awful.spawn('compton')
+--awful.spawn_with_shell(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
