@@ -337,6 +337,8 @@ endw
 
 au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.xsd set filetype=xml
+au BufRead,BufNewFile *.wsdl set filetype=xml
 
 " Close current window or quit vim if no active windows
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '!empty(bufname(v:val)) && buflisted(v:val)')) == 1 | q | endif
