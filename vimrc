@@ -46,6 +46,8 @@ set viminfo^=%  " Remember buffer info on close
 
 set completeopt=menu
 
+set maxmempattern=8171906 " Because some files are big
+
 """"""""""""""""""""""""""""
 " Keybinds
 """"""""""""""""""""""""""""
