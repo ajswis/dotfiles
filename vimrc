@@ -294,6 +294,7 @@ let g:rails_projections = {
 """"""""""""""""""""""""""""
 
 let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_server_log_level = 'error'
 
 """"""""""""""""""""""""""""
