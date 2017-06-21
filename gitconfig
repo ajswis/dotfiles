@@ -10,7 +10,7 @@
 [mergetool]
   prompt = false
 [core]
-  editor = nvim
+  editor = vim
 [alias]
   lol = log --oneline
   c = commit
@@ -21,8 +21,9 @@
   ca = commit -a
   d = diff
   ch = checkout
-[mergetool "vimdiff"]
-  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd W' -c '$wincmd J'
+	;ch = "!~/.gitexplode"
+;[mergetool "vimdiff"]
+  ;cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd W' -c '$wincmd J'
 [diff]
   tool = vimdiff
 [color]
