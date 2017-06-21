@@ -43,6 +43,7 @@ set splitright  " New window split settings
 set splitbelow  " New window split settings
 set viminfo^=%  " Remember buffer info on close
 
+set completeopt=menu
 
 """"""""""""""""""""""""""""
 " Keybinds
@@ -130,6 +131,7 @@ map <S-q> <nop>
 """"""""""""""""""""""""""""
 
 map <silent> <leader>t :call RunCurrentSpecFile()<CR>
+autocmd FileType go map <buffer> <silent> <leader>t :GoTest<CR>
 map <silent> <leader>a :call RunAllSpecs()<CR>
 map <silent> <leader>s :call RunNearestSpec()<CR>
 map <silent> <leader>k :call RunLastSpec()<CR>
@@ -317,6 +319,7 @@ function! DeleteTrailingWS()
   exe "normal `z"
 endfunction
 autocmd BufWrite * :call DeleteTrailingWS()
+autocmd BufWrite *.go :GoImports
 
 " Allow the use of ALT as a function key.
 let c='a'
@@ -326,7 +329,8 @@ while c <= 'z'
   let c = nr2char(1+char2nr(c))
 endw
 
-au BufRead,BufNewFile *.Dockerfile setfiletype dockerfile
+au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
+au BufRead,BufNewFile *.go set filetype=go
 
 " Close current window or quit vim if no active windows
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '!empty(bufname(v:val)) && buflisted(v:val)')) == 1 | q | endif
