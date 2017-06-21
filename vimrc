@@ -307,7 +307,7 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "xfc
 endif
 
 " Use a nice color scheme
-colors Monokai
+colors monokai
 
 """"""""""""""""""""""""""""""""""""""""
 " Useful Stuff
