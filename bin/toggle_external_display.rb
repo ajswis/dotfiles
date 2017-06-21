@@ -45,4 +45,6 @@ elsif xrandr =~ /((HDMI|[^e]DP)(\d*)) connected/
   else
     enable_mirror(ext_mon, resolutions.first)
   end
+  system 'awesome-client "awesome.restart()"'
+  system 'synclientconf.sh'
 end
