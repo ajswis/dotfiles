@@ -115,6 +115,9 @@ vnoremap <D-k> :m '<-2<CR>gv=gv
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
 
+" JSON formatting
+nmap <silent> =j :FormatJSON<CR>
+
 " Set specific directories for swap, undo, and backups.
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
@@ -382,3 +385,4 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 let g:vim_json_syntax_conceal = 1
+com! FormatJSON %!python -m json.tool
