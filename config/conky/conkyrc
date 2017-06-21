@@ -1,38 +1,41 @@
-# -- Conky settings -- #
-update_interval 1
-cpu_avg_samples 2
-net_avg_samples 2
+conky.config = {
+-- -- Conky settings -- #
+	update_interval = 1,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
 
-double_buffer yes
+	double_buffer = true,
 
-# -- Window specifications -- #
-own_window yes
-own_window_type desktop
-own_window_hints below,skip_taskbar,skip_pager,undecorated
+-- -- Window specifications -- #
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_hints = 'below,skip_taskbar,skip_pager,undecorated',
 
-minimum_size 200 800
-maximum_width 200
+	minimum_width = 200, minimum_height = 800,
+	maximum_width = 200,
 
-alignment top_right
-gap_x 0
-gap_y 25
+	alignment = 'top_right',
+	gap_x = 0,
+	gap_y = 25,
 
-# -- Text settings -- #
-use_xft yes
-xftfont Sans:size=24
+-- -- Text settings -- #
+	use_xft = true,
+	font = 'Sans:size=24',
 
-color1 cdcdcd
-color2 efefef
-color3 1994d1
-color4 0FC4E3
+	color1 = '#cdcdcd',
+	color2 = '#efefef',
+	color3 = '#1994d1',
+	color4 = '#0FC4E3',
 
-default_color eeeeee
+	default_color = '#eeeeee',
 
-# -- Lua Load -- #
-lua_load $HOME/.config/conky/conkyrings.lua
-lua_draw_hook_pre ring_stats
+-- -- Lua Load -- #
+	lua_load = '$HOME/.config/conky/conkyrings.lua',
+	lua_draw_hook_pre = 'ring_stats',
 
-TEXT
+};
+
+conky.text = [[
 ${voffset 81}${goto 75}${font Ds\-Digital:size=20}${color2}${time %I}${color3}${time %M}
 
 ${goto 75}${color1}${font Nu:size=9}Uptime:
@@ -50,3 +53,4 @@ ${voffset 10}${goto 138}${color}HDD
 ${voffset -40}${goto 108}${color2}${fs_free /home}
 ${goto 60}${goto 108}${color3}${fs_free /}
 ${color1}${voffset 45}${goto 55}${font Nu:size=9}${execi 3600 uname -r}
+]];
