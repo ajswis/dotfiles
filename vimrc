@@ -292,6 +292,12 @@ let g:rails_gem_projections = {
 let g:rails_projections = {
       \   "app/services/*.rb": {"command": "service"}
       \ }
+""""""""""""""""""""""""""""
+" delimitMate
+""""""""""""""""""""""""""""
+
+let g:delimitMate_expand_space = 1
+let g:delimitMate_expand_cr = 1
 
 """"""""""""""""""""""""""""
 " YCM Settings
@@ -383,10 +389,11 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_generate_tags = 1
-
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 let g:vim_json_syntax_conceal = 1
 com! FormatJSON %!python -m json.tool
+
+let g:ophigh_highlight_link_group = "Operator"
