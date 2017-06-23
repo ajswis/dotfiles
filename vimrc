@@ -397,3 +397,4 @@ let g:vim_json_syntax_conceal = 1
 com! FormatJSON %!python -m json.tool
 
 let g:ophigh_highlight_link_group = "Operator"
+
