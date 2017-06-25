@@ -21,7 +21,7 @@ eval "$(hub alias -s)"
 
 # Allow ctrl+S in vim to save files, ie pass
 # the command to vim when vim is open.
-#export EDITOR="nvim"
+export EDITOR="vim"
 #alias vim="nvim"
 
 dot_sync() {
