@@ -388,7 +388,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
+let g:go_highlight_operators = 0
 let g:go_highlight_extra_types = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_generate_tags = 1
@@ -400,4 +400,3 @@ let g:vim_json_syntax_conceal = 1
 com! FormatJSON %!python -m json.tool
 
 let g:ophigh_highlight_link_group = "Operator"
-
