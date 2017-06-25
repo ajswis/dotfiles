@@ -109,10 +109,10 @@ nnoremap <C-p> :sp<space>
 nnoremap <D-p> :vs<space>
 
 " Move lines of text via Cmd+[jk]
-nnoremap <D-j> :m+1<CR>==
-nnoremap <D-k> :m-2<CR>==
-vnoremap <D-j> :m '>+1<CR>gv=gv
-vnoremap <D-k> :m '<-2<CR>gv=gv
+nnoremap <silent> <D-j> :m+1<CR>==
+nnoremap <silent> <D-k> :m-2<CR>==
+vnoremap <silent> <D-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <D-k> :m '<-2<CR>gv=gv
 
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
