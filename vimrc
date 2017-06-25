@@ -119,10 +119,10 @@ nnoremap <C-p> :sp<space>
 nnoremap <A-p> :vs<space>
 
 " Move lines of text via alt+[jk]
-nnoremap <A-j> :m+1<CR>==
-nnoremap <A-k> :m-2<CR>==
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <silent> <A-j> :m+1<CR>==
+nnoremap <silent> <A-k> :m-2<CR>==
+vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
