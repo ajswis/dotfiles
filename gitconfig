@@ -3,14 +3,8 @@
   name = Andrew Swistak
 [push]
   default = simple
-[merge]
-  tool = vimdiff
 [interactive]
   singlekey = true
-[mergetool]
-  prompt = false
-[core]
-  editor = vim
 [alias]
   lol = log --oneline
   c = commit
@@ -21,11 +15,16 @@
   ca = commit -a
   d = diff
   ch = checkout
-	;ch = "!~/.gitexplode"
-;[mergetool "vimdiff"]
-  ;cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd W' -c '$wincmd J'
+[core]
+  editor = nvim
 [diff]
   tool = vimdiff
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd W' -c '$wincmd J'
 [color]
   ui = auto
   diff = auto

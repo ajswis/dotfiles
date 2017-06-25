@@ -21,8 +21,8 @@ eval "$(hub alias -s)"
 
 # Allow ctrl+S in vim to save files, ie pass
 # the command to vim when vim is open.
-export EDITOR="vim"
-#alias vim="nvim"
+export EDITOR="nvim"
+alias vim="nvim"
 
 dot_sync() {
   current_branch=$(git branch | grep '\*.*' | cut -d '*' -f 2 | tr -d ' ')
