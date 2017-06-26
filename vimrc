@@ -376,7 +376,7 @@ set tabline=%!Tabline()
 
 " Go settings
 au BufRead,BufNewFile *.go set filetype=go
-au BufWrite *.go :GoImports
+au BufWritePre *.go :GoImports
 au FileType go map <buffer> <silent> <leader>t :GoTest<CR>
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -386,7 +386,8 @@ let g:go_highlight_operators = 0
 let g:go_highlight_extra_types = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_generate_tags = 1
-let g:syntastic_go_checkers = ['go', 'gofmt', 'golint', 'govet', 'errcheck']
+let g:go_fmt_autosave = 0 " Let syntastic do this
+let g:syntastic_go_checkers = ['gofmt']
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " JSON things
