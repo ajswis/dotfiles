@@ -135,7 +135,6 @@ map <S-q> <nop>
 """"""""""""""""""""""""""""
 
 map <silent> <leader>t :call RunCurrentSpecFile()<CR>
-autocmd FileType go map <buffer> <silent> <leader>t :GoTest<CR>
 map <silent> <leader>a :call RunAllSpecs()<CR>
 map <silent> <leader>s :call RunNearestSpec()<CR>
 map <silent> <leader>k :call RunLastSpec()<CR>
@@ -207,7 +206,7 @@ let g:easytags_updatetime_min = 4000
 
 let g:tex_flavor = "latex"
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
-autocmd FileType tex setlocal spell spelllang=en_us
+au FileType tex setlocal spell spelllang=en_us
 
 """"""""""""""""""""""""""""
 " Rails.vim
@@ -342,12 +341,7 @@ while c <= 'z'
   let c = nr2char(1+char2nr(c))
 endw
 
-au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
-au BufRead,BufNewFile *.go set filetype=go
-au BufRead,BufNewFile *.xsd set filetype=xml
-au BufRead,BufNewFile *.wsdl set filetype=xml
-
-" For auto-aligning Cucumber tables
+" For auto-aligning '|' delimited tables
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
@@ -360,6 +354,7 @@ function! s:align()
   endif
 endfunction
 
+" Set tabline at the top
 function! Tabline()
   let s = ''
   for i in range(tabpagenr('$'))
@@ -379,6 +374,10 @@ function! Tabline()
 endfunction
 set tabline=%!Tabline()
 
+" Go settings
+au BufRead,BufNewFile *.go set filetype=go
+au BufWrite *.go :GoImports
+au FileType go map <buffer> <silent> <leader>t :GoTest<CR>
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -387,11 +386,18 @@ let g:go_highlight_operators = 0
 let g:go_highlight_extra_types = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_generate_tags = 1
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_go_checkers = ['go', 'gofmt', 'golint', 'govet', 'errcheck']
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
+" JSON things
 let g:vim_json_syntax_conceal = 1
 com! FormatJSON %!python -m json.tool
 
+" Operator highlighting
 let g:ophigh_highlight_link_group = "Operator"
+
+" Filetypes
+au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
+au BufRead,BufNewFile *.xsd set filetype=xml
+au BufRead,BufNewFile *.wsdl set filetype=xml
+
