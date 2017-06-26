@@ -65,8 +65,7 @@ inoremap <C-s> <C-o>:Save<CR>
 vnoremap <C-s> <C-o>:Save<CR>
 
 " CTRL+w to close the current buffer
-nnoremap <silent> <C-w> :bd<CR>
-
+nnoremap <silent> <C-w> :Sayonara<CR>
 nnoremap <silent> <S-w> :hide<CR>
 
 " Buffer magic
@@ -348,9 +347,6 @@ au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.xsd set filetype=xml
 au BufRead,BufNewFile *.wsdl set filetype=xml
-
-" Close current window or quit vim if no active windows
-autocmd BufDelete * if len(filter(range(1, bufnr('$')), '!empty(bufname(v:val)) && buflisted(v:val)')) == 1 | q | endif
 
 " For auto-aligning Cucumber tables
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
