@@ -17,6 +17,7 @@
   ch = checkout
 [core]
   editor = nvim
+  pager = less -F -X
 [diff]
   tool = vimdiff
 [merge]
