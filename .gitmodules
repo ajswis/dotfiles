@@ -126,3 +126,4 @@
 [submodule "vim/bundle/vim-sayonara"]
 	path = vim/bundle/vim-sayonara
 	url = https://github.com/mhinz/vim-sayonara
+	ignore = dirty
