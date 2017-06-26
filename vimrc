@@ -325,12 +325,14 @@ colors monokai
 
 " Delete trailing whitespaces on saving.
 function! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
+  if !exists('b:noStrip')
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+  endif
 endfunction
-autocmd BufWrite * :call DeleteTrailingWS()
-autocmd BufWrite *.go :GoImports
+au BufWrite * :call DeleteTrailingWS()
+au FileType go let b:noStrip=1
 
 " Allow the use of ALT as a function key.
 let c='a'
