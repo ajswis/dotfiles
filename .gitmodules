@@ -123,3 +123,6 @@
 [submodule "vim/bundle/vim-operator-highlight"]
 	path = vim/bundle/vim-operator-highlight
 	url = https://github.com/ajswis/vim-operator-highlight
+[submodule "vim/bundle/vim-sayonara"]
+	path = vim/bundle/vim-sayonara
+	url = https://github.com/mhinz/vim-sayonara
