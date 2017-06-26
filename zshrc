@@ -1,3 +1,5 @@
+source $HOME/.oh-my-zshrc
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
