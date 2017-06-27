@@ -318,6 +318,9 @@ endif
 " Use a nice color scheme
 colors monokai
 
+" but override matchparen color
+hi MatchParen ctermfg=160 ctermbg=NONE cterm=underline guifg=#df0000 guibg=NONE gui=underline
+
 """"""""""""""""""""""""""""""""""""""""
 " Useful Stuff
 """"""""""""""""""""""""""""""""""""""""
