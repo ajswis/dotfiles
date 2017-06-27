@@ -391,6 +391,7 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_generate_tags = 1
 let g:go_fmt_autosave = 0 " Let syntastic do this
 let g:syntastic_go_checkers = ['gofmt']
+let g:go_fmt_experimental = 1 " Maintain folds after GoFmt + write
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " JSON things
