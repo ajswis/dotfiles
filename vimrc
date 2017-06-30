@@ -139,7 +139,7 @@ nnoremap <silent> <C-i> :nohlsearch<CR>
 
 " Formatting
 nmap <silent> =j :FormatJSON<CR>
-nmap <silent> =x :%s/></>\r</g<CR>gg=G
+nmap <silent> =x :FormatXML<CR>
 
 " Set specific directories for swap, undo, and backups.
 set backupdir=~/.vim/tmp/backup//
@@ -412,6 +412,7 @@ set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 " JSON things
 let g:vim_json_syntax_conceal = 1
 com! FormatJSON %!python -m json.tool
+com! FormatXML %!xmllint --format -
 
 " Operator highlighting
 let g:ophigh_highlight_link_group = "Operator"
