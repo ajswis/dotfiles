@@ -411,6 +411,8 @@ com! FormatJSON %!python -m json.tool
 
 " Operator highlighting
 let g:ophigh_highlight_link_group = "Operator"
+let g:ophigh_container_color = "208"
+let g:ophigh_container_color_gui = "#fd971f"
 
 " Filetypes
 au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
