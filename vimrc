@@ -137,8 +137,9 @@ vnoremap <silent> <A-h> "mxhh"mp
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
 
-" JSON formatting
+" Formatting
 nmap <silent> =j :FormatJSON<CR>
+nmap <silent> =x :%s/></>\r</g<CR>gg=G
 
 " Set specific directories for swap, undo, and backups.
 set backupdir=~/.vim/tmp/backup//
