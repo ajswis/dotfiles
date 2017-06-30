@@ -127,6 +127,13 @@ nnoremap <silent> <A-k> :m-2<CR>==
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
+" Move text left/right via alt+[hl]
+nnoremap <silent> <A-l> "mx"mp
+nnoremap <silent> <A-h> "mxhh"mp
+" TODO: Maintain selection
+vnoremap <silent> <A-l> "mx"mp
+vnoremap <silent> <A-h> "mxhh"mp
+
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
 
