@@ -51,6 +51,9 @@ set maxmempattern=8171906 " Because some files are big
 " Keybinds
 """"""""""""""""""""""""""""
 
+com! W w
+com! Q q
+
 let mapleader="\<space>"
 
 " Wrapped lines treated like normal ones
