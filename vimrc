@@ -417,3 +417,7 @@ au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
 au BufRead,BufNewFile *.xsd set filetype=xml
 au BufRead,BufNewFile *.wsdl set filetype=xml
 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
