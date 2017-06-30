@@ -40,6 +40,7 @@ set nowrap      " Line Wrapping
 set hidden      " Just hide buffer when :bd'ing
 set autoread    " Automatically update externally updated files
 set cc=80       " Which line is the 80th column?
+set tw=80       " Text width line wrapping
 set splitright  " New window split settings
 set splitbelow  " New window split settings
 set viminfo^=%  " Remember buffer info on close
