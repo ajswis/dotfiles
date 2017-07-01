@@ -212,6 +212,7 @@ map <leader><A-/><space> <plug>NERDCommenterComment
 
 set regexpengine=1
 let g:easytags_updatetime_min = 4000
+let g:easytags_cmd = '/usr/bin/ctags'
 
 """"""""""""""""""""""""""""
 " Tex Settings
