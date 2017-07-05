@@ -127,3 +127,6 @@
 	path = vim/bundle/vim-sayonara
 	url = https://github.com/mhinz/vim-sayonara
 	ignore = dirty
+[submodule "vim/bundle/xterm-color-table.vim"]
+	path = vim/bundle/xterm-color-table.vim
+	url = https://github.com/guns/xterm-color-table.vim
