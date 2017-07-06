@@ -100,6 +100,9 @@ nnoremap <silent>     (     :wincmd <<CR>
 nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
+" Jump backwards in tag stack
+nmap <D-[> <C-T>
+
 " ALt+d to duplicate a line, vmode version is best for SHIFT+V, not the others
 nmap Y y$
 nnoremap <D-d> yyp
