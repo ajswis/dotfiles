@@ -130,3 +130,4 @@
 [submodule "vim/bundle/xterm-color-table.vim"]
 	path = vim/bundle/xterm-color-table.vim
 	url = https://github.com/guns/xterm-color-table.vim
+	ignore = dirty
