@@ -370,6 +370,16 @@ function! IndentWithI()
 endfunction
 nnoremap <expr> i IndentWithI()
 
+" Smart indent when entering insert mode with i on empty lines
+function! IndentWithI()
+    if len(getline('.')) == 0
+        return "\"_cc"
+    else
+        return "i"
+    endif
+endfunction
+nnoremap <expr> i IndentWithI()
+
 " For auto-aligning '|' delimited tables
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
