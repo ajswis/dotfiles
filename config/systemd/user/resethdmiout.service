@@ -1,0 +1,7 @@
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=rm /home/drew/.asoundrc
+
+[Install]
+WantedBy=default.target

@@ -4,3 +4,5 @@ vim/.netrwhist
 vim/tmp/*
 .notebook
 vim/init.vim
+
+config/systemd/user/default.target.wants/*
