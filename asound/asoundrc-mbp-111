@@ -1,19 +1,31 @@
-pcm.hdmi_hw {
-  type hw
-  card 0
-  device 7
-}
-
-pcm.hdmi_complete {
-  type softvol
-  slave.pcm hdmi_hw
-  contorl.name hdmi_volume
-  control.card 0
-}
-
-pcm.!default hdmi_complete
-
 defaults.pcm.card 0
 defaults.pcm.device 7
-defaults.ctl.card 0
-defaults.ctl.device 7
+
+pcm.primary {
+  type hw
+  card 1
+  device 0
+}
+
+pcm.softvol {
+  type softvol
+  slave {
+    pcm "cards.pcm.default"
+  }
+  control {
+    name "Master"
+    card 0
+  }
+}
+
+pcm.!default {
+    type            asym
+    playback.pcm {
+        type        plug
+        slave.pcm   "softvol"
+    }
+    capture.pcm {
+        type        plug
+        slave.pcm   "primary"
+    }
+}
