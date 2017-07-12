@@ -112,17 +112,23 @@ nnoremap <silent> <leader>R :wincmd R<CR>
 
 " Navigate tag stack
 nmap <A-]> <C-]>
-nmap <A-[> <C-T>
+nmap <A-[> <C-t>
 
 " ALt+d to duplicate a line, vmode version is best for SHIFT+V, not the others
 nmap Y y$
-nnoremap <A-d> yyp
-vnoremap <A-d> y<C-o>p
+nnoremap <A-d> "yyy"yp
+vnoremap <A-d> "yy<C-o>"yp
 inoremap <A-d> <C-o>:yank<CR><C-o>:put<CR>
 
-" Open new files in new buffer or new windows
-nnoremap <C-p> :sp<space>
-nnoremap <A-p> :vs<space>
+" Yank/put to primary buffer
+nnoremap <C-p> "*p
+vnoremap <C-p> "*p
+
+nnoremap <expr> <silent> <C-y> '"*' . (v:count ? v:count : '') . 'y'
+vnoremap <C-y> "*y
+
+nnoremap <A-e> <C-e>
+nnoremap <A-y> <C-y>
 
 " Move lines of text via alt+[jk]
 nnoremap <silent> <A-j> :m+1<CR>==
