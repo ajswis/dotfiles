@@ -39,10 +39,10 @@ if g:go_highlight_types != 0
   syn region goDeclInterfaceRegion    matchgroup=goContainer start=/{/ end=/}/ contains=@validInterfaceContains skipwhite fold contained
   syn match goNestedInterfaceType     /\w\+/ contained
 
-  syn match goDeclTypeStart           /\*/ contains=OperatorChars nextgroup=goDeclTypeStart,goDeclTypeNamespace,goDeclTypeType,goMapType,@goDeclarations skipwhite contained
-  syn region goDeclTypeStart          matchgroup=goContainer start=/\[/ end=/\]/ contains=@goNumbers nextgroup=goDeclTypeStart,goDeclTypeNamespace,goDeclTypeType,goMapType,@goDeclarations skipwhite transparent contained
-  syn match goDeclTypeType            /\w\+/ contains=goMapType,@goDeclarations skipwhite contained
-  syn match goDeclTypeNamespace       /\w\+\./ contains=OperatorChars nextgroup=goDeclTypeType skipwhite contained
+  syn match goDeclTypeStart           /\*/ contains=OperatorChars nextgroup=goDeclTypeStart,goDeclTypeNamespace,goDeclTypeWord,goMapType,@goDeclarations skipwhite contained
+  syn region goDeclTypeStart          matchgroup=goContainer start=/\[/ end=/\]/ contains=@goNumbers nextgroup=goDeclTypeStart,goDeclTypeNamespace,goDeclTypeWord,goMapType,@goDeclarations skipwhite transparent contained
+  syn match goDeclTypeWord            /\w\+/ contains=goMapType,@goDeclarations skipwhite contained
+  syn match goDeclTypeNamespace       /\w\+\./ contains=OperatorChars nextgroup=goDeclTypeWord skipwhite contained
   syn cluster goDeclTypeBegin         contains=goDeclTypeStart,goDeclTypeType,goDeclTypeNamespace,goDeclaration
 
   syn region goMapKeyRegion           matchgroup=goContainer start=/\[/ end=/\]/ contains=@goDeclTypeBegin,goDeclaration nextgroup=@goDeclTypeBegin skipwhite contained
