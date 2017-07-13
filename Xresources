@@ -15,7 +15,8 @@
 *color14: #55ffff
 *color15: #ffffff
 
-URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,keyboard-select,url-select,resize-font,clipboard-osc
+URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,keyboard-select,url-select,resize-font,clipboard-osc,selection_to_clipboard
+URxvt.clipboard.autocopy: true
 URxvt.iso14755: false
 URxvt.loginShell: true
 URxvt.depth: 32

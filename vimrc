@@ -120,12 +120,12 @@ nnoremap <A-d> "yyy"yp
 vnoremap <A-d> "yy<C-o>"yp
 inoremap <A-d> <C-o>:yank<CR><C-o>:put<CR>
 
-" Yank/put to primary buffer
-nnoremap <C-p> "*p
-vnoremap <C-p> "*p
+" Yank/put to clipboard
+nnoremap <C-p> "+p
+vnoremap <C-p> "+p
 
-nnoremap <expr> <silent> <C-y> '"*' . (v:count ? v:count : '') . 'y'
-vnoremap <C-y> "*y
+nnoremap <expr> <silent> <C-y> '"+' . (v:count ? v:count : '') . 'y'
+vnoremap <C-y> "+y
 
 nnoremap <A-e> <C-e>
 nnoremap <A-y> <C-y>
