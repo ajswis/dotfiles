@@ -112,7 +112,7 @@ nnoremap <silent> <leader>R :wincmd R<CR>
 
 " Navigate tag stack
 nmap <A-]> <C-]>
-nmap <A-[> <C-t>
+nmap <A-[> <C-T>
 
 " ALt+d to duplicate a line, vmode version is best for SHIFT+V, not the others
 nmap Y y$
@@ -121,14 +121,11 @@ vnoremap <A-d> "yy<C-o>"yp
 inoremap <A-d> <C-o>:yank<CR><C-o>:put<CR>
 
 " Yank/put to clipboard
-nnoremap <C-p> "+p
-vnoremap <C-p> "+p
+nnoremap <A-p> "+p
+vnoremap <A-p> "+p
 
-nnoremap <expr> <silent> <C-y> '"+' . (v:count ? v:count : '') . 'y'
-vnoremap <C-y> "+y
-
-nnoremap <A-e> <C-e>
-nnoremap <A-y> <C-y>
+nnoremap <expr> <silent> <A-y> '"+' . (v:count ? v:count : '') . 'y'
+vnoremap <A-y> "+y
 
 " Move lines of text via alt+[jk]
 nnoremap <silent> <A-j> :m+1<CR>==
