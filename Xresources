@@ -50,3 +50,6 @@ URxvt.keysym.C-V: perl:clipboard:paste
 URxvt.keysym.C-Escape: perl:keyboard-select:activate
 !URxvt.keysym.C-S: perl:keyboard-select:search
 URxvt.keysym.C-Down: perl:tabbedex:kill_tab
+
+Rxvt.keysym.C-equal:     resize-font:bigger
+Rxvt.keysym.C-plus:      resize-font:reset
