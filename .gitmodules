@@ -134,3 +134,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/bundle/vim-colorful-go"]
+	path = vim/bundle/vim-colorful-go
+	url = https://github.com/ajswis/vim-colorful-go
