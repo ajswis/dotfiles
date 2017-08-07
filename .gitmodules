@@ -137,3 +137,6 @@
 [submodule "vim/bundle/vim-colorful-go"]
 	path = vim/bundle/vim-colorful-go
 	url = https://github.com/ajswis/vim-colorful-go
+[submodule "vim/bundle/rust.vim"]
+	path = vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
