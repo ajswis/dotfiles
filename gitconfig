@@ -34,4 +34,4 @@
   interactive = auto
   grep = auto
 [url "github:"]
-  insteadOf = https://github.com/
+  insteadOf = https://github.com
