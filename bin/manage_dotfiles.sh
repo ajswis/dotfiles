@@ -101,7 +101,7 @@ compile_ycm() {
   fi
 
   cd "$DIR"/vim/bundle/YouCompleteMe
-  python2 ./install.py
+  python2 ./install.py --racer-completer
   cd "$DIR"
 }
 
