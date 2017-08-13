@@ -53,6 +53,7 @@ install_dotfiles() {
     'bashrc'
     'fehbg'
     'gitconfig'
+    'gitignore'
     'gtkrc-2.0'
     'vim'
     'vimrc'

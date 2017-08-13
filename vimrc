@@ -216,7 +216,7 @@ map <leader><A-/><space> <plug>NERDCommenterComment
 " Easytags
 """"""""""""""""""""""""""""
 
-set regexpengine=1
+"set regexpengine=1
 let g:easytags_updatetime_min = 4000
 let g:easytags_cmd = '/usr/bin/ctags'
 
@@ -446,4 +446,6 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 let g:rustfmt_autosave = 1
-let g:ycm_rust_src_path = '/usr/src/rust/src'
+let g:ycm_rust_src_path = $RUST_SRC_PATH
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!

@@ -18,6 +18,7 @@
 [core]
   editor = nvim
   pager = less -F -X
+  excludesfile = ~/.gitignore
 [diff]
   tool = vimdiff
 [merge]
