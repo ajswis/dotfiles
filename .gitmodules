@@ -140,3 +140,6 @@
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "vim/bundle/gem-ctags"]
+	path = vim/bundle/gem-ctags
+	url = https://github.com/tpope/gem-ctags
