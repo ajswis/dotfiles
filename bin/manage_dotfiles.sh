@@ -51,6 +51,8 @@ install_dotfiles() {
     'tmux.conf'
     'bashrc'
     'gitconfig'
+    'gitignore'
+    'git_template'
     'vim'
     'vimrc'
     'zshrc'

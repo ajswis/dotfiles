@@ -9,11 +9,10 @@
   summary = true
 [interactive]
   singlekey = true
-[mergetool]
-  prompt = false
 [core]
   editor = mvim -f
   pager = less -F -X
+  excludesfile = ~/.gitignore
 [mergetool]
   prompt = false
   tool = gvimdiff
@@ -29,10 +28,7 @@
   ca = commit -a
   d = diff
   ch = checkout
-[difftool "gvimdiff"]
-  path = mvim
-[mergetool "gvimdiff"]
-  path = mvim
+  ctags = !.git/hooks/ctags
 [color]
   ui = auto
   diff = auto
@@ -43,3 +39,5 @@
 [url "github:"]
   insteadOf = git@github.com
   insteadOf = github.com
+[init]
+  templatedir = ~/.git_template
