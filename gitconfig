@@ -15,6 +15,7 @@
   ca = commit -a
   d = diff
   ch = checkout
+  ctags = !.git/hooks/ctags
 [core]
   editor = nvim
   pager = less -F -X
@@ -37,3 +38,5 @@
 [url "github:"]
   insteadOf = git@github.com
   insteadOf = github.com
+[init]
+  templatedir = ~/.git_template

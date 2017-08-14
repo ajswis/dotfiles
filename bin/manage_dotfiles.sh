@@ -54,6 +54,7 @@ install_dotfiles() {
     'fehbg'
     'gitconfig'
     'gitignore'
+    'git_template'
     'gtkrc-2.0'
     'vim'
     'vimrc'
