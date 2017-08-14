@@ -212,16 +212,9 @@ map <leader>cc <plug>NERDCommenterToggle
 " remapped, so remapping it to something I won't ever use.
 map <leader><A-/><space> <plug>NERDCommenterComment
 
-""""""""""""""""""""""""""""
-" Easytags
-""""""""""""""""""""""""""""
-
-"set regexpengine=1
-let g:easytags_updatetime_min = 4000
-let g:easytags_cmd = '/usr/bin/ctags'
 
 """"""""""""""""""""""""""""
-" Tex Settings
+" TeX Settings
 """"""""""""""""""""""""""""
 
 let g:tex_flavor = "latex"

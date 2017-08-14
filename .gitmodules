@@ -26,10 +26,6 @@
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 	ignore = dirty
-[submodule "vim/bundle/vim-easytags"]
-	path = vim/bundle/vim-easytags
-	url = https://github.com/xolox/vim-easytags.git
-	ignore = dirty
 [submodule "vim/bundle/vim-fanfingtastic"]
 	path = vim/bundle/vim-fanfingtastic
 	url = https://github.com/dahu/vim-fanfingtastic.git
