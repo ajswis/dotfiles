@@ -4,6 +4,7 @@ Helptags
 filetype plugin indent on
 
 set encoding=utf-8
+set spelllang=en_us
 
 " Search settings
 set incsearch
@@ -59,6 +60,15 @@ let mapleader="\<space>"
 " Wrapped lines treated like normal ones
 nnoremap j gj
 nnoremap k gk
+
+nnoremap <leader>S :call ToggleSpellCheck()<cr>
+function! ToggleSpellCheck()
+  if &spell ==# "nospell"
+    set spell
+  else
+    set nospell
+  endif
+endfunction
 
 " Set CTRL+S to save becuase I smack that every 10 seconds on whatever application I use
 command! -nargs=0 Save if &modified | confirm write | endif
@@ -214,7 +224,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<D-S>"
 
 let g:tex_flavor = "latex"
 let g:LatexBox_latexmk_options = "-pvc -pdfps"
-au FileType tex setlocal spell spelllang=en_us
 
 """"""""""""""""""""""""""""
 " Rails.vim
