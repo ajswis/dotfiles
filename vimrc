@@ -22,6 +22,7 @@ set smarttab
 set smartindent
 
 " Code Folding
+set foldopen-=block
 set nofoldenable
 set foldmethod=indent
 set foldnestmax=10
