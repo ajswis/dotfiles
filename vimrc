@@ -158,6 +158,8 @@ nnoremap <silent> <C-i> :nohlsearch<CR>
 nmap <silent> =j :FormatJSON<CR>
 nmap <silent> =x :FormatXML<CR>
 
+nmap <silent> =, :s/$/,/<CR><C-i>
+
 " Set specific directories for swap, undo, and backups.
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
