@@ -422,9 +422,10 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_generate_tags = 1
 let g:go_fmt_autosave = 0 " Let syntastic do this
-let g:syntastic_go_checkers = ['gofmt']
 let g:go_fmt_experimental = 1 " Maintain folds after GoFmt + write
+let g:syntastic_go_checkers = ['gofmt']
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+au BufRead,BufNewFile *.go map <leader>d :GoDeclsDir<cr>
 
 " JSON things
 let g:vim_json_syntax_conceal = 1
