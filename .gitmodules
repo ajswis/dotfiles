@@ -139,3 +139,6 @@
 [submodule "vim/bundle/gem-ctags"]
 	path = vim/bundle/gem-ctags
 	url = https://github.com/tpope/gem-ctags
+[submodule "vim/bundle/vim-cargo"]
+	path = vim/bundle/vim-cargo
+	url = https://github.com/timonv/vim-cargo
