@@ -184,8 +184,6 @@ let g:rspec_command = "!if command -v rspec >/dev/null 2>&1; then rspec {spec}; 
 
 " Keybinding and functionality
 let g:ctrlp_map = "<leader>o"
-let g:ctrlp_cmd = 'CtrlPLastMode'
-let g:ctrlp_extensions = ['line']
 
 " Move Ctrl-P to top of the screen
 let g:ctrlp_match_window_bottom = 0
@@ -193,7 +191,6 @@ let g:ctrlp_match_window_reversed = 0
 
 " Ignore some filetypes
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_switch_buffer = 'E'
 "let g:ctrlp_by_filename = 1
 let g:ctrlp_clear_cache_on_exit = 0
 
