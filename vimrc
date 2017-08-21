@@ -27,6 +27,7 @@ set nofoldenable
 set foldmethod=indent
 set foldnestmax=10
 set viewoptions=cursor,folds,slash,unix
+set noshowmode
 
 " Command expiration
 set timeout
