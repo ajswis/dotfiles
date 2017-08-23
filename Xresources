@@ -27,7 +27,7 @@ URxvt.internalBorder: 0
 URxvt.externalBorder: 0
 URxvt.borderColor: 0
 !URxvt.borderLess: true
-URxvt.font: xft:Meslo LG S for Powerline:size=10
+URxvt.font: xft:Meslo LG S for Powerline:size=9
 URxvt.scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
