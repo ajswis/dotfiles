@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "# Log:" >> "$1"
+
+git lol -n 3 | while read line; do
+  echo "# $line" >> $1
+done
