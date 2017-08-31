@@ -1,6 +1,6 @@
 "$DOTFILES/bin/terminal"
   Alt + t
-"/usr/bin/chromium"
+"/usr/bin/firefox"
   Alt + b
 "$DOTFILES/bin/volume.sh up"
   XF86AudioRaiseVolume
