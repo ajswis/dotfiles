@@ -1,5 +1,5 @@
 "syn match rustType "\w\+\s{\@="
-syn match rustField "\w\+\(: \)\@="
+"syn match rustField "\w\+\(: \)\@="
 
 hi link rustCommentLineDoc SpecialComment
 hi link rustCommentBlockDoc SpecialComment
