@@ -1,5 +1,5 @@
 ! Swap Alt and Super (CMD on Mac)
-pointer = 1 2 3 5 4 7 6 8 9 10 11 12
+pointer = 1 2 3 4 5 7 6 8 9 10 11 12
 remove Mod4 = Super_L
 remove Mod1 = Alt_L
 keysym Alt_L = Super_L
