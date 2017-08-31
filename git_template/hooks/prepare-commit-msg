@@ -1,7 +1,13 @@
 #!/bin/sh
 
-echo "# Log:" >> "$1"
+case "$2,$3" in
+  ,)
+    echo "# Log:" >> "$1"
 
-git lol -n 3 | while read line; do
-  echo "# $line" >> $1
-done
+    git lol -n 3 | while read line; do
+      echo "# $line" >> $1
+    done
+    ;;
+
+  *) ;;
+esac
