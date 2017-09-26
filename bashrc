@@ -70,3 +70,5 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+
+alias ack=ag
