@@ -437,11 +437,6 @@ let g:vim_json_syntax_conceal = 1
 com! FormatJSON %!python -m json.tool
 com! FormatXML %!xmllint --format -
 
-" Operator highlighting
-let g:ophigh_highlight_link_group = "Operator"
-let g:ophigh_container_color = "208"
-let g:ophigh_container_color_gui = "#fd971f"
-
 " Filetypes
 au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
 au BufRead,BufNewFile *.xsd set filetype=xml
@@ -456,4 +451,3 @@ let g:ycm_rust_src_path = $RUST_SRC_PATH
 let g:rust_src_path = $RUST_SRC_PATH
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
-
