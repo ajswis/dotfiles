@@ -72,4 +72,6 @@ export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.c.zsh
+source $HOME/.2fak.zsh
 
+alias ack=ag

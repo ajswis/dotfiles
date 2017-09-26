@@ -97,3 +97,5 @@ export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 if [ -x /usr/bin/ssh-agent -a -z "$SSH_AUTH_SOCK" ]; then
   eval "$(keychain --eval -Q -q --agents ssh  `find $HOME/.ssh/*  ! -name '*.pub' ! -name 'config' ! -name 'known_hosts'`)"
 fi
+
+alias ack=ag
