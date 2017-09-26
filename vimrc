@@ -420,6 +420,7 @@ set tabline=%!Tabline()
 au BufRead,BufNewFile *.go set filetype=go
 au BufWritePre *.go :GoImports
 au FileType go map <buffer> <silent> <leader>t :GoTest<CR>
+au FileType go map <buffer> <silent> <leader>i :GoInfo<CR>
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
