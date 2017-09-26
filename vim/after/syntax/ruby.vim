@@ -1,6 +1,10 @@
 let ruby_operators = 1
 
-syn match OperatorChars /\.\(class\)\@!/
+syn match Operator /\.\(class\)\@!/
+syn match Operator /[?+*;,<>&!~=-]/
+syn match Operator /||\||=\||\(\d\)\@=\||\(\w\)\@!\(.\{-\}|\)\@!/
+
+
 syn match _rubyFunction /\(\.\|\s\|^\)\@<=\w\+\((\)\@=/
 
 syn region ParenContainer   matchgroup=ContainerChars start=/(/ end=/)/ transparent
