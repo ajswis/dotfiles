@@ -297,7 +297,16 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
-  awful.key({ s_mod,           }, "f",      function(c) c.fullscreen = not c.fullscreen  end),
+  awful.key({ s_mod,           }, "f",      function(c)
+                                              if not c.fullscreen then
+                                                c.wasontop = c.ontop
+                                              end
+                                              c.fullscreen = not c.fullscreen
+                                              if not c.fullscreen then
+                                                c.ontop = c.wasontop
+                                              end
+                                            end),
+
   awful.key({ s_mod, "Shift"   }, "c",      function(c) c:kill()                         end),
   awful.key({ s_mod, "Control" }, "space",  awful.client.floating.toggle                    ),
   awful.key({ s_mod, "Control" }, "Return", function(c) c:swap(awful.client.getmaster()) end),
@@ -312,6 +321,10 @@ clientkeys = awful.util.table.join(
   awful.key({ s_mod,           }, "m",      function(c)
                                               c.maximized_horizontal = not c.maximized_horizontal
                                               c.maximized_vertical   = not c.maximized_vertical
+                                            end),
+
+  awful.key({ s_mod,  "Shift"  }, "m",      function(c)
+                                              c.maximized = not c.maximized
                                             end)
 )
 
