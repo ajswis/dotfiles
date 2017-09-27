@@ -98,8 +98,8 @@ for s = 1, screen.count() do
   -- 21:9 is really wide, so 3 columns makes sense. 16:9 is not, so 2 columns makes sense
   columns = math.ceil(screen[s].geometry.width / screen[s].geometry.height)
   for i,v in ipairs(tags[s]) do
-    awful.tag.setncol(columns-1, tags[s][i])
-    awful.tag.setmwfact(1/columns, tags[s][i])
+    tags[s][i].column_count = columns-1
+    tags[s][i].master_width_factor = 1/columns
   end
 end
 -- }}}
@@ -131,7 +131,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-textclock = awful.widget.textclock()
+textclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 widgetbox = {}
@@ -202,8 +202,8 @@ for s = 1, screen.count() do
   -- Create a tasklist widget
   tasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist.buttons)
 
-  -- Create the wibox
-  widgetbox[s] = awful.wibox({ position = "top", screen = s })
+  -- Create the wibar
+  widgetbox[s] = awful.wibar({ position = "top", screen = s })
 
   -- Widgets that are aligned to the left
   local left_layout = wibox.layout.fixed.horizontal()
@@ -323,15 +323,15 @@ for i = 1, 9 do
     -- View tag only.
     awful.key({ alt_mod }, "#" .. i + 9, function()
       local screen = mouse.screen
-      local tag = awful.tag.gettags(screen)[i]
+      local tag = screen.tags[i]
       if tag then
-        awful.tag.viewonly(tag)
+        tag:view_only()
       end
     end),
     -- Toggle tag.
     awful.key({ alt_mod, "Control" }, "#" .. i + 9, function()
       local screen = mouse.screen
-      local tag = awful.tag.gettags(screen)[i]
+      local tag = screen.tags[i]
       if tag then
         awful.tag.viewtoggle(tag)
       end
@@ -339,18 +339,18 @@ for i = 1, 9 do
     -- Move client to tag.
     awful.key({ alt_mod, "Shift" }, "#" .. i + 9, function()
       if client.focus then
-        local tag = awful.tag.gettags(client.focus.screen)[i]
+        local tag = client.focus.screen.tags[i]
         if tag then
-          awful.client.movetotag(tag)
+          client.focus:move_to_tag(tag)
         end
       end
     end),
     -- Toggle tag.
     awful.key({ s_mod, "Control", "Shift" }, "#" .. i + 9, function()
       if client.focus then
-        local tag = awful.tag.gettags(client.focus.screen)[i]
+        local tag = client.focus.screen.tags[i]
         if tag then
-          awful.client.toggletag(tag)
+          client.focus:toggle_tag(tag)
         end
       end
     end)
@@ -410,7 +410,7 @@ awful.rules.rules = {
 -- Signal functionto execute when a new client appears.
 client.connect_signal("manage", function(c, startup)
   -- Enable sloppy focus
-  awful.client.movetoscreen(c, mouse.screen)
+  c:move_to_screen(mouse.screen)
   c:connect_signal("mouse::enter", function(c)
     if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
       and awful.client.focus.filter(c) then
