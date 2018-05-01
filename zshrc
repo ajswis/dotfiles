@@ -64,9 +64,14 @@ export PATH=$DOTFILES/bin:$PATH
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+#export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias ack=ag
+
+# added by travis gem
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
