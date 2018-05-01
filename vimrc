@@ -245,6 +245,16 @@ let g:rails_gem_projections = {
       \       "keywords": "Fabricate Fabricator sequence"
       \     }
       \   },
+      \   "webpacker": {
+      \     "app/javascript/packs/*.js": {
+      \       "command": "pack",
+      \       "test": "test/javascript/%s.test.js"
+      \     },
+      \     "app/javascript/packs/*.jsx": {
+      \       "command": "pack",
+      \       "test": "test/javascript/%s.test.js"
+      \     }
+      \   },
       \   "factory_girl_rails": {
       \     "spec/factories/*_factory.rb": {
       \       "command": "factory",
