@@ -482,3 +482,24 @@ let g:python3_host_prog = '/bin/python'
 let g:OmniSharp_server_path = '/opt/omnisharp-roslyn/OmniSharp.exe'
 let g:OmniSharp_server_use_mono = 1
 let g:syntastic_cs_checkers = ['code_checker']
+
+" Source project specific settings from .git/project.vim if the file exists
+" this kinda sucks because
+"   a) depends on fugutive
+"   b) will only source one .git/project.vim ever, per vim instance
+autocmd BufEnter,VimEnter * call s:MaybeRunProjectSettings(expand("<amatch>"))
+
+let g:custom_project_settings_loaded = 0
+function! s:MaybeRunProjectSettings(file)
+  if g:custom_project_settings_loaded == 1
+    return
+  endif
+
+  let git_dir = fugitive#extract_git_dir(@%)
+  if git_dir != ""
+    if filereadable(git_dir.'/project.vim')
+      exec "source ".(git_dir.'/project.vim')
+    endif
+  endif
+  let g:custom_project_settings_loaded = 1
+endfunction
