@@ -7,4 +7,4 @@ export DOTFILES=$HOME/Documents/dotfiles
 (pgrep -u $USER xautolock || /usr/bin/xautolock -time 10 -locker /usr/bin/slimlock -nowlocker /usr/bin/slimlock -detectsleep) &
 (pgrep -u $USER urxvtd || /usr/bin/urxvtd -q -o -f) &
 
-exec awesome
+exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
