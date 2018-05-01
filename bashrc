@@ -98,4 +98,10 @@ if [ -x /usr/bin/ssh-agent -a -z "$SSH_AUTH_SOCK" ]; then
   eval "$(keychain --eval -Q -q --agents ssh  `find $HOME/.ssh/*  ! -name '*.pub' ! -name 'config' ! -name 'known_hosts'`)"
 fi
 
+alias yaourt=pacaur
 alias ack=ag
+
+# added by travis gem
+[ -f /home/drew/.travis/travis.sh ] && source /home/drew/.travis/travis.sh
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1

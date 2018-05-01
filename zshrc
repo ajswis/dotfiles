@@ -74,4 +74,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $HOME/.c.zsh
 source $HOME/.2fak.zsh
 
+alias yaourt=pacaur
 alias ack=ag
+
+# added by travis gem
+[ -f /home/drew/.travis/travis.sh ] && source /home/drew/.travis/travis.sh
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
