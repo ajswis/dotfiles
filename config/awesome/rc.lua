@@ -298,6 +298,10 @@ globalkeys = awful.util.table.join(
 
 clientkeys = awful.util.table.join(
   awful.key({ s_mod,           }, "f",      function(c)
+                                              if c.wasontop == nil then
+                                                c.wasontop = false
+                                              end
+
                                               if not c.fullscreen then
                                                 c.wasontop = c.ontop
                                               end
@@ -312,7 +316,7 @@ clientkeys = awful.util.table.join(
   awful.key({ s_mod, "Control" }, "Return", function(c) c:swap(awful.client.getmaster()) end),
   awful.key({ s_mod,           }, "i",      function(c) awful.client.movetoscreen(c, c.screen.index-1) end ),
   awful.key({ s_mod,           }, "o",      function(c) awful.client.movetoscreen(c, c.screen.index+1) end ),
-  awful.key({ s_mod,           }, "t",      function(c) c.ontop = not c.ontop            end),
+  awful.key({ s_mod,           }, "t",      function(c) c.ontop = not c.ontop end),
   awful.key({ s_mod,           }, "n",      function(c)
                                               -- The client currently has the input focus, so it cannot be
                                               -- minimized, since minimized clients can't have the focus.
