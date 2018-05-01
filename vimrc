@@ -452,6 +452,7 @@ au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
 au BufRead,BufNewFile *.xsd set filetype=xml
 au BufRead,BufNewFile *.wsdl set filetype=xml
 
+" F10 to print syntax highlighting for selection under cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -481,14 +482,18 @@ let g:LatexBox_latexmk_preview_continuously = 1
 let g:python_host_prog = '/bin/python2'
 let g:python3_host_prog = '/bin/python'
 
-let g:OmniSharp_server_path = '/opt/omnisharp-roslyn/OmniSharp.exe'
-let g:OmniSharp_server_use_mono = 1
-let g:syntastic_cs_checkers = ['code_checker']
+" omnisharp-roslyn settings are disabled because YCM does it better
+"let g:OmniSharp_server_path = '/opt/omnisharp-roslyn/OmniSharp.exe'
+"let g:OmniSharp_server_use_mono = 1
+"let g:syntastic_cs_checkers = ['code_checker']
+let g:ycm_auto_start_csharp_server = 1
+let g:ycm_auto_stop_csharp_server = 1
 
 " Source project specific settings from .git/project.vim if the file exists
 " this kinda sucks because
 "   a) depends on fugutive
 "   b) will only source one .git/project.vim ever, per vim instance
+"   c) can potentially source something you don't want
 autocmd BufEnter,VimEnter * call s:MaybeRunProjectSettings(expand("<amatch>"))
 
 let g:custom_project_settings_loaded = 0
