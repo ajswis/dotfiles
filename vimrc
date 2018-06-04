@@ -338,6 +338,7 @@ let g:delimitMate_expand_cr = 1
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_server_log_level = 'error'
+"let g:ycm_show_diagnostics_ui = 0
 
 """"""""""""""""""""""""""""
 " Colors and Themes
@@ -482,10 +483,9 @@ let g:LatexBox_latexmk_preview_continuously = 1
 let g:python_host_prog = '/bin/python2'
 let g:python3_host_prog = '/bin/python'
 
-" omnisharp-roslyn settings are disabled because YCM does it better
-"let g:OmniSharp_server_path = '/opt/omnisharp-roslyn/OmniSharp.exe'
-"let g:OmniSharp_server_use_mono = 1
-"let g:syntastic_cs_checkers = ['code_checker']
+" OmniSharp settings are disabled because YCM does it better
+let g:Omnisharp_start_server = 0
+let g:syntastic_cs_checkers = ['code_checker']
 let g:ycm_auto_start_csharp_server = 1
 let g:ycm_auto_stop_csharp_server = 1
 
