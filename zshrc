@@ -74,7 +74,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $HOME/.c.zsh
 source $HOME/.2fak.zsh
 
-alias yaourt=pacaur
+alias yaourt=pikaur
+alias pacaur=pikaur
 alias ack=ag
 
 # added by travis gem

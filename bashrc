@@ -98,7 +98,8 @@ if [ -x /usr/bin/ssh-agent -a -z "$SSH_AUTH_SOCK" ]; then
   eval "$(keychain --eval -Q -q --agents ssh  `find $HOME/.ssh/*  ! -name '*.pub' ! -name 'config' ! -name 'known_hosts'`)"
 fi
 
-alias yaourt=pacaur
+alias yaourt=pikaur
+alias pacaur=pikaur
 alias ack=ag
 
 # added by travis gem
