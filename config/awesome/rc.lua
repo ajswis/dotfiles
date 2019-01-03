@@ -5,8 +5,9 @@ require("awful.autofocus")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 naughty = require("naughty")
-require("obvious.battery")
-require("obvious.volume_alsa")
+local battery = require("obvious.battery")
+battery.preferred_backend = 'acpi'
+require("obvious.volume_alsa") -- FIXME: breaks with pulseaudio
 local menubar = require("menubar")
 
 -- {{{ Error handling
@@ -219,7 +220,7 @@ for s = 1, screen.count() do
   simple_seperator:set_text('  ')
   right_layout:add(simple_seperator)
   if s == 1 then right_layout:add(wibox.widget.systray()) end
-  right_layout:add(obvious.battery())
+  right_layout:add(battery())
   right_layout:add(seperator)
   right_layout:add(obvious.volume_alsa(1, "Master"))
   right_layout:add(seperator)
