@@ -122,9 +122,10 @@ nnoremap <D-d> yyp
 vnoremap <D-d> y<C-o>p
 inoremap <D-d> <C-o>:yank<CR><C-o>:put<CR>
 
-" Open new files in new buffer or new windows
-nnoremap <C-p> :sp<space>
-nnoremap <D-p> :vs<space>
+nnoremap <D-p> "+p
+vnoremap <D-p> "+p
+nnoremap <expr> <silent> <D-y> '"+' . (v:count ? v:count : '') . 'y'
+vnoremap <D-y> "+y
 
 " Move lines of text via Cmd+[jk]
 nnoremap <silent> <D-j> :m+1<CR>==
