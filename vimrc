@@ -359,12 +359,14 @@ au BufWrite * :call DeleteTrailingWS()
 au FileType go let b:noStrip=1
 
 " Allow the use of ALT as a function key.
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
+if !has('nvim')
+  let c='a'
+  while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+  endw
+endif
 
 " Smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
