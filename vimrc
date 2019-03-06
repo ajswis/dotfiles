@@ -156,7 +156,9 @@ set undodir=~/.vim/tmp/undo//
 set viewdir=~/.vim/tmp/view//
 set undofile
 
-macmenu File.Print key=<nop>
+if has('gui_macvim')
+  macmenu File.Print key=<nop>
+endif
 map <S-k> <nop>
 map <S-q> <nop>
 
@@ -463,7 +465,10 @@ autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
+augroup PretterFormatting
+  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
+augroup END
+
 
 " Fix backspace
 imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
@@ -509,3 +514,8 @@ function! s:MaybeRunProjectSettings(file)
   endif
   let g:custom_project_settings_loaded = 1
 endfunction
+
+if has('nvim')
+  let g:python_host_prog = "/usr/local/bin/python2"
+  let g:python3_host_prog = "/usr/local/bin/python3"
+endif
