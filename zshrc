@@ -66,7 +66,6 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cargo/bin
 #export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias ack=ag
@@ -77,3 +76,5 @@ alias ack=ag
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
