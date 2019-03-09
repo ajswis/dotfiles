@@ -76,4 +76,6 @@ alias ack=ag
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
