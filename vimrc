@@ -521,3 +521,12 @@ if has('nvim')
   let g:python_host_prog = "/usr/local/bin/python2"
   let g:python3_host_prog = "/usr/local/bin/python3"
 endif
+
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+let g:UltiSnipsSnippetsDir="~/.vim/snippets"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
