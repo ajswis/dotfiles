@@ -465,6 +465,7 @@ autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
 
 let g:prettier#autoformat = 0
+let g:prettier#config#print_width = 120
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
 
 " Fix backspace
@@ -511,6 +512,11 @@ function! s:MaybeRunProjectSettings(file)
   let g:custom_project_settings_loaded = 1
 endfunction
 
+if has('nvim')
+  let g:python_host_prog = "/bin/python2"
+  let g:python3_host_prog = "/bin/python3"
+endif
+
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
@@ -519,5 +525,3 @@ let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:prettier#config#print_width = 120
