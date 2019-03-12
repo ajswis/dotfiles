@@ -530,3 +530,5 @@ let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:prettier#config#print_width = 120
