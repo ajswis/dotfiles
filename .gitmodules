@@ -157,9 +157,6 @@
 	path = vim/bundle/omnisharp-vim
 	url = github:OmniSharp/omnisharp-vim.git
 	ignore = dirty
-[submodule "vim/bundle/vim-colorful-go"]
-	path = vim/bundle/vim-colorful-go
-	url = github:ajswis/vim-colorful-go
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = github:SirVer/ultisnips
