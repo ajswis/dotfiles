@@ -48,11 +48,13 @@ link() {
 
 install_dotfiles() {
   confs=(
-    'tmux.conf'
+    'ackrc'
+    'ag-ignore'
     'bashrc'
+    'git_template'
     'gitconfig'
     'gitignore'
-    'git_template'
+    'tmux.conf'
     'vim'
     'vimrc'
     'zshrc'
