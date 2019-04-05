@@ -16,3 +16,8 @@ hi link rubyRoute Type
 hi link rubyValidation Type
 
 syn region rubyBlockParameterList matchgroup=Operator start="\%(\%(\<do\>\|{\)\_s*\)\@32<=|" end="|" oneline display contains=rubyBlockParameter
+
+unlet b:current_syntax
+syn include @SQL syntax/sql.vim
+syn region sqlHeredoc start=/\v\<\<[-~]SQL/ end=/\vSQL/ keepend contains=@SQL
+let b:current_syntax = "ruby"
