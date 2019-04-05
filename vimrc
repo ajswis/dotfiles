@@ -257,25 +257,25 @@ let g:rails_gem_projections = {
       \       "test": "test/javascript/%s.test.js"
       \     }
       \   },
-      \   "factory_girl_rails": {
+      \   "factory_bot_rails": {
       \     "spec/factories/*_factory.rb": {
       \       "command": "factory",
       \       "affinity": "collection",
       \       "alternate": "app/models/%i.rb",
       \       "related": "db/schema.rb#%s",
       \       "test": "spec/models/%i_spec.rb",
-      \       "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \       "template": "FactoryBot.define do\n  factory :%i do\n  end\nend",
       \       "keywords": "factory sequence"
       \     }
       \   },
-      \   "factory_girl": {
+      \   "factory_bot": {
       \     "spec/factories/*_factory.rb": {
       \       "command": "factory",
       \       "affinity": "collection",
       \       "alternate": "app/models/%i.rb",
       \       "related": "db/schema.rb#%s",
       \       "test": "spec/models/%i_spec.rb",
-      \       "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \       "template": "FactoryBot.define do\n  factory :%i do\n  end\nend",
       \       "keywords": "factory sequence"
       \     }
       \   },
