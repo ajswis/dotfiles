@@ -78,7 +78,7 @@ update_git_submodules() {
 compile_ycm() {
   echo "Compiling YouCompleteMe"
   cd "$DIR"/vim/bundle/YouCompleteMe
-  python2 ./install.py --racer-completer
+  ./install.py --ts-completer --clang-completer --clangd-completer --cs-completer --go-completer --rust-completer --java-completer
   cd "$DIR"
 }
 
