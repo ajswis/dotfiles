@@ -159,3 +159,9 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = github:ervandew/supertab
+[submodule "vim/bundle/vim-dispatch"]
+	path = vim/bundle/vim-dispatch
+	url = github:tpope/vim-dispatch
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = github:tpope/vim-repeat
