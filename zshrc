@@ -80,3 +80,19 @@ export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+plugins=(
+  git
+  bundler
+  rake
+  rvm
+  ruby
+  npm
+  npx
+  rails
+  rust
+  yarn
+  cargo
+  docker
+  aws
+)
