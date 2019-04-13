@@ -106,7 +106,7 @@ compile_ycm() {
   fi
 
   cd "$DIR"/vim/bundle/YouCompleteMe
-  ./install.py --ts-completer --clang-completer --clangd-completer --cs-completer --go-completer --rust-completer --java-completer
+  ./install.py --ts-completer --clang-completer --clangd-completer --cs-completer --rust-completer --java-completer
   cd "$DIR"
 }
 
