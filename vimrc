@@ -319,7 +319,8 @@ let g:rails_gem_projections = {
       \ }
 
 let g:rails_projections = {
-      \   "app/services/*.rb": {"command": "service"}
+      \   "app/services/*.rb": {"command": "service"},
+      \   "app/extras/*.rb": {"command": "service"}
       \ }
 """"""""""""""""""""""""""""
 " delimitMate
