@@ -8,15 +8,16 @@ conky.config = {
 
 -- -- Window specifications -- #
 	own_window = true,
-	own_window_type = 'desktop',
+	own_window_type = 'override',
 	own_window_hints = 'below,skip_taskbar,skip_pager,undecorated',
+  own_window_transparent = true,
 
-	minimum_width = 200, minimum_height = 800,
+	minimum_width = 200,
 	maximum_width = 200,
 
 	alignment = 'top_right',
 	gap_x = 0,
-	gap_y = 25,
+	gap_y = 0,
 
 -- -- Text settings -- #
 	use_xft = true,
@@ -36,21 +37,32 @@ conky.config = {
 };
 
 conky.text = [[
-${voffset 81}${goto 75}${font Ds\-Digital:size=20}${color2}${time %I}${color3}${time %M}
+${voffset 81}${offset 69}${font Ds\-Digital:size=20}${color2}${time %I}${color3}${time %M}
 
-${goto 75}${color1}${font Nu:size=9}Uptime:
-${goto 75}${font Nu:size=9}${uptime_short}
-${voffset 40}${font snap:size=7}${goto 40}${color}CPU
-${voffset 5}${goto 52}${color3}${execi 10 sensors coretemp-isa-0000 | grep Physical | cut -c 18-21}°C
-${goto 52}${color2}${freq_g 1}GHz
-${voffset -35}${goto 138}${color}MEM
-${voffset 5}${goto 109}${color3}${swap}
-${goto 109}${color2}${mem}
-${voffset 60}${goto 40}${color}NET
-${voffset -40}${goto 52}${color2}${downspeedf wlp3s0}
-${goto 52}${color3}${upspeedf wlp3s0}
-${voffset 10}${goto 138}${color}HDD
-${voffset -40}${goto 108}${color2}${fs_free /home}
-${goto 60}${goto 108}${color3}${fs_free /}
-${color1}${voffset 45}${goto 55}${font Nu:size=9}${execi 3600 uname -r}
+#Uptime
+${offset 72}${color1}${font Sans:size=9}Uptime:
+${offset 72}${font Sans:size=9}${uptime_short}
+
+# CPU
+${voffset 22}${offset 35}${font Sans:size=7}${color}CPU
+${voffset 5}${offset 52}${color3}${execi 10 sensors coretemp-isa-0000 | grep Package | cut -c 17-18}°C
+${offset 52}${color2}${freq_g 1}GHz
+
+# Mem
+${voffset -52}${offset 135}${color}MEM
+${voffset 5}${offset 105}${color3}${swap}
+${offset 105}${color2}${mem}
+
+# Network
+${voffset 40}${offset 38}${color}NET
+${voffset -42}${offset 50}${color2}${downspeedf wlp3s0}
+${offset 50}${color3}${upspeedf wlp3s0}
+
+# Disk Space
+${voffset -6}${offset 135}${color}HDD
+${voffset -42}${offset 103}${color2}${fs_free /home}
+${offset 60}${goto 108}${color3}${fs_free /}
+
+# Kernel Release
+${voffset 45}${offset 35}${color1}${font Sans:size=9}${execi 3600 uname -r}
 ]];

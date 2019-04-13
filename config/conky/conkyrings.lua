@@ -164,7 +164,7 @@ settings_table = {
     {
         name='upspeedf',
         arg='wlp3s0',
-        max=750,
+        max=10000,
         bg_colour=ring_background_color,
         bg_alpha=ring_background_alpha,
         fg_colour=ring_foreground_color2,
@@ -179,7 +179,7 @@ settings_table = {
     {
         name='downspeedf',
         arg='wlp3s0',
-        max=4000,
+        max=20000,
         bg_colour=ring_background_color,
         bg_alpha=ring_background_alpha,
         fg_colour=ring_foreground_color,

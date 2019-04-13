@@ -45,7 +45,7 @@ end
 -- }}}
 
 awful.spawn('compton')
---awful.spawn_with_shell(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
+awful.spawn(os.getenv('HOME') .. '/.conkyinit --restart >/dev/null 2>&1')
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -414,11 +414,14 @@ awful.rules.rules = {
     properties = { border = 0 } },
   { rule = { class = "Conky" },
     properties = {
-      border_with = 0,
       floating = true,
       sticky = true,
       ontop = false,
+      skip_taskbar = true,
+      below = true,
       focusable = false,
+      titlebars_enabled = false,
+      border_with = 0,
       size_hints = {"program_position", "program_size"}
   }}
 }
