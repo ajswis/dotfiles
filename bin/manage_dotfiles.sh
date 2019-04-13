@@ -87,7 +87,7 @@ install_dotfiles() {
   mkdir -p "$DIR"/vim/tmp/{backup,swap,undo}
 
   if prompt "Install airline glyphs?" N; then
-    yaourt -S powerline-fonts-git
+    yay -S powerline-fonts-git
   fi
   mkdir -p "$DIR"/vim/tmp/{backup,swap,undo,view}
 }
@@ -101,7 +101,7 @@ update_git_submodules() {
 compile_ycm() {
   echo "Compiling YouCompleteMe"
   if prompt "Install boost (required for YCM)?" N; then
-    yaourt -S boost
+    yay -S boost
   fi
 
   cd "$DIR"/vim/bundle/YouCompleteMe
@@ -110,7 +110,7 @@ compile_ycm() {
 }
 
 compile_exctags() {
-  yaourt -S universal-ctags-git
+  yay -S universal-ctags-git
 }
 
 case "$1" in
