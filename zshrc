@@ -82,3 +82,19 @@ alias ack=ag
 [ -f /home/drew/.travis/travis.sh ] && source /home/drew/.travis/travis.sh
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+plugins=(
+  git
+  bundler
+  rake
+  rvm
+  ruby
+  npm
+  npx
+  rails
+  rust
+  yarn
+  cargo
+  docker
+  aws
+)
