@@ -93,6 +93,7 @@ install_dotfiles() {
 }
 
 update_git_submodules() {
+  git submodule update --init --recursive
   git submodule foreach --recursive git reset --hard origin/master
   git submodule foreach --recursive git pull origin master
   git submodule foreach git submodule update --init --recursive
