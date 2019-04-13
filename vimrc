@@ -482,9 +482,6 @@ endfunction
 let g:LatexBox_latexmk_async = 1
 let g:LatexBox_latexmk_preview_continuously = 1
 
-let g:python_host_prog = '/bin/python2'
-let g:python3_host_prog = '/bin/python'
-
 " OmniSharp settings are disabled because YCM does it better
 let g:Omnisharp_start_server = 0
 let g:syntastic_cs_checkers = ['code_checker']
