@@ -94,6 +94,6 @@ plugins=(
   ruby
   rust
   rvm
-  yarn
+  rvm
   yarn
 )
