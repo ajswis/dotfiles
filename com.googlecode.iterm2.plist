@@ -14,6 +14,10 @@
 	<string>836DEB2C-D0F2-425A-BCA5-D5DAB610D770</string>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>LeftCommand</key>
+	<integer>3</integer>
+	<key>LeftOption</key>
+	<integer>7</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -49,12 +53,25 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSUserKeyEquivalents</key>
+	<dict>
+		<key>New Tab</key>
+		<string>^t</string>
+		<key>New Windows</key>
+		<string>^n</string>
+		<key>Screen</key>
+		<string>@~$p</string>
+	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 109 796 486 0 0 2560 1417 </string>
+	<string>371 582 1016 512 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1280 0 1277 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1280 0 1277 1417 0 0 2560 1417 </string>
+	<string>1280 990 570 427 0 0 2560 1417 </string>
+	<key>NeverWarnAboutShortLivedSessions_836DEB2C-D0F2-425A-BCA5-D5DAB610D770</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_836DEB2C-D0F2-425A-BCA5-D5DAB610D770_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -596,17 +613,17 @@
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -667,6 +684,8 @@
 	<integer>1</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>577034926.07077205</real>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -702,6 +721,16 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>~/Documents/dotfiles</string>
+	<key>Print In Black And White</key>
+	<true/>
+	<key>RightCommand</key>
+	<integer>8</integer>
+	<key>RightOption</key>
+	<integer>3</integer>
+	<key>SwitchTabModifier</key>
+	<integer>9</integer>
+	<key>SwitchWindowModifier</key>
+	<integer>9</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>

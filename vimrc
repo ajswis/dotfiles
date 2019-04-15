@@ -100,11 +100,11 @@ nnoremap <silent>   <C-k>   :wincmd k<CR>
 nnoremap <silent>   <C-j>   :wincmd j<CR>
 nnoremap <silent>   <C-h>   :wincmd h<CR>
 nnoremap <silent>   <C-l>   :wincmd l<CR>
-nnoremap <silent>   <D-K>   :wincmd K<CR>
-nnoremap <silent>   <D-J>   :wincmd J<CR>
-nnoremap <silent>   <D-H>   :wincmd H<CR>
-nnoremap <silent>   <D-L>   :wincmd L<CR>
-nnoremap <silent>   <D-T>   :wincmd T<CR>
+nnoremap <silent>   <A-K>   :wincmd K<CR>
+nnoremap <silent>   <A-J>   :wincmd J<CR>
+nnoremap <silent>   <A-H>   :wincmd H<CR>
+nnoremap <silent>   <A-L>   :wincmd L<CR>
+nnoremap <silent>   <A-T>   :wincmd T<CR>
 nnoremap <silent>     +     :wincmd +<CR>
 nnoremap <silent>     _     :wincmd -<CR>
 nnoremap <silent>     )     :wincmd ><CR>
@@ -113,32 +113,32 @@ nnoremap <silent> <leader>r :wincmd r<CR>
 nnoremap <silent> <leader>R :wincmd R<CR>
 
 " Navigate tag stack
-nmap <D-]> <C-]>
-nmap <D-[> <C-T>
+nmap <A-]> <C-]>
+nmap <A-[> <C-T>
 
 " ALt+d to duplicate a line, vmode version is best for SHIFT+V, not the others
 nmap Y y$
-nnoremap <D-d> yyp
-vnoremap <D-d> y<C-o>p
-inoremap <D-d> <C-o>:yank<CR><C-o>:put<CR>
+nnoremap <A-d> yyp
+vnoremap <A-d> y<C-o>p
+inoremap <A-d> <C-o>:yank<CR><C-o>:put<CR>
 
-nnoremap <D-p> "+p
-vnoremap <D-p> "+p
-nnoremap <expr> <silent> <D-y> '"+' . (v:count ? v:count : '') . 'y'
-vnoremap <D-y> "+y
+nnoremap <A-p> "+p
+vnoremap <A-p> "+p
+nnoremap <expr> <silent> <A-y> '"+' . (v:count ? v:count : '') . 'y'
+vnoremap <A-y> "+y
 
 " Move lines of text via Cmd+[jk]
-nnoremap <silent> <D-j> :m+1<CR>==
-nnoremap <silent> <D-k> :m-2<CR>==
-vnoremap <silent> <D-j> :m '>+1<CR>gv=gv
-vnoremap <silent> <D-k> :m '<-2<CR>gv=gv
+nnoremap <silent> <A-j> :m+1<CR>==
+nnoremap <silent> <A-k> :m-2<CR>==
+vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " Move text left/right via alt+[hl]
-nnoremap <silent> <D-l> "mx"mp
-nnoremap <silent> <D-h> "mxhh"mp
+nnoremap <silent> <A-l> "mx"mp
+nnoremap <silent> <A-h> "mxhh"mp
 " TODO: Maintain selection
-vnoremap <silent> <D-l> "mx"mp
-vnoremap <silent> <D-h> "mxhh"mp
+vnoremap <silent> <A-l> "mx"mp
+vnoremap <silent> <A-h> "mxhh"mp
 
 " Clear searches so there aren't underlined words.
 nnoremap <silent> <C-i> :nohlsearch<CR>
@@ -212,15 +212,7 @@ map <leader>cc <plug>NERDCommenterToggle
 
 " For some reason, CommentToggle doesn't work unless this is
 " remapped, so remapping it to something I won't ever use.
-map <leader><D-/><space> <plug>NERDCommenterComment
-
-""""""""""""""""""""""""""""""""""""""""
-" UltiSnips
-""""""""""""""""""""""""""""""""""""""""
-
-let g:UltiSnipsExpandTrigger = "<D-C>"
-let g:UltiSnipsJumpForwardTrigger = "<D-W>"
-let g:UltiSnipsJumpBackwardTrigger = "<D-S>"
+map <leader><A-/><space> <plug>NERDCommenterComment
 
 """"""""""""""""""""""""""""
 " TeX Settings
