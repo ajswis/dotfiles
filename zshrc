@@ -84,17 +84,18 @@ alias ack=ag
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 plugins=(
-  git
+  aws
   bundler
-  rake
-  rvm
-  ruby
+  cargo
+  docker
+  git
   npm
   npx
   rails
+  rake
+  ruby
   rust
+  rvm
   yarn
-  cargo
-  docker
-  aws
+  yarn
 )
