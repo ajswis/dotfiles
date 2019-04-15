@@ -88,6 +88,7 @@ plugins=(
   bundler
   cargo
   docker
+  docker-compose
   git
   npm
   npx
