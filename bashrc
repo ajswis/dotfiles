@@ -36,8 +36,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-export EDITOR="mvim"
-alias vim="mvim"
+export EDITOR="nvim"
+alias vim="vim"
 
 dot_sync() {
   current_branch=$(git branch | grep '\*.*' | cut -d '*' -f 2 | tr -d ' ')

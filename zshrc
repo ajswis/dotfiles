@@ -18,9 +18,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -G'
 
-export EDITOR="mvim"
-alias vim="mvim"
-alias vimdiff="mvimdiff"
+export EDITOR="nvim"
+alias vim="nvim"
 
 # OS X completions
 fpath=(/usr/local/share/zsh-completions $fpath)
