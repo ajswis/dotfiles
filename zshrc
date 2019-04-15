@@ -82,17 +82,18 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 plugins=(
-  git
+  aws
   bundler
-  rake
-  rvm
-  ruby
+  cargo
+  docker
+  git
   npm
   npx
   rails
+  rake
+  ruby
   rust
+  rvm
   yarn
-  cargo
-  docker
-  aws
+  yarn
 )
