@@ -4,20 +4,20 @@
 [push]
   default = simple
 [merge]
-  tool = gvimdiff
+  tool = vimdiff
   conflictstyle = diff3
   summary = true
 [interactive]
   singlekey = true
 [core]
-  editor = mvim -f
+  editor = nvim -f
   pager = less -F -X
   excludesfile = ~/.gitignore
 [mergetool]
   prompt = false
-  tool = gvimdiff
+  tool = vimdiff
 [diff]
-  tool = gvimdiff
+  tool = vimdiff
 [alias]
   lol = log --oneline
   c = commit
