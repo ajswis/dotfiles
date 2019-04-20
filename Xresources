@@ -43,7 +43,7 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 3
 URxvt.tabbed.tab-bg: 0
 
-URxvt.url-select.launcher: chromium
+URxvt.url-select.launcher: firefox
 URxvt.url-select.underline: true
 URxvt.keysym.C-C: perl:clipboard:copy
 URxvt.keysym.C-V: perl:clipboard:paste
