@@ -326,7 +326,6 @@ let g:delimitMate_expand_cr = 1
 " YCM Settings
 """"""""""""""""""""""""""""
 
-let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_server_log_level = 'error'
 
@@ -439,8 +438,7 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_generate_tags = 1
 let g:go_fmt_autosave = 0 " Let syntastic do this
 let g:go_fmt_experimental = 1 " Maintain folds after GoFmt + write
-let g:syntastic_go_checkers = ['gofmt']
-"set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 au BufRead,BufNewFile *.go map <leader>d :GoDeclsDir<cr>
 
 " JSON things
@@ -469,13 +467,6 @@ let g:rust_src_path = $RUST_SRC_PATH
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
 
-let g:prettier#autoformat = 0
-let g:prettier#config#print_width = 120
-augroup PretterFormatting
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql Prettier
-augroup END
-
-
 " Fix backspace
 imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
 
@@ -489,13 +480,8 @@ endfunction
 let g:LatexBox_latexmk_async = 1
 let g:LatexBox_latexmk_preview_continuously = 1
 
-let g:python_host_prog = '/bin/python2'
-let g:python3_host_prog = '/bin/python'
-
-" omnisharp-roslyn settings are disabled because YCM does it better
-"let g:OmniSharp_server_path = '/opt/omnisharp-roslyn/OmniSharp.exe'
-"let g:OmniSharp_server_use_mono = 1
-"let g:syntastic_cs_checkers = ['code_checker']
+" OmniSharp settings are disabled because YCM does it better
+let g:Omnisharp_start_server = 0
 let g:ycm_auto_start_csharp_server = 1
 let g:ycm_auto_stop_csharp_server = 1
 
@@ -534,3 +520,17 @@ let g:UltiSnipsSnippetsDir="$HOME/.vim/snippets"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:ale_completion_enabled = 0
+let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {
+      \   'javascript': ['eslint', 'prettier'],
+      \   'ruby': ['rubocop'],
+      \}
+
+let b:ale_fixers = {
+      \   'javascript': ['prettier', 'eslint'],
+      \   'ruby': ['rubocop'],
+      \}
+
+let g:ale_fix_on_save = 1
