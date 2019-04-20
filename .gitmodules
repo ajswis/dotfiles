@@ -22,10 +22,6 @@
 	path = vim/bundle/restore_view.vim
 	url = github:vim-scripts/restore_view.vim.git
 	ignore = dirty
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = github:scrooloose/syntastic.git
-	ignore = dirty
 [submodule "vim/bundle/vim-fanfingtastic"]
 	path = vim/bundle/vim-fanfingtastic
 	url = github:dahu/vim-fanfingtastic.git
@@ -165,3 +161,6 @@
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = github:tpope/vim-repeat
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = github:w0rp/ale
