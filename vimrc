@@ -532,7 +532,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-      \   'javascript': ['eslint', 'prettier'],
+      \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \}
 
