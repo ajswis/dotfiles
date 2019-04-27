@@ -532,9 +532,12 @@ let g:ale_linters = {
       \   'ruby': ['rubocop'],
       \}
 
-let b:ale_fixers = {
-      \   'javascript': ['prettier', 'eslint'],
-      \   'ruby': ['rubocop'],
+let g:ale_fixers = {
+      \    'javascript': ['eslint', 'prettier'],
+      \    'typescript': ['eslint', 'prettier'],
+      \    'scss': ['prettier'],
+      \    'html': ['prettier'],
+      \    'ruby': ['rubocop'],
       \}
 
 let g:ale_fix_on_save = 1
