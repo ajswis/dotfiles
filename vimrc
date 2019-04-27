@@ -540,5 +540,7 @@ let g:ale_fixers = {
       \    'ruby': ['rubocop'],
       \}
 
-let g:ale_fix_on_save = 1
-let g:ale_lint_delay = 500
+" ts/tsx highlighting sucks a lot and I'm not inclined to fix it right now.
+" Should be able to get by with using javascript{,.jsx} highlighting for now
+au BufRead,BufNewFile *.ts set filetype=javascript
+au BufRead,BufNewFile *.tsx set filetype=javascript.jsx
