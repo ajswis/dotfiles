@@ -250,12 +250,20 @@ let g:rails_gem_projections = {
       \   "webpacker": {
       \     "app/javascript/packs/*.js": {
       \       "command": "pack",
-      \       "test": "test/javascript/%s.test.js"
+      \       "test": "spec/javascript/%s.test.js"
       \     },
       \     "app/javascript/packs/*.jsx": {
       \       "command": "pack",
-      \       "test": "test/javascript/%s.test.js"
-      \     }
+      \       "test": "spec/javascript/%s.test.jsx"
+      \     },
+      \     "app/javascript/packs/*.ts": {
+      \       "command": "pack",
+      \       "test": "spec/javascript/%s.test.ts"
+      \     },
+      \     "app/javascript/packs/*.tsx": {
+      \       "command": "pack",
+      \       "test": "spec/javascript/%s.test.tsx"
+      \     },
       \   },
       \   "factory_bot_rails": {
       \     "spec/factories/*_factory.rb": {
