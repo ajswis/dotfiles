@@ -28,6 +28,7 @@
   ca = commit -a
   d = diff
   ch = checkout
+  chp = cherry-pick
   ctags = !.git/hooks/ctags
 [color]
   ui = auto
