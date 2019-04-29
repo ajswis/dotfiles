@@ -230,39 +230,39 @@ let g:rails_gem_projections = {
       \     "spec/fabricators/*_fabricator.rb": {
       \       "command": "fabricator",
       \       "affinity": "model",
-      \       "alternate": "app/models/%s.rb",
-      \       "related": "db/schema.rb#%p",
-      \       "test": "spec/models/%s_spec.rb",
-      \       "template": "Fabricator :%s do\nend",
+      \       "alternate": "app/models/{}.rb",
+      \       "related": "db/schema.rb#{plural}",
+      \       "test": "spec/models/{}_spec.rb",
+      \       "template": "# frozen_string_literal: true\n\nFabricator :{} do\nend",
       \       "keywords": "Fabricate Fabricator sequence"
       \     }
       \   },
       \   "webpacker": {
       \     "app/javascript/packs/*.js": {
       \       "command": "pack",
-      \       "test": "spec/javascript/%s.test.js"
+      \       "test": "spec/javascript/{}.test.js"
       \     },
       \     "app/javascript/packs/*.jsx": {
       \       "command": "pack",
-      \       "test": "spec/javascript/%s.test.jsx"
+      \       "test": "spec/javascript/{}.test.jsx"
       \     },
       \     "app/javascript/packs/*.ts": {
       \       "command": "pack",
-      \       "test": "spec/javascript/%s.test.ts"
+      \       "test": "spec/javascript/{}.test.ts"
       \     },
       \     "app/javascript/packs/*.tsx": {
       \       "command": "pack",
-      \       "test": "spec/javascript/%s.test.tsx"
+      \       "test": "spec/javascript/{}.test.tsx"
       \     },
       \   },
       \   "factory_bot_rails": {
       \     "spec/factories/*_factory.rb": {
       \       "command": "factory",
       \       "affinity": "collection",
-      \       "alternate": "app/models/%i.rb",
-      \       "related": "db/schema.rb#%s",
-      \       "test": "spec/models/%i_spec.rb",
-      \       "template": "FactoryBot.define do\n  factory :%i do\n  end\nend",
+      \       "alternate": "app/models/{singular}.rb",
+      \       "related": "db/schema.rb#{plural}",
+      \       "test": "spec/models/{singular}_spec.rb",
+      \       "template": "# frozen_string_literal: true\n\nFactoryBot.define do\n  factory :{singular} do\n  end\nend",
       \       "keywords": "factory sequence"
       \     }
       \   },
@@ -270,35 +270,35 @@ let g:rails_gem_projections = {
       \     "spec/factories/*_factory.rb": {
       \       "command": "factory",
       \       "affinity": "collection",
-      \       "alternate": "app/models/%i.rb",
-      \       "related": "db/schema.rb#%s",
-      \       "test": "spec/models/%i_spec.rb",
-      \       "template": "FactoryBot.define do\n  factory :%i do\n  end\nend",
+      \       "alternate": "app/models/{singular}.rb",
+      \       "related": "db/schema.rb#{plural}",
+      \       "test": "spec/models/{singular}_spec.rb",
+      \       "template": "# frozen_string_literal: true\n\nFactoryBot.define do\n  factory :{singular} do\n  end\nend",
       \       "keywords": "factory sequence"
       \     }
       \   },
       \   "jasmine": {
       \     "spec/javascripts/*_spec.coffee": {
       \       "command": "rice",
-      \       "template": "describe %S, ->\n  ",
+      \       "template": "describe {camelcase|capitalize}, ->\n  ",
       \       "keywords": "describe it beforeEach expect loadFixtures xit"
       \     },
       \     "spec/javascripts/*_spec.js": {
       \       "command": "rice",
-      \       "template": "describe(%S, function() {\n  \n})",
+      \       "template": "describe({camelcase|capitalize}, function() {\n  \n})",
       \       "keywords": "describe it beforeEach expect loadFixtures xit"
       \     }
       \   },
       \   "interactor-rails": {
       \     "app/interactors/*.rb": {
       \       "command": "interactor",
-      \       "template": "class %S\n\nend"
+      \       "template": "# frozen_string_literal: true\n\nclass {camelcase|capitalize|colons}\n\nend"
       \     },
       \   },
       \   "cucumber-rails": {
       \     "features/*.feature": {
       \       "command": "feature",
-      \       "template": "Feature: %h\n\n  Scenario: " ,
+      \       "template": "Feature: {capitalize}\n\n  Scenario: " ,
       \     },
       \     "features/step_definitions/*_steps.rb": {
       \       "command": "steps",
@@ -309,14 +309,32 @@ let g:rails_gem_projections = {
       \     "app/decorators/*_decorator.rb": {
       \       "command": "decorator",
       \       "affinity": "model",
-      \       "alternate": "app/models/%s.rb",
-      \       "related": "db/schema.rb#%p",
-      \       "test": "spec/decorators/%s_decorator_spec.rb",
-      \       "template": "class %SDecorator < Draper::Decorator\n\nend",
+      \       "alternate": "app/models/{}.rb",
+      \       "related": "db/schema.rb#{plural}",
+      \       "test": "spec/decorators/{}_decorator_spec.rb",
+      \       "template": "# frozen_string_literal: true\n\nclass {camelcase|capitalize|colons}Decorator < Draper::Decorator\n\nend",
       \       "keywords": "delegate_all"
+      \     }
+      \   },
+      \   "graphql": {
+      \     "app/graphql/types/*_type.rb": {
+      \       "command": "type",
+      \       "affinity": "model",
+      \       "alternate": "app/models/{}.rb",
+      \       "related": "app/graphql/*_schema.rb#{plural}",
+      \       "test": "spec/graphql/type/{}_type_spec.rb",
+      \       "template": "# frozen_string_literal: true\n\nTypes::{camelcase|capitalize|colons}Type = GraphQL::ObjectType.define do\n  name '{capitalize}'\nend",
+      \     },
+      \     "app/graphql/mutations/*.rb": {
+      \       "command": "mutation",
+      \       "affinity": "model",
+      \       "alternate": "app/models/{}.rb",
+      \       "test": "spec/graphql/mutations/{}_spec.rb",
+      \       "template": "# frozen_string_literal: true\n\nclass Mutations::{camelcase|capitalize|colons} < GraphQL::Function\n  \nend",
       \     }
       \   }
       \ }
+
 
 let g:rails_projections = {
       \   "app/services/*.rb": {"command": "service"},
