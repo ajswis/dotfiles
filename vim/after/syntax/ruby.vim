@@ -12,6 +12,7 @@ syn region BraceContainer   matchgroup=ContainerChars start=/{/ end=/}/ transpar
 syn region BracketContainer matchgroup=ContainerChars start=/\[/ end=/\]/ transparent
 
 hi link _rubyFunction Function
+hi link rubyBangPredicateMethod Function
 hi link rubyRoute Type
 hi link rubyValidation Type
 
