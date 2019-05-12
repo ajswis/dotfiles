@@ -333,14 +333,22 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/{}.rb",
       \       "related": "app/graphql/*_schema.rb#{plural}",
       \       "test": "spec/graphql/type/{}_type_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nTypes::{camelcase|capitalize|colons}Type = GraphQL::ObjectType.define do\n  name '{capitalize}'\nend",
+      \       "template": "# frozen_string_literal: true\n\nmodule Types\n  class {camelcase|capitalize|colons}Type < Types::BaseObject\n    graphql_name '{capitalize}'\n  end\nend",
+      \     },
+      \     "app/graphql/resolvers/*_resolver.rb": {
+      \       "command": "resolver",
+      \       "affinity": "model",
+      \       "alternate": "app/models/{}.rb",
+      \       "related": "app/graphql/*_schema.rb#{}",
+      \       "test": "spec/graphql/resolvers/{}_resolver_spec.rb",
+      \       "template": "# frozen_string_literal: true\n\nmodule Resolvers\n  class {camelcase|capitalize|colons}Resolver < BaseResolver\n  end\nend",
       \     },
       \     "app/graphql/mutations/*.rb": {
       \       "command": "mutation",
       \       "affinity": "model",
       \       "alternate": "app/models/{}.rb",
       \       "test": "spec/graphql/mutations/{}_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nclass Mutations::{camelcase|capitalize|colons} < GraphQL::Function\n  \nend",
+      \       "template": "# frozen_string_literal: true\n\nmodule Mutations\n  class {camelcase|capitalize|colons} < Mutations::BaseMutation\n  end\nend",
       \     }
       \   }
       \ }
