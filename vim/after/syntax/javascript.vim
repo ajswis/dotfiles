@@ -32,6 +32,12 @@ syn region  tsTypeArg         start=/</ end=/>/ matchgroup=tsTypeArgAngleBracket
 " Override the default definitions, adding/removing as necessary
 syn cluster jsAll           contains=@jsExpression,jsStorageClass,jsConditional,jsRepeat,jsReturn,jsException,jsTry,jsNoise,jsBlockLabel,tsPrimitives
 
+
+syn clear jsTemplateString
+syn include @graphql ~/.vim/bundle/vim-graphql/syntax/graphql.vim
+syn region graphqlTemplate start=/graphql`/ end=/`/ keepend contains=@graphql
+syn region jsTemplateString start=/`/ skip=/\\`/ end=/`/  extend contains=jsTemplateExpression,jsSpecial,@Spell
+
 hi link jsObjectKey Special
 hi link jsClassDefinition Type
 hi link jsFutureKeys Keyword
