@@ -35,7 +35,7 @@ syn cluster jsAll           contains=@jsExpression,jsStorageClass,jsConditional,
 
 syn clear jsTemplateString
 syn include @graphql ~/.vim/bundle/vim-graphql/syntax/graphql.vim
-syn region graphqlTemplate start=/graphql`/ end=/`/ keepend contains=@graphql
+syn region graphqlTemplate start=/graphql\s*`/ end=/`/ keepend contains=@graphql
 syn region jsTemplateString start=/`/ skip=/\\`/ end=/`/  extend contains=jsTemplateExpression,jsSpecial,@Spell
 
 hi link jsObjectKey Special
