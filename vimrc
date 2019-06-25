@@ -571,5 +571,5 @@ let g:ale_lint_delay = 1000
 
 " ts/tsx highlighting sucks a lot and I'm not inclined to fix it right now.
 " Should be able to get by with using javascript{,.jsx} highlighting for now
-au BufRead,BufNewFile *.ts set filetype=javascript
-au BufRead,BufNewFile *.tsx set filetype=javascript.jsx
+au BufRead,BufNewFile *.ts set syn=javascript
+au BufRead,BufNewFile *.tsx set syn=javascript.jsx
