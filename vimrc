@@ -550,6 +550,7 @@ let g:UltiSnipsSnippetsDir="$HOME/.vim/snippets"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"set runtimepath+=$DOTFILES/vim/bundle/ultisnips
 
 let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
