@@ -76,7 +76,7 @@ source $HOME/.2fak.zsh
 
 alias yaourt=pikaur
 alias pacaur=pikaur
-alias ack=ag
+alias ack=rg
 
 # added by travis gem
 [ -f /home/drew/.travis/travis.sh ] && source /home/drew/.travis/travis.sh
