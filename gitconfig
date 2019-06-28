@@ -18,6 +18,8 @@
   tool = vimdiff
 [diff]
   tool = vimdiff
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd W' -c '$wincmd J'
 [alias]
   lol = log --oneline
   c = commit
