@@ -441,7 +441,8 @@ function! Tabline()
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' ' . tab . (bufmodified ? '+' : '') . ': '
-    let s .= (bufname != '' ? fnamemodify(bufname, ':t') . ' ' : '--- ')
+    let s .= (bufname != '' ? pathshorten(fnamemodify(bufname, ':.')) . ' ' : '--- ')
+
   endfor
 
   let s .= '%#TabLineFill#'
