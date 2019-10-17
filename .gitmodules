@@ -167,3 +167,6 @@
 [submodule "vim/bundle/vim-graphql"]
 	path = vim/bundle/vim-graphql
 	url = github:jparise/vim-graphql
+[submodule "vim/bundle/vim-blockle"]
+	path = vim/bundle/vim-blockle
+	url = github:jgdavey/vim-blockle
