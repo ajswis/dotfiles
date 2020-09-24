@@ -401,11 +401,11 @@ hi MatchParen ctermfg=160 ctermbg=NONE cterm=underline guifg=#df0000 guibg=NONE 
 function! DeleteTrailingWS()
   if !exists('b:noStrip')
     exe "normal mz"
-    %s/\s\+$//ge
+    keepp %s/\s\+$//ge
     exe "normal `z"
   endif
 endfunction
-au BufWrite * :call DeleteTrailingWS()
+au BufWritePre * :call DeleteTrailingWS()
 au FileType go let b:noStrip=1
 
 if !has("nvim")
