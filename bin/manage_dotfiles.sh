@@ -87,12 +87,7 @@ compile_ycm() {
 }
 
 compile_exctags() {
-  git clone git://github.com/jakedouglas/exuberant-ctags.git "$DIR"/exuberant-ctags
-  cd "$DIR"/exuberant-ctags
-  ./configure
-  make
-  sudo make install
-  rm -rf "$DIR"/exuberant-ctags
+  brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 }
 
 case "$1" in
