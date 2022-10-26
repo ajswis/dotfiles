@@ -89,7 +89,7 @@ update_git_submodules() {
 compile_ycm() {
   echo "Compiling YouCompleteMe"
   cd "$DIR"/vim/bundle/YouCompleteMe
-  ./install.py --ts-completer --clang-completer --clangd-completer --cs-completer --rust-completer --java-completer
+  ./install.py --ts-completer --clang-completer --clangd-completer --cs-completer --rust-completer
   cd "$DIR"
 }
 
