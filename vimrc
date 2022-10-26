@@ -146,6 +146,12 @@ nnoremap <silent> <C-i> :nohlsearch<CR>
 " Formatting
 nmap <silent> =j :FormatJSON<CR>
 nmap <silent> =x :FormatXML<CR>
+"au FileType javascript setlocal formatprg=prettier
+"au FileType javascript.jsx setlocal formatprg=prettier
+"au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+"au FileType html setlocal formatprg=js-beautify\ --type\ html
+"au FileType scss setlocal formatprg=prettier\ --parser\ css
+"au FileType css setlocal formatprg=prettier\ --parser\ css
 
 nmap <silent> =, :s/$/,/<CR><C-i>
 
@@ -185,7 +191,7 @@ let g:ctrlp_match_window_reversed = 0
 
 " Ignore some filetypes
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-"let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 1
 let g:ctrlp_clear_cache_on_exit = 0
 
 " Uncomment to show hidden directories.
@@ -309,7 +315,7 @@ let g:rails_gem_projections = {
       \     }
       \   },
       \   "draper": {
-      \     "app/decorators/*_decorator.rb": {
+      \     "app/decorators/*.rb": {
       \       "command": "decorator",
       \       "affinity": "model",
       \       "alternate": "app/models/{}.rb",
@@ -320,7 +326,7 @@ let g:rails_gem_projections = {
       \     }
       \   },
       \   "graphql": {
-      \     "app/graphql/types/*_type.rb": {
+      \     "app/graphql/types/*.rb": {
       \       "command": "type",
       \       "affinity": "model",
       \       "alternate": "app/models/{}.rb",
@@ -328,7 +334,7 @@ let g:rails_gem_projections = {
       \       "test": "spec/graphql/type/{}_type_spec.rb",
       \       "template": "# frozen_string_literal: true\n\nmodule Types\n  class {camelcase|capitalize|colons}Type < Types::BaseObject\n    graphql_name '{capitalize}'\n  end\nend",
       \     },
-      \     "app/graphql/resolvers/*_resolver.rb": {
+      \     "app/graphql/resolvers/*.rb": {
       \       "command": "resolver",
       \       "affinity": "model",
       \       "alternate": "app/models/{}.rb",
@@ -536,7 +542,7 @@ function! s:MaybeRunProjectSettings(file)
     return
   endif
 
-  let git_dir = fugitive#extract_git_dir(@%)
+  let git_dir = FugitiveExtractGitDir(@%)
   if git_dir != ""
     if filereadable(git_dir.'/project.vim')
       exec "source ".(git_dir.'/project.vim')
@@ -562,16 +568,16 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-      \   'javascript': ['eslint'],
-      \   'ruby': ['rubocop'],
+      \   'ruby': ['standardrb'],
       \}
+"      \   'javascript': ['eslint'],
 
 let g:ale_fixers = {
       \    'javascript': ['eslint', 'prettier'],
       \    'typescript': ['eslint', 'prettier'],
       \    'scss': ['prettier'],
       \    'html': ['prettier'],
-      \    'ruby': ['rubocop'],
+      \    'ruby': ['standardrb'],
       \}
 
 let g:ale_fix_on_save = 1
@@ -581,3 +587,4 @@ let g:ale_lint_delay = 1000
 " Should be able to get by with using javascript{,.jsx} highlighting for now
 au BufRead,BufNewFile *.ts set filetype=javascript
 au BufRead,BufNewFile *.tsx set filetype=javascript.jsx
+au BufRead,BufNewFile *_spec.rb set filetype=rspec
