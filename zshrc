@@ -22,8 +22,8 @@ export EDITOR="nvim"
 alias vim="nvim"
 
 # OS X completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath=(/opt/homebrew/share/zsh-completions $fpath)
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 dot_sync() {
   current_branch=$(git branch | grep '\*.*' | cut -d '*' -f 2 | tr -d ' ')
@@ -91,3 +91,10 @@ plugins=(
   rvm
   yarn
 )
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export GPG_TTY=$(tty)

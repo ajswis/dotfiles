@@ -546,8 +546,8 @@ function! s:MaybeRunProjectSettings(file)
 endfunction
 
 if has('nvim')
-  let g:python_host_prog = "/usr/local/bin/python2"
-  let g:python3_host_prog = "/usr/local/bin/python3"
+  let g:python3_host_prog = "/opt/homebrew/bin/python3"
+  let g:loaded_perl_provider = 0 "disable perl
 endif
 
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
