@@ -1,6 +1,7 @@
 [user]
   email = andrew@andrewswistak.com
   name = Andrew Swistak
+	signingkey = 666C20960EF30DE21A0C9866C3F4D60CA6D49CA0
 [push]
   default = simple
 [merge]
@@ -44,3 +45,5 @@
   insteadOf = github.com
 [init]
   templatedir = ~/.git_template
+[diff "rails_credentials"]
+	textconv = bin/rails credentials:diff
