@@ -52,6 +52,7 @@ bindkey '^[OF' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[[5~' beginning-of-buffer-or-history
 bindkey '^[[6~' end-of-buffer-or-history
+bindkey '^R' history-incremental-search-backward
 
 export PAGER=less
 export DOTFILES=$HOME/Documents/dotfiles
