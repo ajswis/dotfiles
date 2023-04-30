@@ -22,8 +22,8 @@ export EDITOR="nvim"
 alias vim="nvim"
 
 # OS X completions
-fpath=(/opt/homebrew/share/zsh-completions $fpath)
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 dot_sync() {
   current_branch=$(git branch | grep '\*.*' | cut -d '*' -f 2 | tr -d ' ')
