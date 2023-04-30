@@ -63,6 +63,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
 
 alias ack=ag
+alias bx="bundle exec"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
