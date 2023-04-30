@@ -369,8 +369,8 @@ let g:delimitMate_expand_cr = 1
 " YCM Settings
 """"""""""""""""""""""""""""
 
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_server_log_level = 'error'
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_server_log_level = 'error'
 
 """"""""""""""""""""""""""""
 " Colors and Themes
@@ -509,27 +509,43 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 let g:rustfmt_autosave = 1
 let g:ycm_rust_src_path = $RUST_SRC_PATH
 let g:rust_src_path = $RUST_SRC_PATH
-let g:coc_global_extensions = ['coc-rust-analyzer']
+"let g:coc_global_extensions = ['coc-rust-analyzer']
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
 
 " Fix backspace
-imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
+"imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
 
-function! YcmOnDeleteChar()
-  if pumvisible()
-    return "\<C-y>"
-  endif
-  return ""
-endfunction
+"function! YcmOnDeleteChar()
+"  if pumvisible()
+"    return "\<C-y>"
+"  endif
+"  return ""
+"endfunction
 
 let g:LatexBox_latexmk_async = 1
 let g:LatexBox_latexmk_preview_continuously = 1
 
 " OmniSharp settings are disabled because YCM does it better
 let g:Omnisharp_start_server = 0
-let g:ycm_auto_start_csharp_server = 1
-let g:ycm_auto_stop_csharp_server = 1
+"let g:ycm_auto_start_csharp_server = 1
+"let g:ycm_auto_stop_csharp_server = 1
 
 " Source project specific settings from .git/project.vim if the file exists
 " this kinda sucks because
@@ -558,12 +574,12 @@ if has('nvim')
   let g:loaded_perl_provider = 0 "disable perl
 endif
 
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 let g:UltiSnipsSnippetsDir="$HOME/.vim/snippets"
-let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
