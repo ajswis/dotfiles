@@ -93,6 +93,13 @@ compile_ycm() {
   cd "$DIR"
 }
 
+install_coc() {
+  echo "Installing CoC Yarn dependencies"
+  cd "$DIR"/vim/bundle/coc.nvim
+  yarn
+  cd "$DIR"
+}
+
 compile_exctags() {
   brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 }
@@ -101,6 +108,7 @@ case "$1" in
   -a|--all)
     install_dotfiles
     update_git_submodules
+    install_coc
     compile_ycm
     compile_exctags
     ;;
@@ -112,6 +120,9 @@ case "$1" in
     ;;
   -y|--compile_ycm)
     compile_ycm
+    ;;
+  -c|--install_coc)
+    install_coc
     ;;
   -e|--compile_exctags)
     compile_exctags
