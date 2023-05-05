@@ -242,7 +242,7 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/{}.rb",
       \       "related": "db/schema.rb#{plural}",
       \       "test": "spec/models/{}_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nFabricator :{} do\nend",
+      \       "template": "Fabricator :{} do\nend",
       \       "keywords": "Fabricate Fabricator sequence"
       \     }
       \   },
@@ -271,7 +271,7 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/{singular}.rb",
       \       "related": "db/schema.rb#{plural}",
       \       "test": "spec/models/{singular}_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nFactoryBot.define do\n  factory :{singular} do\n  end\nend",
+      \       "template": "FactoryBot.define do\n  factory :{singular} do\n  end\nend",
       \       "keywords": "factory sequence"
       \     }
       \   },
@@ -282,7 +282,7 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/{singular}.rb",
       \       "related": "db/schema.rb#{plural}",
       \       "test": "spec/models/{singular}_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nFactoryBot.define do\n  factory :{singular} do\n  end\nend",
+      \       "template": "FactoryBot.define do\n  factory :{singular} do\n  end\nend",
       \       "keywords": "factory sequence"
       \     }
       \   },
@@ -301,7 +301,7 @@ let g:rails_gem_projections = {
       \   "interactor-rails": {
       \     "app/interactors/*.rb": {
       \       "command": "interactor",
-      \       "template": "# frozen_string_literal: true\n\nclass {camelcase|capitalize|colons}\n\nend"
+      \       "template": "class {camelcase|capitalize|colons}\n\nend"
       \     },
       \   },
       \   "cucumber-rails": {
@@ -321,7 +321,7 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/{}.rb",
       \       "related": "db/schema.rb#{plural}",
       \       "test": "spec/decorators/{}_decorator_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nclass {camelcase|capitalize|colons}Decorator < Draper::Decorator\n\nend",
+      \       "template": "class {camelcase|capitalize|colons}Decorator < Draper::Decorator\n\nend",
       \       "keywords": "delegate_all"
       \     }
       \   },
@@ -332,7 +332,7 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/{}.rb",
       \       "related": "app/graphql/*_schema.rb#{plural}",
       \       "test": "spec/graphql/type/{}_type_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nmodule Types\n  class {camelcase|capitalize|colons}Type < Types::BaseObject\n    graphql_name '{capitalize}'\n  end\nend",
+      \       "template": "module Types\n  class {camelcase|capitalize|colons}Type < Types::BaseObject\n    graphql_name '{capitalize}'\n  end\nend",
       \     },
       \     "app/graphql/resolvers/*.rb": {
       \       "command": "resolver",
@@ -340,22 +340,29 @@ let g:rails_gem_projections = {
       \       "alternate": "app/models/{}.rb",
       \       "related": "app/graphql/*_schema.rb#{}",
       \       "test": "spec/graphql/resolvers/{}_resolver_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nmodule Resolvers\n  class {camelcase|capitalize|colons}Resolver < BaseResolver\n  end\nend",
+      \       "template": "module Resolvers\n  class {camelcase|capitalize|colons}Resolver < BaseResolver\n  end\nend",
       \     },
       \     "app/graphql/mutations/*.rb": {
       \       "command": "mutation",
       \       "affinity": "model",
       \       "alternate": "app/models/{}.rb",
       \       "test": "spec/graphql/mutations/{}_spec.rb",
-      \       "template": "# frozen_string_literal: true\n\nmodule Mutations\n  class {camelcase|capitalize|colons} < Mutations::BaseMutation\n  end\nend",
+      \       "template": "module Mutations\n  class {camelcase|capitalize|colons} < Mutations::BaseMutation\n  end\nend",
+      \     },
+      \     "app/graphql/subscriptions/*.rb": {
+      \       "command": "subscription",
+      \       "affinity": "model",
+      \       "alternate": "app/models/{}.rb",
+      \       "test": "spec/graphql/subscriptions/{}_spec.rb",
+      \       "template": "module Subscriptions\n  class {camelcase|capitalize|colons} < Subscriptions::BaseSubscription\n  end\nend",
       \     }
       \   }
       \ }
 
 
 let g:rails_projections = {
-      \   "app/services/*.rb": {"command": "service"},
-      \   "app/extras/*.rb": {"command": "service"}
+      \   "app/services/*_service.rb": {"command": "service"},
+      \   "app/extras/*.rb": {"command": "extra"}
       \ }
 """"""""""""""""""""""""""""
 " delimitMate

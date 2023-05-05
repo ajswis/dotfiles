@@ -76,7 +76,7 @@
 	ignore = dirty
 [submodule "vim/bundle/vim-bundler"]
 	path = vim/bundle/vim-bundler
-	url = github:tpope/vim-bundler.git
+	url = github:tpope/vim-bundler
 	ignore = dirty
 [submodule "vim/bundle/vim-cucumber"]
 	path = vim/bundle/vim-cucumber
