@@ -604,6 +604,8 @@ let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
       \   'ruby': ['standardrb'],
+      \   'python': ['ruff'],
+      \   'php': ['phpstan'],
       \}
 "      \   'javascript': ['eslint'],
 
@@ -613,6 +615,8 @@ let g:ale_fixers = {
       \    'scss': ['prettier'],
       \    'html': ['prettier'],
       \    'ruby': ['standardrb'],
+      \    'python': ['black'],
+      \    'php': ['pint'],
       \}
 
 let g:ale_fix_on_save = 1
