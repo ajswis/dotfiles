@@ -94,9 +94,10 @@ install_dotfiles() {
 
 update_git_submodules() {
   git submodule update --init --recursive
-  git submodule foreach --recursive git reset --hard origin/master
-  git submodule foreach --recursive git pull origin master
-  git submodule foreach git submodule update --init --recursive
+  #git submodule foreach --recursive git reset --hard origin/master
+  #git submodule foreach --recursive git pull origin master
+  #git submodule foreach git submodule update --init --recursive
+  git submodule foreach --recursive zsh -c 'git fetch -a && git checkout -b rm_detached_head && (git checkout master || git checkout main || git checkout hg) && git branch -D rm_detached_head && (git reset --hard remotes/origin/master || git reset --hard remotes/origin/main || git reset --hard remotes/origin/hg)'
 }
 
 compile_ycm() {
