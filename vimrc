@@ -531,10 +531,10 @@ function! s:MaybeRunProjectSettings(file)
     return
   endif
 
-  let git_dir = fugitive#extract_git_dir(@%)
-  if git_dir != ""
-    if filereadable(git_dir.'/project.vim')
-      exec "source ".(git_dir.'/project.vim')
+  let s:git_dir = FugitiveGitDir()
+  if s:git_dir != ""
+    if filereadable(s:git_dir.'/project.vim')
+      exec "source ".(s:git_dir.'/project.vim')
     endif
   endif
   let g:custom_project_settings_loaded = 1
